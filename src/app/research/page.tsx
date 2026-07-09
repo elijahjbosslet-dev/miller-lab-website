@@ -29,7 +29,7 @@ export default function ResearchPage() {
               Five disciplines, one computational pipeline
             </h1>
             <p className="mt-5 max-w-md text-base leading-7 text-slate-300">
-              No discipline works in isolation — each feeds into the next,
+              No discipline works in isolation. Each feeds into the next,
               from raw biological data to AI-driven predictions to
               clinically relevant, publication-ready results.
             </p>
@@ -49,7 +49,7 @@ export default function ResearchPage() {
         alt="Researcher working with lab samples and a pipette"
         eyebrow="Wet Lab to Computation"
         title="Grounded in real experimental collaboration"
-        description="Every computational model starts with a question from the bench — our research areas exist to turn that data into actionable, clinically relevant insight."
+        description="Every computational model starts with a question from the bench. Our research areas exist to turn that data into actionable, clinically relevant insight."
         imageSide="left"
       />
 
@@ -60,7 +60,7 @@ export default function ResearchPage() {
         <GradientBlob tone="mixed" className="left-[-8rem] top-0 h-[22rem] w-[22rem] opacity-[0.14]" />
         <Container className="relative">
           <Reveal>
-            <SectionHeader index="01" eyebrow="The Disciplines" title="Five areas, in detail" />
+            <SectionHeader eyebrow="The Disciplines" title="Five areas, in detail" />
           </Reveal>
         </Container>
         <Reveal delay={0.1}>

@@ -33,7 +33,7 @@ export default function TeamPage() {
         <Container className="relative">
           {/* Principal Investigator */}
           <Reveal>
-            <SectionHeader index="01" eyebrow="Principal Investigator" title="Dr. Whelton Miller" />
+            <SectionHeader eyebrow="Principal Investigator" title="Dr. Whelton Miller" />
           </Reveal>
           <Reveal delay={0.1}>
             <FramedPanel className="mt-10 max-w-3xl">
@@ -60,7 +60,7 @@ export default function TeamPage() {
           {/* Graduate Researchers — staggered offset grid instead of a flat one */}
           <div className="mt-24">
             <Reveal>
-              <SectionHeader index="02" eyebrow="Researchers" title="Graduate Researchers" />
+              <SectionHeader eyebrow="Researchers" title="Graduate Researchers" />
             </Reveal>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {graduateResearchers.map((r, i) => (
@@ -74,7 +74,7 @@ export default function TeamPage() {
           {/* Undergraduate Researchers */}
           <div className="mt-16">
             <Reveal>
-              <SectionHeader index="03" eyebrow="Researchers" title="Undergraduate Researchers" />
+              <SectionHeader eyebrow="Researchers" title="Undergraduate Researchers" />
             </Reveal>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {undergraduateResearchers.map((r, i) => (
@@ -88,7 +88,7 @@ export default function TeamPage() {
           {/* Alumni */}
           <div className="mt-16">
             <Reveal>
-              <SectionHeader index="04" eyebrow="Alumni" title="Where they are now" />
+              <SectionHeader eyebrow="Alumni" title="Where they are now" />
             </Reveal>
             <Reveal delay={0.1} className="mt-10 border-t border-slate-200">
               <ul className="divide-y divide-slate-200">

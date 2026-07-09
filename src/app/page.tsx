@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Users2 } from "lucide-react";
+import { ArrowRight, CheckCircle, Users } from "@phosphor-icons/react/dist/ssr";
 import Container from "@/components/Container";
 import HelixThread from "@/components/HelixThread";
 import ComputeGrid from "@/components/ComputeGrid";
@@ -88,7 +88,6 @@ export default function Home() {
         <Container className="relative">
           <Reveal>
             <SectionHeader
-              index="01"
               eyebrow="Research Areas"
               title="Where computation meets biology"
               description="Five interconnected disciplines that let us move from raw biological data to reproducible, clinically relevant insight."
@@ -116,8 +115,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/70 to-navy-950/10" />
           <Container className="relative flex h-full items-center">
             <div className="max-w-md text-white">
-              <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
-                02 — Infrastructure
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
+                Infrastructure
               </p>
               <h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
                 Built on high-performance computing
@@ -137,7 +136,7 @@ export default function Home() {
         <GradientBlob tone="green" className="-right-16 top-0 h-[20rem] w-[20rem] opacity-[0.13]" />
         <Container className="relative">
           <Reveal>
-            <SectionHeader index="03" eyebrow="Our Approach" title="Reproducible, AI-driven research" />
+            <SectionHeader eyebrow="Our Approach" title="Reproducible, AI-driven research" />
             <p className="mt-6 max-w-2xl font-display text-xl italic leading-snug text-slate-700 sm:text-2xl">
               &ldquo;Our goal is to close the gap between biological data and
               clinically relevant insight.&rdquo;
@@ -149,7 +148,7 @@ export default function Home() {
               <ul className="mt-6 space-y-4">
                 {missionPillars.map((pillar) => (
                   <li key={pillar.title} className="flex gap-3">
-                    <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
+                    <CheckCircle size={20} className="mt-0.5 shrink-0 text-green-600" />
                     <div>
                       <p className="font-semibold text-slate-900">{pillar.title}</p>
                       <p className="text-sm leading-6 text-slate-600">{pillar.description}</p>
@@ -166,7 +165,7 @@ export default function Home() {
               <ul className="mt-6 space-y-4">
                 {audienceSegments.map((segment) => (
                   <li key={segment.title} className="flex gap-3">
-                    <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
+                    <CheckCircle size={20} className="mt-0.5 shrink-0 text-green-600" />
                     <div>
                       <p className="font-semibold text-slate-900">{segment.title}</p>
                       <p className="text-sm leading-6 text-slate-600">{segment.description}</p>
@@ -184,7 +183,7 @@ export default function Home() {
         <GradientBlob tone="green" className="right-[-8rem] top-[-6rem] h-[22rem] w-[22rem] opacity-30" />
         <Container className="relative">
           <Reveal>
-            <SectionHeader index="04" eyebrow="Meet the Lab" title="Led by Dr. Whelton Miller" tone="dark" />
+            <SectionHeader eyebrow="Meet the Lab" title="Led by Dr. Whelton Miller" tone="dark" />
           </Reveal>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <Reveal delay={0.05}>
@@ -194,7 +193,7 @@ export default function Home() {
                 cancer biology, and infectious disease.
               </p>
               <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-400">
-                <Users2 size={18} className="text-green-400" />
+                <Users size={18} className="text-green-400" />
                 {teamCount}+ current lab members
               </div>
               <Link

@@ -22,7 +22,7 @@ export default function FaqPage() {
         <GradientBlob tone="green" className="-right-24 -top-16 h-[20rem] w-[20rem] opacity-[0.14]" />
         <Container className="relative max-w-3xl">
           <Reveal>
-            <SectionHeader index="01" eyebrow="Common Questions" title="What people ask us" />
+            <SectionHeader eyebrow="Common Questions" title="What people ask us" />
           </Reveal>
           <Reveal delay={0.1} className="mt-10">
             <FaqAccordion faqs={faqs} />

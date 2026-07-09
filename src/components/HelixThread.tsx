@@ -1,36 +1,64 @@
-// Horizontal double-helix line art sized to run behind/through a headline,
-// echoing the logo's helix-across-the-wordmark composition instead of
-// sitting off to the side as pure decoration.
+// Horizontal ribbon-style double helix, matching the logo's twisting-ribbon
+// mark: solid curved bands that pinch to nothing at each crossing (real
+// negative space) and properly weave over/under each other, instead of a
+// thin wireframe strand with cross rungs.
 export default function HelixThread({ className = "" }: { className?: string }) {
   const width = 1000;
   const height = 200;
-  const amplitude = 62;
   const centerY = height / 2;
+  const amplitude = height * 0.42;
+  const maxHalfWidth = height * 0.15;
   const cycles = 4;
-  const samples = 160;
+  const samples = 480;
 
-  const strand = (phase: number) => {
-    const points: [number, number][] = [];
-    for (let i = 0; i <= samples; i++) {
-      const t = i / samples;
-      const x = t * width;
-      const y = centerY + amplitude * Math.sin(t * cycles * Math.PI * 2 + phase);
-      points.push([x, y]);
-    }
-    return points;
+  type Sample = { x: number; yA: number; yB: number; w: number; c: number };
+
+  const data: Sample[] = [];
+  for (let i = 0; i <= samples; i++) {
+    const t = i / samples;
+    const theta = t * cycles * Math.PI * 2;
+    const x = t * width;
+    const yA = centerY + amplitude * Math.sin(theta);
+    const yB = centerY - amplitude * Math.sin(theta);
+    const c = Math.cos(theta);
+    const w = maxHalfWidth * Math.abs(c);
+    data.push({ x, yA, yB, w, c });
+  }
+
+  const ribbonPath = (indices: number[], strand: "A" | "B") => {
+    if (indices.length < 2) return "";
+    const top = indices.map((i) => {
+      const s = data[i];
+      const y = strand === "A" ? s.yA : s.yB;
+      return `${s.x.toFixed(1)},${(y - s.w).toFixed(1)}`;
+    });
+    const bottom = indices
+      .slice()
+      .reverse()
+      .map((i) => {
+        const s = data[i];
+        const y = strand === "A" ? s.yA : s.yB;
+        return `${s.x.toFixed(1)},${(y + s.w).toFixed(1)}`;
+      });
+    return `M${top.join(" L")} L${bottom.join(" L")} Z`;
   };
 
-  const strandA = strand(0);
-  const strandB = strand(Math.PI);
-
-  const toPath = (points: [number, number][]) =>
-    points.map(([x, y], i) => `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
-
-  const rungCount = 26;
-  const rungs = Array.from({ length: rungCount }, (_, i) => {
-    const idx = Math.round((i / (rungCount - 1)) * samples);
-    return [strandA[idx], strandB[idx]] as const;
-  });
+  // Split into segments wherever the front/back strand swaps (i.e. cos
+  // changes sign) — that's exactly where the ribbon pinches to zero width.
+  const segments: number[][] = [];
+  let current: number[] = [0];
+  for (let i = 1; i < data.length; i++) {
+    const prevSign = Math.sign(data[i - 1].c) || 1;
+    const sign = Math.sign(data[i].c) || 1;
+    if (sign !== prevSign) {
+      current.push(i);
+      segments.push(current);
+      current = [i];
+    } else {
+      current.push(i);
+    }
+  }
+  segments.push(current);
 
   return (
     <svg
@@ -39,15 +67,16 @@ export default function HelixThread({ className = "" }: { className?: string }) 
       className={className}
       aria-hidden="true"
     >
-      <g stroke="currentColor" strokeWidth="4" fill="none">
-        <path d={toPath(strandA)} />
-        <path d={toPath(strandB)} />
-      </g>
-      <g stroke="currentColor" strokeWidth="2.5" strokeOpacity="0.55">
-        {rungs.map(([a, b], i) => (
-          <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} />
-        ))}
-      </g>
+      {segments.map((seg, i) => {
+        const front = data[seg[Math.floor(seg.length / 2)]].c >= 0 ? "A" : "B";
+        const back = front === "A" ? "B" : "A";
+        return (
+          <g key={i}>
+            <path d={ribbonPath(seg, back)} fill="currentColor" fillOpacity="0.35" />
+            <path d={ribbonPath(seg, front)} fill="currentColor" fillOpacity="0.85" />
+          </g>
+        );
+      })}
     </svg>
   );
 }

@@ -1,18 +1,16 @@
 import { ReactNode } from "react";
 
-// Editorial, journal-style section header: a numbered gutter column next to
-// eyebrow/title/description, used at the top of nearly every section on the
-// site so the whole thing reads as one indexed document rather than a stack
-// of generic SaaS-template blocks.
+// Section header: eyebrow, title, optional description and action, sitting
+// under a plain top rule. Deliberately no section-numbering ("01 / 02")
+// gutter — that enumeration pattern reads as templated rather than
+// considered, however tidy it looks in isolation.
 export default function SectionHeader({
-  index,
   eyebrow,
   title,
   description,
   action,
   tone = "light",
 }: {
-  index: string;
   eyebrow: string;
   title: string;
   description?: string;
@@ -22,18 +20,11 @@ export default function SectionHeader({
   const isDark = tone === "dark";
   return (
     <div
-      className={`grid gap-6 border-t pt-8 lg:grid-cols-12 lg:gap-8 ${
+      className={`flex flex-wrap items-end justify-between gap-6 border-t pt-8 ${
         isDark ? "border-white/15" : "border-slate-200"
       }`}
     >
-      <div className="lg:col-span-2">
-        <span
-          className={`section-index text-sm ${isDark ? "text-white/40" : "text-slate-400"}`}
-        >
-          {index}
-        </span>
-      </div>
-      <div className="lg:col-span-7">
+      <div className="max-w-2xl">
         <p
           className={`text-xs font-semibold uppercase tracking-[0.2em] ${
             isDark ? "text-green-400" : "text-green-600"
@@ -58,7 +49,7 @@ export default function SectionHeader({
           </p>
         )}
       </div>
-      {action && <div className="lg:col-span-3 lg:justify-self-end">{action}</div>}
+      {action && <div className="shrink-0">{action}</div>}
     </div>
   );
 }

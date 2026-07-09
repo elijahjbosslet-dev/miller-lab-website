@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, List, X } from "@phosphor-icons/react/dist/ssr";
 import Container from "./Container";
 import { lab } from "@/lib/content";
 
@@ -62,7 +62,7 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={22} /> : <List size={22} />}
         </button>
       </Container>
 

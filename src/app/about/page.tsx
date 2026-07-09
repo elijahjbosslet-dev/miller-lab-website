@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
@@ -24,17 +24,11 @@ export default function AboutPage() {
         description="We combine artificial intelligence, molecular simulation, and bioinformatics with high-performance computing to make sophisticated computational science accessible to researchers in medicine, biology, and chemistry."
       />
 
-      {/* Mission — offset panel, giant watermark numeral */}
+      {/* Mission — offset panel */}
       <section className="slant-b relative overflow-hidden pt-16">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-6 -top-10 select-none font-display text-[10rem] font-bold leading-none text-slate-100 sm:text-[14rem]"
-        >
-          01
-        </span>
         <Container className="relative">
           <Reveal>
-            <SectionHeader index="01" eyebrow="Mission" title="What we do" />
+            <SectionHeader eyebrow="Mission" title="What we do" />
           </Reveal>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <Reveal>
@@ -42,7 +36,7 @@ export default function AboutPage() {
               <ul className="mt-6 space-y-4">
                 {missionPillars.map((pillar) => (
                   <li key={pillar.title} className="flex gap-3">
-                    <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
+                    <CheckCircle size={20} className="mt-0.5 shrink-0 text-green-600" />
                     <div>
                       <p className="font-semibold text-slate-900">{pillar.title}</p>
                       <p className="text-sm leading-6 text-slate-600">{pillar.description}</p>
@@ -66,16 +60,9 @@ export default function AboutPage() {
       {/* Who we serve — full-bleed diagonal navy band */}
       <section className="slant-tb bg-grain relative -mt-14 overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black text-white">
         <GradientBlob tone="green" className="left-[-8rem] top-[-4rem] h-[24rem] w-[24rem] opacity-30" />
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-4 bottom-0 select-none font-display text-[10rem] font-bold leading-none text-white/5 sm:text-[14rem]"
-        >
-          02
-        </span>
         <Container className="relative">
           <Reveal>
             <SectionHeader
-              index="02"
               eyebrow="Who We Serve"
               title="A collaborative research hub"
               description={lab.audienceIntro}
@@ -99,7 +86,7 @@ export default function AboutPage() {
       <section className="slant-t relative -mt-14 overflow-hidden pb-16">
         <Container className="relative">
           <Reveal>
-            <SectionHeader index="03" eyebrow="Research Areas" title="Where computation meets biology" />
+            <SectionHeader eyebrow="Research Areas" title="Where computation meets biology" />
           </Reveal>
           <Reveal delay={0.1}>
             <ResearchAreaList areas={researchAreas} />

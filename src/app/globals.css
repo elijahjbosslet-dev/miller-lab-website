@@ -34,7 +34,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-grotesk);
   --font-mono: var(--font-plex-mono);
-  --font-display: var(--font-fraunces);
+  --font-display: var(--font-bricolage);
 
   --color-navy-950: var(--color-navy-950);
   --color-navy-900: var(--color-navy-900);
@@ -71,7 +71,6 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-feature-settings: "ss01" 1;
 }
 
 /* Editorial section-number label, used throughout SectionHeader. */

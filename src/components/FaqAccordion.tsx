@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Plus } from "lucide-react";
+import { Plus } from "@phosphor-icons/react/dist/ssr";
 import type { faqs as faqsType } from "@/lib/content";
 
 export default function FaqAccordion({ faqs }: { faqs: typeof faqsType }) {

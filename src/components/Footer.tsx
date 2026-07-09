@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import { LinkedInIcon, XIcon, YouTubeIcon } from "./social-icons";
 import Container from "./Container";
 import { lab } from "@/lib/content";
@@ -46,7 +46,7 @@ export default function Footer() {
             href={`mailto:${lab.contactEmail}`}
             className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green-400 hover:text-green-300"
           >
-            <Mail size={16} />
+            <EnvelopeSimple size={16} />
             {lab.contactEmail}
           </a>
           <div className="mt-5 flex items-center gap-4">

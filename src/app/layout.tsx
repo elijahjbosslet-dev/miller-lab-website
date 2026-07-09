@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const fontDisplay = Fraunces({
-  variable: "--font-fraunces",
+const fontDisplay = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "900"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const fontSans = Space_Grotesk({

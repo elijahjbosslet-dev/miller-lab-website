@@ -10,7 +10,7 @@ export const lab = {
   audienceStatement:
     "The Miller Lab serves as a collaborative computational research hub, building partnerships with investigators worldwide. Our primary audience is faculty and researchers to whom we provide computational expertise that complements their experimental work across disciplines including medicine, pharmacology, neuroscience, cancer biology, chemistry, and biology. By integrating artificial intelligence, molecular simulation, bioinformatics, and high-performance computing into biomedical research, we help investigators generate preliminary data, strengthen grant proposals, and accelerate scientific progress. We also seek collaborations beyond our home institution with external academics, research consortia, and government-funded teams working on interdisciplinary projects in computational biology, drug discovery, precision medicine, and translational science. Additionally, we partner with biotechnology, pharmaceutical, and healthcare organizations interested in advanced computational modeling and AI-driven methods.",
   missionIntro:
-    "We combine AI, molecular simulation, and bioinformatics — backed by high-performance computing — to close the gap between biological data and clinically relevant insight.",
+    "We combine AI, molecular simulation, and bioinformatics with high-performance computing to close the gap between biological data and clinically relevant insight.",
   audienceIntro:
     "The Miller Lab is a collaborative computational research hub, partnering with investigators at Loyola and beyond.",
   contactEmail: "wamillerlab@gmail.com",
@@ -127,7 +127,7 @@ export const consultationSteps = [
     step: "03",
     title: "Tailored project plan",
     description:
-      "The lab develops a scope of work — recommended methods (AI, molecular dynamics, bioinformatics, structural modeling, drug discovery), milestones, deliverables, and estimated costs.",
+      "The lab develops a scope of work, including recommended methods (AI, molecular dynamics, bioinformatics, structural modeling, drug discovery), milestones, deliverables, and estimated costs.",
   },
   {
     step: "04",
@@ -139,7 +139,7 @@ export const consultationSteps = [
     step: "05",
     title: "Delivery & ongoing support",
     description:
-      "You receive publication-ready results, workflows, and reports — plus continued support for manuscripts, grant applications, and future research.",
+      "You receive publication-ready results, workflows, and reports, plus continued support for manuscripts, grant applications, and future research.",
   },
 ];
 
@@ -202,7 +202,7 @@ export const graduateResearchers: Researcher[] = [
   },
   {
     name: "Scarlet Schuth",
-    program: "M2, Medicine — STAR Program",
+    program: "M2, Medicine - STAR Program",
     focus: "RNA Editing, Infectious Disease",
   },
 ];
@@ -265,7 +265,7 @@ export const faqs = [
   {
     question: "Can students get involved?",
     answer:
-      "Yes — the lab regularly hosts graduate and undergraduate researchers and interns. Contact us about current openings and rotation opportunities.",
+      "Yes. The lab regularly hosts graduate and undergraduate researchers and interns. Contact us about current openings and rotation opportunities.",
   },
   {
     question: "What do we receive at the end of a project?",
