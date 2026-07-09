@@ -13,11 +13,15 @@ export const lab = {
     "We combine AI, molecular simulation, and bioinformatics — backed by high-performance computing — to close the gap between biological data and clinically relevant insight.",
   audienceIntro:
     "The Miller Lab is a collaborative computational research hub, partnering with investigators at Loyola and beyond.",
-  // Placeholder contact details — swap in real values before launch.
-  contactEmail: "info@millerlab.example.edu",
+  contactEmail: "wamillerlab@gmail.com",
   affiliation: "Department of Medicine · Department of Molecular Pharmacology and Neuroscience",
   // Placeholder — swap in the real GoFundMe campaign URL once it exists.
   donateUrl: "#",
+  social: {
+    linkedin: "https://linkedin.com/in/whelton-miller-lab-060297279",
+    twitter: "https://twitter.com/WAMillerLab",
+    youtube: "https://www.youtube.com/@WAMillerLab",
+  },
 };
 
 // Scannable breakdown of the mission statement — used anywhere the full

@@ -12,7 +12,7 @@ function initials(name: string) {
 
 export default function ResearcherCard({ researcher }: { researcher: Researcher }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5">
+    <div className="h-full rounded-xl border border-slate-200 bg-white p-5 transition-all hover:-translate-y-1 hover:border-green-300 hover:shadow-lg hover:shadow-slate-200/60">
       <div className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-green-400">
         {initials(researcher.name)}
       </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
+import { LinkedInIcon, XIcon, YouTubeIcon } from "./social-icons";
 import Container from "./Container";
 import { lab } from "@/lib/content";
 
@@ -22,7 +23,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="bg-grain relative overflow-hidden border-t border-slate-200 bg-navy-950 text-slate-300">
+    <footer className="bg-grain relative overflow-hidden border-t border-slate-200 bg-gradient-to-br from-navy-900 via-navy-950 to-black text-slate-300">
       <Container className="relative grid gap-10 py-16 lg:grid-cols-[2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
@@ -48,6 +49,35 @@ export default function Footer() {
             <Mail size={16} />
             {lab.contactEmail}
           </a>
+          <div className="mt-5 flex items-center gap-4">
+            <a
+              href={lab.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-400 transition-colors hover:text-green-400"
+            >
+              <LinkedInIcon size={18} />
+            </a>
+            <a
+              href={lab.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter)"
+              className="text-slate-400 transition-colors hover:text-green-400"
+            >
+              <XIcon size={18} />
+            </a>
+            <a
+              href={lab.social.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-slate-400 transition-colors hover:text-green-400"
+            >
+              <YouTubeIcon size={18} />
+            </a>
+          </div>
         </div>
 
         {columns.map((col) => (

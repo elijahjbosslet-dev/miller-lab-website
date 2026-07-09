@@ -32,7 +32,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-plex-sans);
+  --font-sans: var(--font-grotesk);
   --font-mono: var(--font-plex-mono);
   --font-display: var(--font-fraunces);
 
@@ -53,8 +53,16 @@
   --color-green-950: var(--color-green-950);
 }
 
+/* Atmospheric canvas instead of a flat white page — soft, fixed color
+   washes that sit behind every section so light pages never read as an
+   empty white/black block, even where a GradientBlob isn't placed. */
 body {
-  background: var(--background);
+  background:
+    radial-gradient(ellipse 900px 560px at 12% 0%, rgba(0, 177, 64, 0.09), transparent 60%),
+    radial-gradient(ellipse 800px 620px at 92% 18%, rgba(10, 17, 32, 0.07), transparent 55%),
+    radial-gradient(ellipse 900px 700px at 15% 95%, rgba(0, 177, 64, 0.06), transparent 55%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
 }
 
@@ -85,4 +93,45 @@ h4 {
   opacity: 0.5;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Slow drifting motion for GradientBlob — real depth instead of flat
+   color fields, but calm enough not to be distracting. */
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(4%, -6%) scale(1.08);
+  }
+  66% {
+    transform: translate(-3%, 5%) scale(0.95);
+  }
+}
+.blob-drift {
+  animation: blob-drift 22s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-drift {
+    animation: none;
+  }
+}
+
+/* Diagonal section edges, used instead of hard flat-color cuts between
+   sections. Pair with a negative top margin on the following element
+   (e.g. -mt-14) so it slides up into the clipped wedge. */
+.slant-b {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
+  padding-bottom: 3.5rem;
+}
+.slant-t {
+  clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0 100%);
+  padding-top: 3.5rem;
+}
+.slant-tb {
+  clip-path: polygon(0 3.5rem, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }

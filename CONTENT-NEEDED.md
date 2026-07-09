@@ -3,7 +3,7 @@
 Everything below is currently a placeholder or best-guess draft. Nothing here blocks the site from being live, but it should be reviewed/filled in before calling it final.
 
 ## Contact & Basics
-- [ ] Real contact email (currently `info@millerlab.example.edu` — fake placeholder)
+- [x] ~~Real contact email~~ — `wamillerlab@gmail.com`, live in the footer
 - [ ] Physical location / room number, if you want a "visit us" section
 - [ ] Phone number, if desired
 - [ ] Preferred custom domain (e.g. `millerlab.org`) so we can buy and connect it
@@ -41,14 +41,16 @@ rates note) is preserved in git history (see the commit that removed
 - [ ] Notable press or collaborator testimonials
 
 ## Links
+- [x] ~~LinkedIn~~ — linked in the footer
+- [x] ~~X (Twitter)~~ — linked in the footer
+- [x] ~~YouTube~~ — linked in the footer
 - [ ] Google Scholar / ORCID profile
-- [ ] Lab or PI LinkedIn
 - [ ] GitHub org/repo, if the lab publishes code
 - [ ] Real GoFundMe campaign URL — a "Donate" button now exists in the header/footer but points to `#` (nowhere) until you send the link
 
 ## Brand
 - [x] ~~Recolored logo file~~ — done, logo now matches the Kelly Green accent (`#00B140`, Pantone 354C)
-- [x] ~~Font~~ — swapped from the default Geist to Fraunces (headlines) + IBM Plex Sans (body) + IBM Plex Mono (numerals/labels) for a more distinctive, less "generic AI-startup template" look
+- [x] ~~Font~~ — now Fraunces (headlines) + Space Grotesk (body) + IBM Plex Mono (numerals/labels), moved off Space Grotesk's predecessor (IBM Plex Sans) to steer further away from the ubiquitous Inter/Roboto look
 - [ ] Any further font/style preferences
 
 ## Photography

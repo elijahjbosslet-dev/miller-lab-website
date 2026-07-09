@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,8 +11,8 @@ const fontDisplay = Fraunces({
   style: ["normal", "italic"],
 });
 
-const fontSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
+const fontSans = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -39,7 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-slate-900">
+      <body className="min-h-full flex flex-col text-slate-900">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

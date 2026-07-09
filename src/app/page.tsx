@@ -6,6 +6,8 @@ import ComputeGrid from "@/components/ComputeGrid";
 import ResearchAreaList from "@/components/ResearchAreaList";
 import SectionHeader from "@/components/SectionHeader";
 import FramedPanel from "@/components/FramedPanel";
+import GradientBlob from "@/components/GradientBlob";
+import Reveal from "@/components/Reveal";
 import {
   lab,
   researchAreas,
@@ -24,7 +26,9 @@ export default function Home() {
   return (
     <>
       {/* Hero — wordmark echoes the logo's green-M / helix composition */}
-      <section className="bg-grain relative overflow-hidden bg-navy-950 text-white">
+      <section className="bg-grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black text-white">
+        <GradientBlob tone="green" className="-left-24 -top-24 h-[26rem] w-[26rem] opacity-40" />
+        <GradientBlob tone="mixed" className="-right-32 top-1/3 h-[30rem] w-[30rem] opacity-50" />
         <Container className="relative py-20 sm:py-24">
           <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
             Computational Biomedical Research
@@ -52,7 +56,7 @@ export default function Home() {
               <div className="mt-8">
                 <Link
                   href="/research"
-                  className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-green-400"
+                  className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-all hover:-translate-y-0.5 hover:bg-green-400 hover:shadow-lg hover:shadow-green-500/30"
                 >
                   Explore Our Research
                   <ArrowRight size={16} />
@@ -72,60 +76,75 @@ export default function Home() {
             </div>
           </div>
         </Container>
+
+        {/* soft dissolve into the page instead of a hard color line */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
       </section>
 
       {/* Research areas */}
-      <section className="py-16">
-        <Container>
-          <SectionHeader
-            index="01"
-            eyebrow="Research Areas"
-            title="Where computation meets biology"
-            description="Five interconnected disciplines that let us move from raw biological data to reproducible, clinically relevant insight."
-            action={
-              <Link
-                href="/research"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700"
-              >
-                See how they connect
-                <ArrowRight size={16} />
-              </Link>
-            }
-          />
-          <ResearchAreaList areas={researchAreas} />
+      <section className="relative overflow-hidden py-16">
+        <GradientBlob tone="green" className="right-[-10rem] top-10 h-[28rem] w-[28rem] opacity-20" />
+        <GradientBlob tone="mixed" className="left-[-10rem] bottom-0 h-[22rem] w-[22rem] opacity-[0.14]" />
+        <Container className="relative">
+          <Reveal>
+            <SectionHeader
+              index="01"
+              eyebrow="Research Areas"
+              title="Where computation meets biology"
+              description="Five interconnected disciplines that let us move from raw biological data to reproducible, clinically relevant insight."
+              action={
+                <Link
+                  href="/research"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700"
+                >
+                  See how they connect
+                  <ArrowRight size={16} />
+                </Link>
+              }
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <ResearchAreaList areas={researchAreas} />
+          </Reveal>
         </Container>
       </section>
 
       {/* Infrastructure — bespoke compute-grid art instead of a stock photo */}
-      <section className="relative h-[22rem] w-full overflow-hidden">
-        <ComputeGrid className="absolute inset-0 h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/70 to-navy-950/10" />
-        <Container className="relative flex h-full items-center">
-          <div className="max-w-md text-white">
-            <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
-              02 — Infrastructure
-            </p>
-            <h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
-              Built on high-performance computing
-            </h2>
-            <p className="mt-3 text-base leading-7 text-slate-300">
-              HPC resources that scale AI, molecular simulation, and
-              bioinformatics workflows for every collaborator.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <Reveal y={0}>
+        <section className="relative h-[22rem] w-full overflow-hidden">
+          <ComputeGrid className="absolute inset-0 h-full w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/70 to-navy-950/10" />
+          <Container className="relative flex h-full items-center">
+            <div className="max-w-md text-white">
+              <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
+                02 — Infrastructure
+              </p>
+              <h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
+                Built on high-performance computing
+              </h2>
+              <p className="mt-3 text-base leading-7 text-slate-300">
+                HPC resources that scale AI, molecular simulation, and
+                bioinformatics workflows for every collaborator.
+              </p>
+            </div>
+          </Container>
+        </section>
+      </Reveal>
 
       {/* Approach / who we serve */}
-      <section className="bg-slate-50 py-16">
-        <Container>
-          <SectionHeader index="03" eyebrow="Our Approach" title="Reproducible, AI-driven research" />
-          <p className="mt-6 max-w-2xl font-display text-xl italic leading-snug text-slate-700 sm:text-2xl">
-            &ldquo;Our goal is to close the gap between biological data and
-            clinically relevant insight.&rdquo;
-          </p>
+      <section className="relative overflow-hidden py-16">
+        <GradientBlob tone="mixed" className="left-[-12rem] bottom-[-8rem] h-[30rem] w-[30rem] opacity-20" />
+        <GradientBlob tone="green" className="-right-16 top-0 h-[20rem] w-[20rem] opacity-[0.13]" />
+        <Container className="relative">
+          <Reveal>
+            <SectionHeader index="03" eyebrow="Our Approach" title="Reproducible, AI-driven research" />
+            <p className="mt-6 max-w-2xl font-display text-xl italic leading-snug text-slate-700 sm:text-2xl">
+              &ldquo;Our goal is to close the gap between biological data and
+              clinically relevant insight.&rdquo;
+            </p>
+          </Reveal>
           <div className="mt-10 grid gap-12 lg:grid-cols-2">
-            <div>
+            <Reveal delay={0.05}>
               <p className="text-base leading-7 text-slate-600">{lab.missionIntro}</p>
               <ul className="mt-6 space-y-4">
                 {missionPillars.map((pillar) => (
@@ -138,8 +157,8 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={0.15}>
               <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-600">
                 Who We Serve
               </p>
@@ -155,58 +174,63 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           </div>
         </Container>
       </section>
 
       {/* Team preview */}
-      <section className="py-16">
-        <Container>
-          <SectionHeader index="04" eyebrow="Meet the Lab" title="Led by Dr. Whelton Miller" />
+      <section className="bg-grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black py-16 text-white">
+        <GradientBlob tone="green" className="right-[-8rem] top-[-6rem] h-[22rem] w-[22rem] opacity-30" />
+        <Container className="relative">
+          <Reveal>
+            <SectionHeader index="04" eyebrow="Meet the Lab" title="Led by Dr. Whelton Miller" tone="dark" />
+          </Reveal>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <div>
-              <p className="text-base leading-7 text-slate-600">
+            <Reveal delay={0.05}>
+              <p className="text-base leading-7 text-slate-300">
                 {principalInvestigator.title} working alongside a growing team
                 of graduate and undergraduate researchers spanning RNA editing,
                 cancer biology, and infectious disease.
               </p>
-              <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-500">
-                <Users2 size={18} className="text-green-600" />
+              <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-400">
+                <Users2 size={18} className="text-green-400" />
                 {teamCount}+ current lab members
               </div>
               <Link
                 href="/team"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-all hover:-translate-y-0.5 hover:bg-green-400 hover:shadow-lg hover:shadow-green-500/30"
               >
                 Meet the full team
                 <ArrowRight size={16} />
               </Link>
-            </div>
+            </Reveal>
 
-            <FramedPanel className="mr-3">
-              <div className="border border-slate-200 bg-white p-8">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-900 font-display text-lg font-semibold text-green-400">
-                    WM
+            <Reveal delay={0.15}>
+              <FramedPanel className="mr-3" frameClassName="border-green-500">
+                <div className="border border-white/10 bg-navy-900 p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-500/20 font-display text-lg font-semibold text-green-400">
+                      WM
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white">
+                        {principalInvestigator.name}, {principalInvestigator.credentials}
+                      </p>
+                      <p className="text-sm text-slate-400">{principalInvestigator.title}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-slate-900">
-                      {principalInvestigator.name}, {principalInvestigator.credentials}
-                    </p>
-                    <p className="text-sm text-slate-500">{principalInvestigator.title}</p>
-                  </div>
+                  <ul className="mt-6 space-y-2 border-t border-white/10 pt-6 text-sm text-slate-300">
+                    {principalInvestigator.role.map((r) => (
+                      <li key={r} className="flex gap-2">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-green-500" />
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="mt-6 space-y-2 border-t border-slate-100 pt-6 text-sm text-slate-600">
-                  {principalInvestigator.role.map((r) => (
-                    <li key={r} className="flex gap-2">
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-green-500" />
-                      {r}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FramedPanel>
+              </FramedPanel>
+            </Reveal>
           </div>
         </Container>
       </section>
