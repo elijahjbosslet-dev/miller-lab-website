@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail } from "lucide-react";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import { services, consultationSteps, lab } from "@/lib/content";
@@ -84,11 +84,10 @@ export default function ServicesPage() {
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Ready to start a project?
+              Questions about our work?
             </h2>
             <p className="mt-2 max-w-xl text-slate-300">
-              Email us with your research question, available data, and
-              goals — we&apos;ll schedule an initial meeting from there.
+              Reach out and we&apos;ll get back to you.
             </p>
           </div>
           <a
@@ -97,7 +96,6 @@ export default function ServicesPage() {
           >
             <Mail size={16} />
             {lab.contactEmail}
-            <ArrowRight size={16} />
           </a>
         </Container>
       </section>

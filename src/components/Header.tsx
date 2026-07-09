@@ -58,12 +58,6 @@ export default function Header() {
             <Heart size={15} />
             Donate
           </a>
-          <Link
-            href="/services#contact"
-            className="rounded-full bg-navy-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
-          >
-            Start a Collaboration
-          </Link>
         </div>
 
         <button
@@ -101,13 +95,6 @@ export default function Header() {
               <Heart size={15} />
               Donate
             </a>
-            <Link
-              href="/services#contact"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-navy-900 px-4 py-2 text-center text-sm font-semibold text-white"
-            >
-              Start a Collaboration
-            </Link>
           </Container>
         </div>
       )}

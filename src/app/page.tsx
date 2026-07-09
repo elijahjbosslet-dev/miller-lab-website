@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Users2 } from "lucide-react";
 import Container from "@/components/Container";
 import NetworkPattern from "@/components/NetworkPattern";
 import ResearchAreaCard from "@/components/ResearchAreaCard";
+import ImageBanner from "@/components/ImageBanner";
 import {
   lab,
   researchAreas,
@@ -40,17 +41,11 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href="/services#contact"
+              href="/research"
               className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-green-400"
             >
-              Start a Collaboration
-              <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/research"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/5"
-            >
               Explore Our Research
+              <ArrowRight size={16} />
             </Link>
           </div>
         </Container>
@@ -94,6 +89,14 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <ImageBanner
+        src="/images/server-room.jpg"
+        alt="Server racks with illuminated network cables"
+        eyebrow="Infrastructure"
+        title="Built on high-performance computing"
+        description="HPC resources that scale AI, molecular simulation, and bioinformatics workflows for every collaborator."
+      />
 
       {/* Pull quote */}
       <section className="border-y border-slate-100 py-16">
@@ -248,27 +251,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* CTA banner */}
-      <section className="bg-navy-950">
-        <Container className="flex flex-col items-start gap-6 py-20 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Have a research question we could help answer?
-            </h2>
-            <p className="mt-2 max-w-xl text-slate-300">
-              Tell us about your data and goals — we&apos;ll follow up to
-              scope a collaboration.
-            </p>
-          </div>
-          <Link
-            href="/services#contact"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-green-400"
-          >
-            Start a Collaboration
-            <ArrowRight size={16} />
-          </Link>
-        </Container>
-      </section>
     </>
   );
 }

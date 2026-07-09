@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ResearchAreaCard from "@/components/ResearchAreaCard";
+import SplitImageSection from "@/components/SplitImageSection";
 import { lab, missionPillars, audienceSegments, researchAreas } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -52,6 +53,14 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <SplitImageSection
+        src="/images/dna.jpg"
+        alt="Close-up render of a DNA double helix"
+        eyebrow="Reproducible Science"
+        title="From raw biological data to clinical insight"
+        description="Every workflow the lab builds — from molecular simulation to bioinformatics pipelines — is designed to be reproducible, auditable, and ready for publication."
+      />
 
       {/* Who we serve */}
       <section className="bg-slate-50 py-20">

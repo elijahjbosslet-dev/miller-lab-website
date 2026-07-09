@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import { iconMap } from "@/components/icon-map";
+import SplitImageSection from "@/components/SplitImageSection";
+import DisciplineWeb from "@/components/DisciplineWeb";
 import { researchAreas } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -17,10 +17,35 @@ export default function ResearchPage() {
       <PageHero
         eyebrow="Research"
         title="Five disciplines, one computational pipeline"
-        description="Each research area feeds into the next — from raw biological data to AI-driven predictions to clinically relevant, publication-ready results."
+        description="No discipline works in isolation — each feeds into the next, from raw biological data to AI-driven predictions to clinically relevant, publication-ready results."
       />
 
       <section className="py-20">
+        <Container>
+          <div className="mx-auto max-w-xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
+              How They Connect
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+              A web, not a checklist
+            </h2>
+          </div>
+          <div className="mt-14">
+            <DisciplineWeb areas={researchAreas} />
+          </div>
+        </Container>
+      </section>
+
+      <SplitImageSection
+        src="/images/lab-pipette.jpg"
+        alt="Researcher working with lab samples and a pipette"
+        eyebrow="Wet Lab to Computation"
+        title="Grounded in real experimental collaboration"
+        description="Every computational model starts with a question from the bench — our research areas exist to turn that data into actionable, clinically relevant insight."
+        imageSide="left"
+      />
+
+      <section className="pb-20">
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             {researchAreas.map((area) => {
@@ -44,23 +69,6 @@ export default function ResearchPage() {
                 </div>
               );
             })}
-          </div>
-
-          <div className="mt-16 rounded-2xl bg-slate-50 p-8 text-center sm:p-12">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-              Have a project in mind?
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-slate-600">
-              Tell us about your research question and we&apos;ll help scope
-              the right computational approach.
-            </p>
-            <Link
-              href="/services#contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
-            >
-              Start a Collaboration
-              <ArrowRight size={16} />
-            </Link>
           </div>
         </Container>
       </section>
