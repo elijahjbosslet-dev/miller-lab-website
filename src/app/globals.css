@@ -12,20 +12,21 @@
   --color-navy-800: #101a30;
   --color-navy-700: #1b2942;
 
-  /* Eagles "Kelly Green" throwback (PMS 349C, #046A38 — base/600 below) as
-     the requested accent. Full scale kept on the same hue so every shade
-     (borders, hovers, tints) reads as one consistent green. */
-  --color-green-50: #eefbf3;
-  --color-green-100: #d7f5e3;
-  --color-green-200: #b3ecc9;
-  --color-green-300: #82dca8;
-  --color-green-400: #16c16e;
-  --color-green-500: #0b7a42;
-  --color-green-600: #046a38;
-  --color-green-700: #035530;
-  --color-green-800: #024024;
-  --color-green-900: #012c18;
-  --color-green-950: #011a0e;
+  /* "Kelly Green" accent (Pantone 354C, #00B140 — base/600 below), the
+     brighter sports-branding shade requested in place of the muted Eagles
+     throwback green. Full scale kept on the same hue so every shade
+     (borders, hovers, tints) reads as one consistent, vivid green. */
+  --color-green-50: #eafcf1;
+  --color-green-100: #cef8dc;
+  --color-green-200: #a0f0bb;
+  --color-green-300: #6be897;
+  --color-green-400: #3adb70;
+  --color-green-500: #17c452;
+  --color-green-600: #00b140;
+  --color-green-700: #00963a;
+  --color-green-800: #007a2c;
+  --color-green-900: #005f22;
+  --color-green-950: #003d16;
 }
 
 @theme inline {

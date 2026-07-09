@@ -21,12 +21,16 @@ const columns = [
       { href: "/services#contact", label: "Start a Collaboration" },
     ],
   },
+  {
+    title: "Support",
+    links: [{ href: lab.donateUrl, label: "Donate (GoFundMe)" }],
+  },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-navy-950 text-slate-300">
-      <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr]">
+      <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1.5">

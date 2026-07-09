@@ -16,6 +16,8 @@ export const lab = {
   // Placeholder contact details — swap in real values before launch.
   contactEmail: "info@millerlab.example.edu",
   affiliation: "Department of Medicine · Department of Molecular Pharmacology and Neuroscience",
+  // Placeholder — swap in the real GoFundMe campaign URL once it exists.
+  donateUrl: "#",
 };
 
 // Scannable breakdown of the mission statement — used anywhere the full

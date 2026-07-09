@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Heart, Menu, X } from "lucide-react";
 import Container from "./Container";
 import { lab } from "@/lib/content";
 
@@ -50,7 +50,14 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={lab.donateUrl}
+            className="inline-flex items-center gap-1.5 rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-700"
+          >
+            <Heart size={15} />
+            Donate
+          </a>
           <Link
             href="/services#contact"
             className="rounded-full bg-navy-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
@@ -86,6 +93,14 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={lab.donateUrl}
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-green-600 px-4 py-2 text-center text-sm font-semibold text-white"
+            >
+              <Heart size={15} />
+              Donate
+            </a>
             <Link
               href="/services#contact"
               onClick={() => setOpen(false)}

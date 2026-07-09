@@ -41,10 +41,10 @@ Everything below is currently a placeholder or best-guess draft. Nothing here bl
 - [ ] Google Scholar / ORCID profile
 - [ ] Lab or PI LinkedIn
 - [ ] GitHub org/repo, if the lab publishes code
-- [ ] Should the GoFundMe link from the old Wix nav still exist somewhere?
+- [ ] Real GoFundMe campaign URL — a "Donate" button now exists in the header/footer but points to `#` (nowhere) until you send the link
 
 ## Brand
-- [ ] Recolored logo file to match the Kelly Green accent (`#046A38`) once you've had a chance to update it
+- [x] ~~Recolored logo file~~ — done, logo now matches the Kelly Green accent (`#00B140`, Pantone 354C)
 - [ ] Any font/style preferences beyond color (current site uses Geist, a clean modern sans-serif)
 
 ## Legal/Compliance
