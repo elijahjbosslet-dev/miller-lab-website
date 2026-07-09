@@ -9,7 +9,6 @@ import Container from "./Container";
 import { lab } from "@/lib/content";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/research", label: "Research" },
   { href: "/team", label: "Team" },
@@ -22,26 +21,24 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-      <Container className="flex h-[4.5rem] items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10" priority />
-          <span className="text-lg font-semibold tracking-tight text-slate-900">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <Container className="flex h-16 items-center justify-between">
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" priority />
+          <span className="font-display text-lg font-semibold tracking-tight text-slate-900">
             {lab.shortName}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                  active
-                    ? "text-green-600"
-                    : "text-slate-600 hover:text-slate-900"
+                className={`text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
+                  active ? "text-green-600" : "text-slate-500 hover:text-slate-900"
                 }`}
               >
                 {link.label}
@@ -50,19 +47,19 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden lg:block">
           <a
             href={lab.donateUrl}
-            className="inline-flex items-center gap-1.5 rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-700"
+            className="inline-flex items-center gap-1.5 border-b border-green-600 pb-0.5 text-xs font-semibold uppercase tracking-[0.14em] text-green-700 transition-colors hover:text-green-800"
           >
-            <Heart size={15} />
+            <Heart size={13} />
             Donate
           </a>
         </div>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 lg:hidden"
+          className="inline-flex items-center justify-center p-2 text-slate-700 lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -72,16 +69,14 @@ export default function Header() {
 
       {open && (
         <div className="border-t border-slate-200 bg-white lg:hidden">
-          <Container className="flex flex-col gap-1 py-3">
+          <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-md px-3 py-2 text-sm font-medium ${
-                  pathname === link.href
-                    ? "bg-slate-100 text-green-600"
-                    : "text-slate-700 hover:bg-slate-50"
+                className={`py-2 text-sm font-semibold uppercase tracking-[0.1em] ${
+                  pathname === link.href ? "text-green-600" : "text-slate-700"
                 }`}
               >
                 {link.label}
@@ -90,9 +85,9 @@ export default function Header() {
             <a
               href={lab.donateUrl}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-green-600 px-4 py-2 text-center text-sm font-semibold text-white"
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-[0.1em] text-green-700"
             >
-              <Heart size={15} />
+              <Heart size={14} />
               Donate
             </a>
           </Container>

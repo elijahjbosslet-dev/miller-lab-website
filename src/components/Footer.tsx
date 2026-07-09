@@ -28,8 +28,8 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-navy-950 text-slate-300">
-      <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+    <footer className="bg-grain relative overflow-hidden border-t border-slate-200 bg-navy-950 text-slate-300">
+      <Container className="relative grid gap-10 py-16 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1.5">
@@ -42,11 +42,11 @@ export default function Footer() {
                 className="h-full w-full object-contain"
               />
             </span>
-            <span className="text-lg font-semibold text-white">{lab.shortName}</span>
+            <span className="font-display text-lg font-semibold text-white">
+              {lab.shortName}
+            </span>
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
-            {lab.tagline}.
-          </p>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">{lab.tagline}.</p>
           <a
             href={`mailto:${lab.contactEmail}`}
             className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green-400 hover:text-green-300"
@@ -58,7 +58,9 @@ export default function Footer() {
 
         {columns.map((col) => (
           <div key={col.title}>
-            <h3 className="text-sm font-semibold text-white">{col.title}</h3>
+            <h3 className="section-index text-xs uppercase tracking-[0.14em] text-white/50">
+              {col.title}
+            </h3>
             <ul className="mt-4 space-y-3">
               {col.links.map((link) => (
                 <li key={link.href}>
@@ -75,7 +77,7 @@ export default function Footer() {
         ))}
       </Container>
 
-      <div className="border-t border-white/10">
+      <div className="relative border-t border-white/10">
         <Container className="flex flex-col gap-2 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {new Date().getFullYear()} {lab.shortName}. All rights reserved.

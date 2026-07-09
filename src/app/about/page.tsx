@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
-import ResearchAreaCard from "@/components/ResearchAreaCard";
-import SplitImageSection from "@/components/SplitImageSection";
+import SectionHeader from "@/components/SectionHeader";
+import ResearchAreaList from "@/components/ResearchAreaList";
+import FramedPanel from "@/components/FramedPanel";
+import HelixRibbon from "@/components/HelixRibbon";
 import { lab, missionPillars, audienceSegments, researchAreas } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -22,67 +23,48 @@ export default function AboutPage() {
       />
 
       {/* Mission */}
-      <section className="py-20">
+      <section className="py-24">
         <Container>
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
-              Mission
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-              What we do
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              {lab.missionIntro}
-            </p>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {missionPillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="flex gap-3 rounded-xl border border-slate-200 p-5"
-              >
-                <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
-                <div>
-                  <p className="font-semibold text-slate-900">{pillar.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    {pillar.description}
-                  </p>
-                </div>
+          <SectionHeader index="01" eyebrow="Mission" title="What we do" />
+          <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-base leading-7 text-slate-600">{lab.missionIntro}</p>
+              <ul className="mt-6 space-y-4">
+                {missionPillars.map((pillar) => (
+                  <li key={pillar.title} className="flex gap-3">
+                    <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
+                    <div>
+                      <p className="font-semibold text-slate-900">{pillar.title}</p>
+                      <p className="text-sm leading-6 text-slate-600">{pillar.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <FramedPanel className="mr-3">
+              <div className="relative flex h-72 items-center justify-center bg-navy-950 sm:h-96">
+                <HelixRibbon className="h-full w-auto text-green-400/70" />
               </div>
-            ))}
+            </FramedPanel>
           </div>
         </Container>
       </section>
 
-      <SplitImageSection
-        src="/images/dna.jpg"
-        alt="Close-up render of a DNA double helix"
-        eyebrow="Reproducible Science"
-        title="From raw biological data to clinical insight"
-        description="Every workflow the lab builds — from molecular simulation to bioinformatics pipelines — is designed to be reproducible, auditable, and ready for publication."
-      />
-
       {/* Who we serve */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-slate-50 py-24">
         <Container>
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
-              Who We Serve
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-              A collaborative research hub
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              {lab.audienceIntro}
-            </p>
-          </div>
+          <SectionHeader
+            index="02"
+            eyebrow="Who We Serve"
+            title="A collaborative research hub"
+            description={lab.audienceIntro}
+          />
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {audienceSegments.map((segment) => (
               <div key={segment.title} className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="font-semibold text-slate-900">{segment.title}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {segment.description}
-                </p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{segment.description}</p>
               </div>
             ))}
           </div>
@@ -90,30 +72,10 @@ export default function AboutPage() {
       </section>
 
       {/* Research areas */}
-      <section className="py-20">
+      <section className="py-24">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
-                Research Areas
-              </p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-                Where computation meets biology
-              </h2>
-            </div>
-            <Link
-              href="/research"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700"
-            >
-              Explore our research
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {researchAreas.map((area) => (
-              <ResearchAreaCard key={area.slug} area={area} />
-            ))}
-          </div>
+          <SectionHeader index="03" eyebrow="Research Areas" title="Where computation meets biology" />
+          <ResearchAreaList areas={researchAreas} />
         </Container>
       </section>
     </>

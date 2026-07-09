@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Container from "./Container";
-import NetworkPattern from "./NetworkPattern";
+import HelixRibbon from "./HelixRibbon";
 
 export default function PageHero({
   eyebrow,
@@ -14,21 +14,19 @@ export default function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy-950 text-white">
-      <NetworkPattern className="pointer-events-none absolute -right-16 -top-10 h-[26rem] w-[26rem] text-green-400/60 lg:right-0" />
-      <Container className="relative py-20 sm:py-24">
+    <section className="bg-grain relative overflow-hidden bg-navy-950 text-white">
+      <HelixRibbon className="pointer-events-none absolute -right-16 top-0 h-full w-72 text-green-400/40 lg:w-96" />
+      <Container className="relative py-24 sm:py-28">
         {eyebrow && (
-          <p className="text-sm font-semibold uppercase tracking-widest text-green-400">
+          <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
           {title}
         </h1>
         {description && (
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            {description}
-          </p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">{description}</p>
         )}
         {children}
       </Container>

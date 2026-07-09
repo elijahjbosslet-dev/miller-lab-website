@@ -58,7 +58,7 @@ export default function DisciplineWeb({
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-green-600 shadow-md ring-1 ring-slate-200 sm:h-12 sm:w-12">
               {Icon && <Icon size={20} strokeWidth={1.75} />}
             </div>
-            <span className="text-xs font-semibold leading-tight text-slate-900 sm:text-sm">
+            <span className="font-display text-xs font-semibold leading-tight text-slate-900 sm:text-sm">
               {area.title}
             </span>
           </div>

@@ -45,13 +45,11 @@ Everything below is currently a placeholder or best-guess draft. Nothing here bl
 
 ## Brand
 - [x] ~~Recolored logo file~~ — done, logo now matches the Kelly Green accent (`#00B140`, Pantone 354C)
-- [ ] Any font/style preferences beyond color (current site uses Geist, a clean modern sans-serif)
+- [x] ~~Font~~ — swapped from the default Geist to Fraunces (headlines) + IBM Plex Sans (body) + IBM Plex Mono (numerals/labels) for a more distinctive, less "generic AI-startup template" look
+- [ ] Any further font/style preferences
 
 ## Photography
-- [ ] Real photos of the lab, equipment, or team at work — the Home, About, and Research pages currently use free Unsplash stock photos (DNA render, a generic lab pipette shot, and a server room) as placeholders, credited below. None of these depict the actual lab and should be swapped for real photography when available.
-  - `public/images/dna.jpg` — Sangharsh Lohakare, via Unsplash
-  - `public/images/lab-pipette.jpg` — Nathan Rimoux, via Unsplash
-  - `public/images/server-room.jpg` — Taylor Vick, via Unsplash
+- [ ] Real photos of the lab, equipment, or team at work. Only one stock photo remains as a placeholder — `public/images/lab-pipette.jpg` (Nathan Rimoux, via Unsplash), used on the Research page. The DNA and server-room stock photos were replaced with bespoke SVG art (a custom molecular helix graphic and a compute-grid visualization) generated for this site specifically, so no further action needed there — but the pipette photo should still be swapped for a real photo of the lab when available.
 
 ## Legal/Compliance
 - [ ] Any Loyola disclosure language required on lab-affiliated external sites (check with Vice Provost Singh alongside the platform/rates discussion)

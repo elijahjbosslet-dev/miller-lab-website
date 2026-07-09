@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
+import SectionHeader from "@/components/SectionHeader";
 import { iconMap } from "@/components/icon-map";
 import SplitImageSection from "@/components/SplitImageSection";
 import DisciplineWeb from "@/components/DisciplineWeb";
@@ -20,16 +21,9 @@ export default function ResearchPage() {
         description="No discipline works in isolation — each feeds into the next, from raw biological data to AI-driven predictions to clinically relevant, publication-ready results."
       />
 
-      <section className="py-20">
+      <section className="py-24">
         <Container>
-          <div className="mx-auto max-w-xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
-              How They Connect
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-              A web, not a checklist
-            </h2>
-          </div>
+          <SectionHeader index="01" eyebrow="How They Connect" title="A web, not a checklist" />
           <div className="mt-14">
             <DisciplineWeb areas={researchAreas} />
           </div>
@@ -45,26 +39,28 @@ export default function ResearchPage() {
         imageSide="left"
       />
 
-      <section className="pb-20">
+      <section className="pb-24">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {researchAreas.map((area) => {
+          <SectionHeader index="02" eyebrow="The Disciplines" title="Five areas, in detail" />
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {researchAreas.map((area, i) => {
               const Icon = iconMap[area.icon];
               return (
                 <div
                   key={area.slug}
-                  className="flex gap-5 rounded-2xl border border-slate-200 p-7"
+                  className="flex gap-5 border-t border-slate-200 pt-7"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-green-400">
-                    {Icon && <Icon size={24} strokeWidth={1.75} />}
+                  <span className="section-index text-sm text-slate-400">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-900 text-green-400">
+                    {Icon && <Icon size={22} strokeWidth={1.75} />}
                   </div>
                   <div>
-                    <h2 className="text-lg font-semibold text-slate-900">
+                    <h3 className="font-display text-lg font-semibold text-slate-900">
                       {area.title}
-                    </h2>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
-                      {area.blurb}
-                    </p>
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{area.blurb}</p>
                   </div>
                 </div>
               );
