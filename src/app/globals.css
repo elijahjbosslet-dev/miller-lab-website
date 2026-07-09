@@ -112,8 +112,58 @@ h4 {
   animation: blob-drift 22s ease-in-out infinite;
 }
 
+/* Breathing radial glow — used behind the hero logo so it reads as a lit
+   focal point instead of a flat image sitting on a dark background. */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.12);
+  }
+}
+.glow-pulse {
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+/* Gentle float, used on hero focal elements to feel alive rather than
+   static without being distracting. */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4%);
+  }
+}
+.float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+/* Staggered twinkle for ComputeGrid's active cells, so the infrastructure
+   visualization reads as a live cluster rather than a static pattern. */
+@keyframes cell-twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.cell-twinkle {
+  animation: cell-twinkle 3s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .blob-drift {
+  .blob-drift,
+  .glow-pulse,
+  .float-y,
+  .cell-twinkle {
     animation: none;
   }
 }

@@ -8,6 +8,7 @@ import SectionHeader from "@/components/SectionHeader";
 import FramedPanel from "@/components/FramedPanel";
 import GradientBlob from "@/components/GradientBlob";
 import Reveal from "@/components/Reveal";
+import AnimatedStat from "@/components/AnimatedStat";
 import {
   lab,
   researchAreas,
@@ -27,10 +28,11 @@ export default function Home() {
     <>
       {/* Hero — real logo instead of a hand-drawn approximation of it */}
       <section className="bg-grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black text-white">
-        <GradientBlob tone="green" className="-left-20 -top-20 h-80 w-80 opacity-30" />
-        <GradientBlob tone="mixed" className="-right-24 bottom-0 h-96 w-96 opacity-30" />
+        <GradientBlob tone="green" className="-left-24 -top-24 h-96 w-96 opacity-40" />
+        <GradientBlob tone="mixed" className="-right-32 bottom-[-6rem] h-[28rem] w-[28rem] opacity-40" />
+        <GradientBlob tone="green" className="right-1/4 top-1/3 h-64 w-64 opacity-[0.18]" />
         <Container className="relative py-12 sm:py-16">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
                 Computational Biomedical Research
@@ -56,21 +58,25 @@ export default function Home() {
               <div className="mt-9 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/10 pt-6">
                 {impactStats.map((stat) => (
                   <div key={stat.label}>
-                    <p className="font-display text-2xl font-bold text-white">{stat.value}</p>
+                    <AnimatedStat value={stat.value} />
                     <p className="text-xs leading-5 text-slate-400">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[15rem] lg:max-w-xs">
+            <div className="relative mx-auto flex w-full max-w-xs items-center justify-center py-6 lg:max-w-sm">
+              <div
+                aria-hidden="true"
+                className="glow-pulse absolute h-[85%] w-[85%] rounded-full bg-green-500 blur-[70px]"
+              />
               <Image
                 src="/logo.png"
                 alt="Miller Lab"
-                width={480}
-                height={480}
+                width={640}
+                height={640}
                 priority
-                className="h-auto w-full drop-shadow-[0_0_70px_rgba(0,177,64,0.25)]"
+                className="float-y relative h-auto w-full drop-shadow-[0_0_35px_rgba(0,177,64,0.55)]"
               />
             </div>
           </div>

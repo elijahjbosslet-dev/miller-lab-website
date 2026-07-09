@@ -30,7 +30,8 @@ export default function ComputeGrid({ className = "" }: { className?: string }) 
     const r = rand();
     const active = r > 0.82;
     const bright = active && r > 0.94;
-    return { col, row, active, bright };
+    const twinkle = active && rand() > 0.55;
+    return { col, row, active, bright, twinkle, delay: rand() * 4 };
   });
 
   return (
@@ -41,7 +42,7 @@ export default function ComputeGrid({ className = "" }: { className?: string }) 
       aria-hidden="true"
     >
       <rect x={0} y={0} width={width} height={height} className="fill-navy-950" />
-      {cells.map(({ col, row, active, bright }, i) => (
+      {cells.map(({ col, row, active, bright, twinkle, delay }, i) => (
         <rect
           key={i}
           x={col * cell + gap / 2}
@@ -49,13 +50,10 @@ export default function ComputeGrid({ className = "" }: { className?: string }) 
           width={cell - gap}
           height={cell - gap}
           rx={1.5}
-          className={
-            bright
-              ? "fill-green-400"
-              : active
-                ? "fill-green-700"
-                : "fill-white/10"
-          }
+          style={twinkle ? { animationDelay: `${delay.toFixed(2)}s` } : undefined}
+          className={`${twinkle ? "cell-twinkle" : ""} ${
+            bright ? "fill-green-400" : active ? "fill-green-700" : "fill-white/10"
+          }`}
         />
       ))}
     </svg>
