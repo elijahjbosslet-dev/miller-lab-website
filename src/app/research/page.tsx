@@ -16,32 +16,39 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <>
-      {/* Hero — the discipline web lives in the hero itself, not a repeat
-          text-only banner like every other page. */}
+      {/* Hero — plain and tight, no floating card */}
       <section className="bg-grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black text-white">
-        <GradientBlob tone="mixed" className="-left-24 top-0 h-[26rem] w-[26rem] opacity-40" />
-        <Container className="relative grid gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <GradientBlob tone="mixed" className="-left-20 -top-16 h-80 w-80 opacity-30" />
+        <GradientBlob tone="green" className="-right-16 bottom-0 h-72 w-72 opacity-30" />
+        <Container className="relative py-12 sm:py-16">
           <Reveal>
-            <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
               Research
             </p>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
               Five disciplines, one computational pipeline
             </h1>
-            <p className="mt-5 max-w-md text-base leading-7 text-slate-300">
+            <p className="mt-4 max-w-lg text-lg leading-7 text-slate-300">
               No discipline works in isolation. Each feeds into the next,
               from raw biological data to AI-driven predictions to
               clinically relevant, publication-ready results.
             </p>
           </Reveal>
+        </Container>
+      </section>
 
-          <Reveal delay={0.15}>
-            <div className="rounded-2xl bg-white p-6 shadow-2xl shadow-green-900/20 sm:p-8">
+      {/* How they connect */}
+      <section className="py-16">
+        <Container>
+          <Reveal>
+            <SectionHeader eyebrow="How They Connect" title="A web, not a checklist" />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mx-auto mt-10 max-w-xl">
               <DisciplineWeb areas={researchAreas} />
             </div>
           </Reveal>
         </Container>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-white" />
       </section>
 
       <SplitImageSection

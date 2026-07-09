@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle, Users } from "@phosphor-icons/react/dist/ssr";
 import Container from "@/components/Container";
-import HelixThread from "@/components/HelixThread";
 import ComputeGrid from "@/components/ComputeGrid";
 import ResearchAreaList from "@/components/ResearchAreaList";
 import SectionHeader from "@/components/SectionHeader";
@@ -25,35 +25,25 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero — wordmark echoes the logo's green-M / helix composition */}
+      {/* Hero — real logo instead of a hand-drawn approximation of it */}
       <section className="bg-grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black text-white">
-        <GradientBlob tone="green" className="-left-24 -top-24 h-[26rem] w-[26rem] opacity-40" />
-        <GradientBlob tone="mixed" className="-right-32 top-1/3 h-[30rem] w-[30rem] opacity-50" />
-        <Container className="relative py-20 sm:py-24">
-          <p className="section-index text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
-            Computational Biomedical Research
-          </p>
-
-          <div className="relative mt-4 inline-block">
-            <h1 className="font-display whitespace-nowrap text-[2.05rem] font-semibold leading-[0.92] tracking-tight sm:text-[5rem] lg:text-[7.5rem]">
-              <span className="relative z-10 text-green-400">MILLER</span>{" "}
-              <span className="relative z-10">LAB</span>
-            </h1>
-            <HelixThread className="pointer-events-none absolute left-0 top-1/2 z-0 h-16 w-full -translate-y-1/2 text-white/50 sm:h-24 lg:h-32" />
-          </div>
-
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
+        <GradientBlob tone="green" className="-left-20 -top-20 h-80 w-80 opacity-30" />
+        <GradientBlob tone="mixed" className="-right-24 bottom-0 h-96 w-96 opacity-30" />
+        <Container className="relative py-12 sm:py-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
             <div>
-              <h2 className="font-display text-2xl font-medium leading-snug text-slate-100 sm:text-3xl">
-                {lab.tagline}.
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-7 text-slate-400">
-                We combine artificial intelligence, molecular simulation, and
-                bioinformatics with high-performance computing to predict
-                disease mechanisms, identify therapeutic targets, and turn
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
+                Computational Biomedical Research
+              </p>
+              <h1 className="mt-3 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+                Miller Lab
+              </h1>
+              <p className="mt-5 max-w-lg text-lg leading-7 text-slate-300">
+                {lab.tagline}. We combine AI, molecular simulation, and
+                bioinformatics with high-performance computing to turn
                 biological data into clinically relevant insight.
               </p>
-              <div className="mt-8">
+              <div className="mt-7">
                 <Link
                   href="/research"
                   className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-all hover:-translate-y-0.5 hover:bg-green-400 hover:shadow-lg hover:shadow-green-500/30"
@@ -62,23 +52,29 @@ export default function Home() {
                   <ArrowRight size={16} />
                 </Link>
               </div>
+
+              <div className="mt-9 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/10 pt-6">
+                {impactStats.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="font-display text-2xl font-bold text-white">{stat.value}</p>
+                    <p className="text-xs leading-5 text-slate-400">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 border-t border-white/15 pt-6 lg:grid-cols-1 lg:gap-5 lg:border-t-0 lg:border-l lg:pl-8 lg:pt-0">
-              {impactStats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="font-display text-3xl font-semibold text-white">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-400">{stat.label}</p>
-                </div>
-              ))}
+            <div className="relative mx-auto w-full max-w-[15rem] lg:max-w-xs">
+              <Image
+                src="/logo.png"
+                alt="Miller Lab"
+                width={480}
+                height={480}
+                priority
+                className="h-auto w-full drop-shadow-[0_0_70px_rgba(0,177,64,0.25)]"
+              />
             </div>
           </div>
         </Container>
-
-        {/* soft dissolve into the page instead of a hard color line */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
       </section>
 
       {/* Research areas */}
