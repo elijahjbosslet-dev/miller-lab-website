@@ -12,10 +12,20 @@
   --color-navy-800: #101a30;
   --color-navy-700: #1b2942;
 
-  /* Eagles "Kelly Green" throwback (PMS 349C, #046A38) as the requested accent. */
+  /* Eagles "Kelly Green" throwback (PMS 349C, #046A38 — base/600 below) as
+     the requested accent. Full scale kept on the same hue so every shade
+     (borders, hovers, tints) reads as one consistent green. */
+  --color-green-50: #eefbf3;
+  --color-green-100: #d7f5e3;
+  --color-green-200: #b3ecc9;
+  --color-green-300: #82dca8;
   --color-green-400: #16c16e;
   --color-green-500: #0b7a42;
   --color-green-600: #046a38;
+  --color-green-700: #035530;
+  --color-green-800: #024024;
+  --color-green-900: #012c18;
+  --color-green-950: #011a0e;
 }
 
 @theme inline {
@@ -28,9 +38,17 @@
   --color-navy-900: var(--color-navy-900);
   --color-navy-800: var(--color-navy-800);
   --color-navy-700: var(--color-navy-700);
+  --color-green-50: var(--color-green-50);
+  --color-green-100: var(--color-green-100);
+  --color-green-200: var(--color-green-200);
+  --color-green-300: var(--color-green-300);
   --color-green-400: var(--color-green-400);
   --color-green-500: var(--color-green-500);
   --color-green-600: var(--color-green-600);
+  --color-green-700: var(--color-green-700);
+  --color-green-800: var(--color-green-800);
+  --color-green-900: var(--color-green-900);
+  --color-green-950: var(--color-green-950);
 }
 
 body {

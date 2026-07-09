@@ -30,7 +30,14 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1.5">
-              <Image src="/logo.png" alt="" width={32} height={32} className="h-full w-full object-contain" />
+              <Image
+                src="/logo.png"
+                alt=""
+                width={32}
+                height={32}
+                loading="eager"
+                className="h-full w-full object-contain"
+              />
             </span>
             <span className="text-lg font-semibold text-white">{lab.shortName}</span>
           </div>

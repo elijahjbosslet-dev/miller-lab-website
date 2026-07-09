@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Users2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Users2 } from "lucide-react";
 import Container from "@/components/Container";
 import NetworkPattern from "@/components/NetworkPattern";
 import ResearchAreaCard from "@/components/ResearchAreaCard";
@@ -8,6 +8,8 @@ import {
   researchAreas,
   impactStats,
   consultationSteps,
+  missionPillars,
+  audienceSegments,
   principalInvestigator,
   graduateResearchers,
   undergraduateResearchers,
@@ -93,6 +95,16 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Pull quote */}
+      <section className="border-y border-slate-100 py-16">
+        <Container>
+          <p className="mx-auto max-w-3xl text-center text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-3xl">
+            &ldquo;Our goal is to close the gap between biological data and
+            clinically relevant insight.&rdquo;
+          </p>
+        </Container>
+      </section>
+
       {/* Approach / who we serve */}
       <section className="bg-slate-50 py-24">
         <Container className="grid gap-12 lg:grid-cols-2">
@@ -104,8 +116,19 @@ export default function Home() {
               Reproducible, AI-driven research
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              {lab.missionStatement}
+              {lab.missionIntro}
             </p>
+            <ul className="mt-6 space-y-4">
+              {missionPillars.map((pillar) => (
+                <li key={pillar.title} className="flex gap-3">
+                  <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900">{pillar.title}</p>
+                    <p className="text-sm leading-6 text-slate-600">{pillar.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
@@ -115,8 +138,19 @@ export default function Home() {
               A collaborative research hub
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              {lab.audienceStatement}
+              {lab.audienceIntro}
             </p>
+            <ul className="mt-6 space-y-4">
+              {audienceSegments.map((segment) => (
+                <li key={segment.title} className="flex gap-3">
+                  <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-green-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900">{segment.title}</p>
+                    <p className="text-sm leading-6 text-slate-600">{segment.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>

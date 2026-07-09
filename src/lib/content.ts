@@ -9,10 +9,54 @@ export const lab = {
     "The Miller Lab employs advanced computational techniques to accelerate biomedical discoveries through artificial intelligence (AI), molecular simulations (e.g., molecular dynamics and docking), and bioinformatics. We combine machine learning (ML), structural biology, and high-performance computing (HPC) to predict disease mechanisms, identify therapeutic targets, and develop software tools that make sophisticated computational science accessible to researchers in medicine, biology, and chemistry. Our goal is to close the gap between biological data and clinically relevant insights through reproducible, AI-driven research.",
   audienceStatement:
     "The Miller Lab serves as a collaborative computational research hub, building partnerships with investigators worldwide. Our primary audience is faculty and researchers to whom we provide computational expertise that complements their experimental work across disciplines including medicine, pharmacology, neuroscience, cancer biology, chemistry, and biology. By integrating artificial intelligence, molecular simulation, bioinformatics, and high-performance computing into biomedical research, we help investigators generate preliminary data, strengthen grant proposals, and accelerate scientific progress. We also seek collaborations beyond our home institution with external academics, research consortia, and government-funded teams working on interdisciplinary projects in computational biology, drug discovery, precision medicine, and translational science. Additionally, we partner with biotechnology, pharmaceutical, and healthcare organizations interested in advanced computational modeling and AI-driven methods.",
+  missionIntro:
+    "We combine AI, molecular simulation, and bioinformatics — backed by high-performance computing — to close the gap between biological data and clinically relevant insight.",
+  audienceIntro:
+    "The Miller Lab is a collaborative computational research hub, partnering with investigators at Loyola and beyond.",
   // Placeholder contact details — swap in real values before launch.
   contactEmail: "info@millerlab.example.edu",
   affiliation: "Department of Medicine · Department of Molecular Pharmacology and Neuroscience",
 };
+
+// Scannable breakdown of the mission statement — used anywhere the full
+// paragraph would otherwise run long (home, about).
+export const missionPillars = [
+  {
+    title: "Predict & identify",
+    description: "AI and ML models that predict disease mechanisms and surface therapeutic targets.",
+  },
+  {
+    title: "Simulate & model",
+    description: "Molecular dynamics, docking, and structural biology at atomic resolution.",
+  },
+  {
+    title: "Scale with HPC",
+    description: "High-performance computing that makes sophisticated computation accessible to any lab.",
+  },
+  {
+    title: "Publish reproducibly",
+    description: "Workflows and results built for peer review, reuse, and clinical relevance.",
+  },
+];
+
+// Scannable breakdown of the audience statement.
+export const audienceSegments = [
+  {
+    title: "Faculty & Researchers",
+    description:
+      "Computational expertise that complements experimental work in medicine, pharmacology, neuroscience, cancer biology, chemistry, and biology.",
+  },
+  {
+    title: "External Collaborators",
+    description:
+      "Academic partners, research consortia, and government-funded teams in computational biology, drug discovery, and precision medicine.",
+  },
+  {
+    title: "Industry Partners",
+    description:
+      "Biotechnology, pharmaceutical, and healthcare organizations applying AI-driven modeling to biomedical challenges.",
+  },
+];
 
 export const researchAreas = [
   {
