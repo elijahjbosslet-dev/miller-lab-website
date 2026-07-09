@@ -251,7 +251,7 @@ export const faqs = [
   {
     question: "What does a typical collaboration look like?",
     answer:
-      "Most projects start with a short consultation request, followed by a scoping meeting and a tailored project plan. See the Services page for a full walkthrough of our process.",
+      "Most projects start with a short consultation request, followed by a scoping meeting and a tailored project plan built around your data, timeline, and goals.",
   },
   {
     question: "Is there a cost to work with the lab?",

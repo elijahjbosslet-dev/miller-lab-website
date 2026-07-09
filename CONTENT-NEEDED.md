@@ -15,9 +15,12 @@ Everything below is currently a placeholder or best-guess draft. Nothing here bl
 - [ ] Any other metric you'd rather lead with (grant funding total, software releases, citations, etc.)
 
 ## Rates & Services
-- [ ] Finalized rate structure once Vice Provost Singh decision lands (internal vs. external pricing)
-- [ ] Confirm the four "Core Services" on the Services page are accurate/complete
-- [ ] Confirm the 5-step consultation process description matches how it actually runs
+The Services & Rates page has been removed from the site for now, since
+pricing/platform is still under discussion with Vice Provost Singh — no
+"how to work with us" pitch should go live until that's settled. When
+it's ready, the old copy (core services, 5-step consultation process,
+rates note) is preserved in git history (see the commit that removed
+`src/app/services/`) and can be restored/rebuilt at that point.
 
 ## Copy Review
 - [ ] Sign off on the condensed mission/audience copy (I shortened the paragraphs from your doc into scannable bullet points — want to make sure nothing important got cut)

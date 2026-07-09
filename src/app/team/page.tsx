@@ -25,7 +25,7 @@ export default function TeamPage() {
         description="A growing team of graduate and undergraduate researchers working across RNA editing, cancer biology, and infectious disease."
       />
 
-      <section className="py-24">
+      <section className="py-16">
         <Container>
           {/* Principal Investigator */}
           <SectionHeader index="01" eyebrow="Principal Investigator" title="Dr. Whelton Miller" />

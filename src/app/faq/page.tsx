@@ -14,7 +14,7 @@ export default function FaqPage() {
     <>
       <PageHero eyebrow="FAQ" title="Frequently asked questions" />
 
-      <section className="py-24">
+      <section className="py-16">
         <Container>
           <SectionHeader index="01" eyebrow="Common Questions" title="What people ask us" />
           <dl className="mt-10 max-w-3xl divide-y divide-slate-200">

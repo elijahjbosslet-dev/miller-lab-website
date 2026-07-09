@@ -23,7 +23,7 @@ export default function AboutPage() {
       />
 
       {/* Mission */}
-      <section className="py-24">
+      <section className="py-16">
         <Container>
           <SectionHeader index="01" eyebrow="Mission" title="What we do" />
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -52,7 +52,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who we serve */}
-      <section className="bg-slate-50 py-24">
+      <section className="bg-slate-50 py-16">
         <Container>
           <SectionHeader
             index="02"
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* Research areas */}
-      <section className="py-24">
+      <section className="py-16">
         <Container>
           <SectionHeader index="03" eyebrow="Research Areas" title="Where computation meets biology" />
           <ResearchAreaList areas={researchAreas} />
