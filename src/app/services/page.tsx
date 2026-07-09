@@ -49,7 +49,7 @@ export default function ServicesPage() {
           <ol className="mt-10 space-y-10 border-l border-slate-200 pl-8">
             {consultationSteps.map((step) => (
               <li key={step.step} className="relative">
-                <span className="absolute -left-[2.55rem] flex h-8 w-8 items-center justify-center rounded-full bg-navy-900 text-xs font-bold text-teal-400">
+                <span className="absolute -left-[2.55rem] flex h-8 w-8 items-center justify-center rounded-full bg-navy-900 text-xs font-bold text-green-400">
                   {step.step}
                 </span>
                 <h3 className="font-semibold text-slate-900">{step.title}</h3>
@@ -93,7 +93,7 @@ export default function ServicesPage() {
           </div>
           <a
             href={`mailto:${lab.contactEmail}`}
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-teal-400"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-green-400"
           >
             <Mail size={16} />
             {lab.contactEmail}

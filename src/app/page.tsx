@@ -21,10 +21,10 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy-950 text-white">
-        <NetworkPattern className="pointer-events-none absolute -right-24 -top-16 h-[34rem] w-[34rem] text-teal-400/50 lg:-right-4" />
+        <NetworkPattern className="pointer-events-none absolute -right-24 -top-16 h-[34rem] w-[34rem] text-green-400/50 lg:-right-4" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy-950" />
         <Container className="relative py-24 sm:py-32">
-          <p className="text-sm font-semibold uppercase tracking-widest text-teal-400">
+          <p className="text-sm font-semibold uppercase tracking-widest text-green-400">
             Computational Biomedical Research
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
@@ -39,7 +39,7 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href="/services#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-teal-400"
+              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-green-400"
             >
               Start a Collaboration
               <ArrowRight size={16} />
@@ -74,7 +74,7 @@ export default function Home() {
       <section className="py-24">
         <Container>
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
               Research Areas
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -97,7 +97,7 @@ export default function Home() {
       <section className="bg-slate-50 py-24">
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
               Our Approach
             </p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
@@ -108,7 +108,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
               Who We Serve
             </p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
@@ -126,7 +126,7 @@ export default function Home() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+              <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
                 How It Works
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -135,7 +135,7 @@ export default function Home() {
             </div>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-700"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700"
             >
               See full process
               <ArrowRight size={16} />
@@ -145,7 +145,7 @@ export default function Home() {
           <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {consultationSteps.map((step) => (
               <li key={step.step} className="relative">
-                <span className="text-3xl font-bold text-teal-500/40">
+                <span className="text-3xl font-bold text-green-500/40">
                   {step.step}
                 </span>
                 <h3 className="mt-2 text-sm font-semibold text-slate-900">
@@ -164,7 +164,7 @@ export default function Home() {
       <section className="bg-slate-50 py-24">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
               Meet the Lab
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -176,7 +176,7 @@ export default function Home() {
               cancer biology, and infectious disease.
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm font-medium text-slate-500">
-              <Users2 size={18} className="text-teal-600" />
+              <Users2 size={18} className="text-green-600" />
               {teamCount}+ current lab members
             </div>
             <Link
@@ -190,7 +190,7 @@ export default function Home() {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
             <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-900 text-lg font-bold text-teal-400">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy-900 text-lg font-bold text-green-400">
                 WM
               </div>
               <div>
@@ -205,7 +205,7 @@ export default function Home() {
             <ul className="mt-6 space-y-2 border-t border-slate-100 pt-6 text-sm text-slate-600">
               {principalInvestigator.role.map((r) => (
                 <li key={r} className="flex gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-teal-500" />
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-green-500" />
                   {r}
                 </li>
               ))}
@@ -228,7 +228,7 @@ export default function Home() {
           </div>
           <Link
             href="/services#contact"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-teal-400"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-green-400"
           >
             Start a Collaboration
             <ArrowRight size={16} />

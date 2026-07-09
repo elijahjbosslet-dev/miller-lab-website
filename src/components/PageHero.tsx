@@ -15,10 +15,10 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-navy-950 text-white">
-      <NetworkPattern className="pointer-events-none absolute -right-16 -top-10 h-[26rem] w-[26rem] text-teal-400/60 lg:right-0" />
+      <NetworkPattern className="pointer-events-none absolute -right-16 -top-10 h-[26rem] w-[26rem] text-green-400/60 lg:right-0" />
       <Container className="relative py-20 sm:py-24">
         {eyebrow && (
-          <p className="text-sm font-semibold uppercase tracking-widest text-teal-400">
+          <p className="text-sm font-semibold uppercase tracking-widest text-green-400">
             {eyebrow}
           </p>
         )}

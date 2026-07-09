@@ -28,11 +28,11 @@ export default function TeamPage() {
           {/* Principal Investigator */}
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 sm:p-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-navy-900 text-2xl font-bold text-teal-400">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-navy-900 text-2xl font-bold text-green-400">
                 WM
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+                <p className="text-sm font-semibold uppercase tracking-widest text-green-600">
                   Principal Investigator
                 </p>
                 <h2 className="mt-1 text-2xl font-bold text-slate-900">

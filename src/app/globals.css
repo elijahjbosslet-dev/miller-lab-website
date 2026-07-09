@@ -4,16 +4,18 @@
   --background: #ffffff;
   --foreground: #0f172a;
 
-  /* Brand palette — deep navy + teal accent, deliberately independent of any
-     host-institution branding so the site can travel with the lab. */
+  /* Brand palette — deep navy + Eagles "Kelly Green" accent, deliberately
+     independent of any host-institution branding so the site can travel
+     with the lab. */
   --color-navy-950: #04070f;
   --color-navy-900: #0a1120;
   --color-navy-800: #101a30;
   --color-navy-700: #1b2942;
 
-  --color-teal-400: #2dd4bf;
-  --color-teal-500: #14b8a6;
-  --color-teal-600: #0d9488;
+  /* Eagles "Kelly Green" throwback (PMS 349C, #046A38) as the requested accent. */
+  --color-green-400: #16c16e;
+  --color-green-500: #0b7a42;
+  --color-green-600: #046a38;
 }
 
 @theme inline {
@@ -26,9 +28,9 @@
   --color-navy-900: var(--color-navy-900);
   --color-navy-800: var(--color-navy-800);
   --color-navy-700: var(--color-navy-700);
-  --color-teal-400: var(--color-teal-400);
-  --color-teal-500: var(--color-teal-500);
-  --color-teal-600: var(--color-teal-600);
+  --color-green-400: var(--color-green-400);
+  --color-green-500: var(--color-green-500);
+  --color-green-600: var(--color-green-600);
 }
 
 body {

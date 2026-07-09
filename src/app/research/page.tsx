@@ -30,7 +30,7 @@ export default function ResearchPage() {
                   key={area.slug}
                   className="flex gap-5 rounded-2xl border border-slate-200 p-7"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-teal-400">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-green-400">
                     {Icon && <Icon size={24} strokeWidth={1.75} />}
                   </div>
                   <div>

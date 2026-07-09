@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail } from "lucide-react";
 import Container from "./Container";
 import { lab } from "@/lib/content";
@@ -28,8 +29,8 @@ export default function Footer() {
       <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-500/20 text-sm font-bold tracking-tight text-teal-400">
-              ML
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1.5">
+              <Image src="/logo.png" alt="" width={32} height={32} className="h-full w-full object-contain" />
             </span>
             <span className="text-lg font-semibold text-white">{lab.shortName}</span>
           </div>
@@ -38,7 +39,7 @@ export default function Footer() {
           </p>
           <a
             href={`mailto:${lab.contactEmail}`}
-            className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal-400 hover:text-teal-300"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green-400 hover:text-green-300"
           >
             <Mail size={16} />
             {lab.contactEmail}
@@ -53,7 +54,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-teal-400"
+                    className="text-sm text-slate-400 transition-colors hover:text-green-400"
                   >
                     {link.label}
                   </Link>

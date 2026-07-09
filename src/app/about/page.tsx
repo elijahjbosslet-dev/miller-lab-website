@@ -38,7 +38,7 @@ export default function AboutPage() {
           </div>
 
           <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-teal-600">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-green-600">
               Research Areas
             </h3>
             <ul className="mt-5 space-y-4">
@@ -53,7 +53,7 @@ export default function AboutPage() {
             </ul>
             <Link
               href="/research"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-700"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700"
             >
               Explore our research
               <ArrowRight size={16} />
