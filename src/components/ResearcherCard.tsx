@@ -42,6 +42,16 @@ export default function ResearcherCard({
       {researcher.focus && (
         <p className="mt-2 text-[12.5px] leading-[1.55] text-ink-mute">{researcher.focus}</p>
       )}
+      {researcher.scholarUrl && (
+        <a
+          href={researcher.scholarUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="section-index mt-3 inline-block border-b border-green-700/50 text-[11px] uppercase tracking-[0.06em] text-green-700 hover:text-green-600"
+        >
+          Google Scholar
+        </a>
+      )}
     </div>
   );
 }

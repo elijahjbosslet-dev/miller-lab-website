@@ -176,6 +176,7 @@ export type Researcher = {
   program: string;
   focus?: string;
   credentials?: string;
+  scholarUrl?: string;
 };
 
 export const principalInvestigator = {
@@ -187,6 +188,7 @@ export const principalInvestigator = {
     "Department of Molecular Pharmacology and Neuroscience",
     "Bioinformatics",
   ],
+  scholarUrl: "https://scholar.google.com/citations?user=iUpdueEAAAAJ&hl=en",
 };
 
 export const graduateResearchers: Researcher[] = [
@@ -194,6 +196,7 @@ export const graduateResearchers: Researcher[] = [
     name: "Emmanuel Broni",
     program: "IPBS PhD",
     focus: "Estrogen Receptor, RNA Editing, Cancer Biology, Infectious Disease",
+    scholarUrl: "https://scholar.google.com/citations?user=gz15nLcAAAAJ&hl=en",
   },
   {
     name: "ChaNyah Wood",
@@ -231,7 +234,7 @@ export const undergraduateResearchers: Researcher[] = [
 ];
 
 export const alumni: Researcher[] = [
-  { name: "Carolyn Ashley", credentials: "PhD", program: "IPBS PhD", focus: "RNA Editing, Cancer Biology, Infectious Disease" },
+  { name: "Carolyn Ashley", credentials: "PhD", program: "IPBS PhD", focus: "RNA Editing, Cancer Biology, Infectious Disease", scholarUrl: "https://scholar.google.com/citations?user=jYhxyn0AAAAJ&hl=en" },
   { name: "Brandon Lim", program: "M2, STAR Program", focus: "RNA Editing, Infectious Disease" },
   { name: "Maxwell Pierce", program: "M2, STAR Program", focus: "RNA Editing, Infectious Disease" },
   { name: "Miriam Velaquez", credentials: "MS, MBA", program: "MS/MBA Program (Rotation)", focus: "RNA Editing, Cancer Biology, Infectious Disease" },

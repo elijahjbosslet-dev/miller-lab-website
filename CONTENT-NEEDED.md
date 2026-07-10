@@ -47,7 +47,11 @@ rates note) is preserved in git history (see the commit that removed
 - [x] ~~LinkedIn~~ — linked in the footer
 - [x] ~~X (Twitter)~~ — linked in the footer
 - [x] ~~YouTube~~ — linked in the footer
-- [ ] Google Scholar / ORCID profile
+- [x] ~~Google Scholar (PI)~~ — linked on the Team page, verified against Dr. Miller's ADAR2/RNA-editing publications
+- [ ] Google Scholar for the rest of the team. I found and linked two more I could confidently verify by cross-referencing co-authored papers — Emmanuel Broni and alumna Carolyn Ashley — but stopped there. Google Scholar blocks automated verification, and several team members share names with unrelated researchers, so guessing the rest risked linking the wrong person's profile. If you send me the correct Scholar/ORCID URLs (or confirm the ones below are right), I'll add the rest:
+  - Whelton Miller: `scholar.google.com/citations?user=iUpdueEAAAAJ`
+  - Emmanuel Broni: `scholar.google.com/citations?user=gz15nLcAAAAJ`
+  - Carolyn Ashley: `scholar.google.com/citations?user=jYhxyn0AAAAJ`
 - [ ] GitHub org/repo, if the lab publishes code
 - [ ] Real GoFundMe campaign URL — a "Donate" button now exists in the header/footer but points to `#` (nowhere) until you send the link
 

@@ -52,6 +52,16 @@ export default function TeamPage() {
                       <li key={r}>{r}</li>
                     ))}
                   </ul>
+                  {principalInvestigator.scholarUrl && (
+                    <a
+                      href={principalInvestigator.scholarUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="section-index mt-3 inline-block border-b border-green-700/50 text-xs uppercase tracking-[0.06em] text-green-700 hover:text-green-600"
+                    >
+                      Google Scholar
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -97,9 +107,21 @@ export default function TeamPage() {
                     key={a.name}
                     className="dashed-rule-b flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between"
                   >
-                    <span className="font-sans font-bold text-ink">
-                      {a.name}
-                      {a.credentials ? `, ${a.credentials}` : ""}
+                    <span className="flex items-baseline gap-3">
+                      <span className="font-sans font-bold text-ink">
+                        {a.name}
+                        {a.credentials ? `, ${a.credentials}` : ""}
+                      </span>
+                      {a.scholarUrl && (
+                        <a
+                          href={a.scholarUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="section-index border-b border-green-700/50 text-[11px] uppercase tracking-[0.06em] text-green-700 hover:text-green-600"
+                        >
+                          Scholar
+                        </a>
+                      )}
                     </span>
                     <span className="section-index text-sm text-ink-faint">{a.program}</span>
                   </li>
