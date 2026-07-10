@@ -20,20 +20,11 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-ink">
+    <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-card">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image
-            src="/logo-dark.png"
-            alt=""
-            width={32}
-            height={32}
-            priority
-            className="h-8 w-8"
-          />
-          <span className="font-display text-[17px] tracking-[0.01em] text-white">
-            MILLER LAB
-          </span>
+          <Image src="/logo.png" alt="" width={32} height={32} priority className="h-8 w-8" />
+          <span className="font-display text-[17px] tracking-[0.01em] text-ink">MILLER LAB</span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -44,7 +35,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`font-sans text-[13px] font-semibold uppercase tracking-[0.07em] transition-colors ${
-                  active ? "text-green-400" : "text-paper-dim hover:text-green-400"
+                  active ? "text-green-700" : "text-ink-mute hover:text-green-700"
                 }`}
               >
                 {link.label}
@@ -61,7 +52,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center p-2 text-white lg:hidden"
+          className="inline-flex items-center justify-center p-2 text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -70,7 +61,7 @@ export default function Header() {
       </Container>
 
       {open && (
-        <div className="border-t border-white/15 bg-ink lg:hidden">
+        <div className="dashed-rule bg-card lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <Link
@@ -78,7 +69,7 @@ export default function Header() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={`py-2 font-sans text-sm font-semibold uppercase tracking-[0.07em] ${
-                  pathname === link.href ? "text-green-400" : "text-paper-dim"
+                  pathname === link.href ? "text-green-700" : "text-ink-mute"
                 }`}
               >
                 {link.label}

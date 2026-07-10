@@ -38,11 +38,7 @@ export default function ResearchPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1} className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <PinnedPhoto
-              src="/images/lab-microscope.jpg"
-              caption="a question from the bench"
-              rotate={-2}
-            />
+            <PinnedPhoto src="/images/lab-microscope.jpg" rotate={-2} />
           </Reveal>
         </Container>
       </section>

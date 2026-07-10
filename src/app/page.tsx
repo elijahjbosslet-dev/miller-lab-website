@@ -44,7 +44,7 @@ export default function Home() {
           </div>
 
           <div className="relative flex justify-center pb-4 pr-2 pt-2">
-            <PinnedPhoto src="/images/lab-pipette.jpg" caption="where the questions come from" />
+            <PinnedPhoto src="/images/lab-pipette.jpg" />
           </div>
         </Container>
 

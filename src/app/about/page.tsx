@@ -45,11 +45,7 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.1} className="flex justify-center lg:justify-end">
-              <PinnedPhoto
-                src="/images/lab-data-analysis.jpg"
-                caption="the lab, most days"
-                rotate={2}
-              />
+              <PinnedPhoto src="/images/lab-data-analysis.jpg" rotate={2} />
             </Reveal>
           </div>
         </Container>

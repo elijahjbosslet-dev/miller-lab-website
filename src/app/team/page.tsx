@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
@@ -34,8 +35,13 @@ export default function TeamPage() {
           <Reveal delay={0.1}>
             <div className="mt-10 max-w-2xl border-[2.5px] border-ink bg-card p-8 sm:p-10">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-                <div className="section-index flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-[2.5px] border-ink text-2xl text-ink">
-                  WM
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-[2.5px] border-ink">
+                  <Image
+                    src="/images/whelton-miller.jpg"
+                    alt={principalInvestigator.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <h3 className="font-display text-2xl uppercase text-ink">

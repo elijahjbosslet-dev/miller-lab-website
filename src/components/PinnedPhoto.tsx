@@ -2,23 +2,22 @@ import Image from "next/image";
 
 // Taped polaroid — see SKILL.md "Pinned photo" recipe. Pass `src` for a
 // real photo, or omit it for the honest striped placeholder the approved
-// reference uses where we don't have real lab photography yet.
+// reference uses where we don't have real lab photography yet. No caption
+// text: just the blank polaroid margin.
 export default function PinnedPhoto({
   src,
   alt,
-  caption,
   rotate = -2,
   className = "",
 }: {
   src?: string;
   alt?: string;
-  caption: string;
   rotate?: number;
   className?: string;
 }) {
   return (
     <div
-      className={`photo-shadow relative w-full max-w-[340px] bg-card px-3.5 pb-[52px] pt-3.5 ${className}`}
+      className={`photo-shadow relative w-full max-w-[340px] bg-card px-3.5 pb-6 pt-3.5 ${className}`}
       style={{ transform: `rotate(${rotate}deg)` }}
     >
       <div
@@ -41,9 +40,6 @@ export default function PinnedPhoto({
           </div>
         )}
       </div>
-      <p className="section-index absolute inset-x-0 bottom-3 text-center text-xs normal-case text-ink-mute">
-        {caption}
-      </p>
     </div>
   );
 }

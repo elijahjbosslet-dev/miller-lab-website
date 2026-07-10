@@ -30,7 +30,7 @@ rates note) is preserved in git history (see the commit that removed
 - [ ] Confirm the 5 research areas (AI, Molecular Simulation, Computational Biophysics, Drug Discovery, Bioinformatics) are the right framing/order
 
 ## People
-- [ ] Headshot for Dr. Miller (PI) — currently initials in a circle-stamp badge
+- [x] ~~Headshot for Dr. Miller (PI)~~ — live on the Team page (`public/images/whelton-miller.jpg`)
 - [ ] Headshots for any grad/undergrad researchers who want one (currently initials for everyone)
 - [ ] Longer bios, if wanted — doc only specified name / program / research focus
 - [ ] Any current team members missing from the doc, or alumni who should be removed/added

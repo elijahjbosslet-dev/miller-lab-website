@@ -10,14 +10,14 @@ export const lab = {
   audienceStatement:
     "The Miller Lab serves as a collaborative computational research hub, building partnerships with investigators worldwide. Our primary audience is faculty and researchers to whom we provide computational expertise that complements their experimental work across disciplines including medicine, pharmacology, neuroscience, cancer biology, chemistry, and biology. By integrating artificial intelligence, molecular simulation, bioinformatics, and high-performance computing into biomedical research, we help investigators generate preliminary data, strengthen grant proposals, and accelerate scientific progress. We also seek collaborations beyond our home institution with external academics, research consortia, and government-funded teams working on interdisciplinary projects in computational biology, drug discovery, precision medicine, and translational science. Additionally, we partner with biotechnology, pharmaceutical, and healthcare organizations interested in advanced computational modeling and AI-driven methods.",
   missionIntro:
-    "We combine AI, molecular simulation, and bioinformatics with high-performance computing to close the gap between biological data and clinically relevant insight.",
+    "We combine AI, molecular simulation, and bioinformatics with high-performance computing to predict disease mechanisms, identify therapeutic targets, and close the gap between biological data and clinically relevant insight.",
   audienceIntro:
     "The Miller Lab is a collaborative computational research hub, partnering with investigators at Loyola and beyond.",
   // Approved hero copy — see .claude/skills/miller-bulletin-theme/reference.html
   heroKicker: "A computational biomedical research lab",
-  heroHeadline: ["We turn ", "data", " into cures."] as const,
+  heroHeadline: ["We turn ", "data", " into insight."] as const,
   heroDek:
-    "AI, molecular simulation, and bioinformatics — run on serious computing power — so researchers across medicine, biology, and chemistry get real answers, faster.",
+    "AI, molecular simulation, and bioinformatics, run on serious computing power, so researchers across medicine, biology, and chemistry get real answers, faster.",
   contactEmail: "wamillerlab@gmail.com",
   affiliation: "Department of Medicine · Department of Molecular Pharmacology and Neuroscience",
   // Placeholder — swap in the real GoFundMe campaign URL once it exists.
