@@ -17,36 +17,32 @@ const columns = [
   },
   {
     title: "Support",
-    links: [{ href: lab.donateUrl, label: "Donate (GoFundMe)" }],
+    links: [{ href: lab.donateUrl, label: "Donate" }],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-grain relative overflow-hidden border-t border-slate-200 bg-gradient-to-br from-navy-900 via-navy-950 to-black text-slate-300">
-      <Container className="relative grid gap-10 py-16 lg:grid-cols-[2fr_1fr_1fr]">
+    <footer className="bg-ink text-paper-dim">
+      <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1.5">
-              <Image
-                src="/logo.png"
-                alt=""
-                width={32}
-                height={32}
-                loading="eager"
-                className="h-full w-full object-contain"
-              />
-            </span>
-            <span className="font-display text-lg font-semibold text-white">
-              {lab.shortName}
-            </span>
+            <Image
+              src="/logo.png"
+              alt=""
+              width={28}
+              height={28}
+              loading="eager"
+              className="h-7 w-7 brightness-0 invert"
+            />
+            <span className="font-display text-[15px] text-white">MILLER LAB</span>
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">{lab.tagline}.</p>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-ink-faint">{lab.tagline}.</p>
           <a
             href={`mailto:${lab.contactEmail}`}
-            className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green-400 hover:text-green-300"
+            className="section-index mt-5 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.04em] text-green-400 hover:text-green-300"
           >
-            <EnvelopeSimple size={16} />
+            <EnvelopeSimple size={15} />
             {lab.contactEmail}
           </a>
           <div className="mt-5 flex items-center gap-4">
@@ -55,34 +51,34 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-slate-400 transition-colors hover:text-green-400"
+              className="text-paper-dim transition-colors hover:text-green-400"
             >
-              <LinkedInIcon size={18} />
+              <LinkedInIcon size={17} />
             </a>
             <a
               href={lab.social.twitter}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
-              className="text-slate-400 transition-colors hover:text-green-400"
+              className="text-paper-dim transition-colors hover:text-green-400"
             >
-              <XIcon size={18} />
+              <XIcon size={17} />
             </a>
             <a
               href={lab.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="text-slate-400 transition-colors hover:text-green-400"
+              className="text-paper-dim transition-colors hover:text-green-400"
             >
-              <YouTubeIcon size={18} />
+              <YouTubeIcon size={17} />
             </a>
           </div>
         </div>
 
         {columns.map((col) => (
           <div key={col.title}>
-            <h3 className="section-index text-xs uppercase tracking-[0.14em] text-white/50">
+            <h3 className="section-index text-[11px] uppercase tracking-[0.14em] text-ink-faint">
               {col.title}
             </h3>
             <ul className="mt-4 space-y-3">
@@ -90,7 +86,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-green-400"
+                    className="text-sm text-paper-dim transition-colors hover:text-green-400"
                   >
                     {link.label}
                   </Link>
@@ -101,12 +97,11 @@ export default function Footer() {
         ))}
       </Container>
 
-      <div className="relative border-t border-white/10">
-        <Container className="flex flex-col gap-2 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; {new Date().getFullYear()} {lab.shortName}. All rights reserved.
+      <div className="border-t border-white/15">
+        <Container>
+          <p className="section-index py-4 text-[10.5px] uppercase tracking-[0.04em] text-ink-faint">
+            &copy; {new Date().getFullYear()} Miller Lab &middot; {lab.affiliation}
           </p>
-          <p>{lab.affiliation}</p>
         </Container>
       </div>
     </footer>

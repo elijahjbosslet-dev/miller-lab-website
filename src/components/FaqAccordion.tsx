@@ -9,26 +9,28 @@ export default function FaqAccordion({ faqs }: { faqs: typeof faqsType }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-slate-200 border-y border-slate-200">
+    <div className="dashed-rule">
       {faqs.map((faq, i) => {
         const isOpen = open === i;
         return (
-          <div key={faq.question}>
+          <div key={faq.question} className="dashed-rule-b">
             <button
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-6 py-6 text-left"
+              className="flex w-full items-center justify-between gap-6 py-5 text-left"
               aria-expanded={isOpen}
             >
-              <span className="font-display text-lg font-semibold text-slate-900">
+              <span className="font-sans text-[17px] font-bold text-ink sm:text-[18px]">
                 {faq.question}
               </span>
               <motion.span
                 animate={{ rotate: isOpen ? 45 : 0 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy-900 text-green-400"
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className={`flex h-7 w-7 shrink-0 items-center justify-center border-2 ${
+                  isOpen ? "border-green-700 text-green-700" : "border-ink text-ink"
+                }`}
               >
-                <Plus size={16} />
+                <Plus size={15} weight="bold" />
               </motion.span>
             </button>
             <AnimatePresence initial={false}>
@@ -37,12 +39,10 @@ export default function FaqAccordion({ faqs }: { faqs: typeof faqsType }) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-2xl pb-6 text-base leading-7 text-slate-600">
-                    {faq.answer}
-                  </p>
+                  <p className="max-w-2xl pb-5 text-base leading-7 text-ink-mute">{faq.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>

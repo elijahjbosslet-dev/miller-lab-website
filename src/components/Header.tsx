@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Heart, List, X } from "@phosphor-icons/react/dist/ssr";
+import { List, X } from "@phosphor-icons/react/dist/ssr";
 import Container from "./Container";
 import { lab } from "@/lib/content";
 
@@ -20,45 +20,48 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-ink">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" priority />
-          <span className="font-display text-lg font-semibold tracking-tight text-slate-900">
-            {lab.shortName}
+          <Image
+            src="/logo.png"
+            alt=""
+            width={28}
+            height={28}
+            priority
+            className="h-7 w-7 brightness-0 invert"
+          />
+          <span className="font-display text-[17px] tracking-[0.01em] text-white">
+            MILLER LAB
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
-                  active ? "text-green-600" : "text-slate-500 hover:text-slate-900"
+                className={`font-sans text-[13px] font-semibold uppercase tracking-[0.07em] transition-colors ${
+                  active ? "text-green-400" : "text-paper-dim hover:text-green-400"
                 }`}
               >
                 {link.label}
               </Link>
             );
           })}
-        </nav>
-
-        <div className="hidden lg:block">
           <a
             href={lab.donateUrl}
-            className="inline-flex items-center gap-1.5 border-b border-green-600 pb-0.5 text-xs font-semibold uppercase tracking-[0.14em] text-green-700 transition-colors hover:text-green-800"
+            className="rounded-[2px] bg-green-600 px-4 py-2 font-sans text-[13px] font-semibold uppercase tracking-[0.07em] text-green-ink transition-colors hover:bg-green-400"
           >
-            <Heart size={13} />
             Donate
           </a>
-        </div>
+        </nav>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center p-2 text-slate-700 lg:hidden"
+          className="inline-flex items-center justify-center p-2 text-white lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -67,15 +70,15 @@ export default function Header() {
       </Container>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div className="border-t border-white/15 bg-ink lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`py-2 text-sm font-semibold uppercase tracking-[0.1em] ${
-                  pathname === link.href ? "text-green-600" : "text-slate-700"
+                className={`py-2 font-sans text-sm font-semibold uppercase tracking-[0.07em] ${
+                  pathname === link.href ? "text-green-400" : "text-paper-dim"
                 }`}
               >
                 {link.label}
@@ -84,9 +87,8 @@ export default function Header() {
             <a
               href={lab.donateUrl}
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-[0.1em] text-green-700"
+              className="mt-3 inline-block w-fit rounded-[2px] bg-green-600 px-4 py-2 font-sans text-sm font-semibold uppercase tracking-[0.07em] text-green-ink"
             >
-              <Heart size={14} />
               Donate
             </a>
           </Container>

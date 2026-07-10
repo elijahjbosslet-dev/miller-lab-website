@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { Archivo_Black, Space_Grotesk, IBM_Plex_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const fontDisplay = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const fontDisplay = Archivo_Black({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: "400",
 });
 
 const fontSans = Space_Grotesk({
@@ -20,6 +20,12 @@ const fontMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const fontHand = Caveat({
+  variable: "--font-hand",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -36,9 +42,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} h-full antialiased`}
+      className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} ${fontHand.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col text-slate-900">
+      <body className="min-h-full flex flex-col bg-paper text-ink-soft">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

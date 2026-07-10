@@ -2,6 +2,8 @@
 
 Everything below is currently a placeholder or best-guess draft. Nothing here blocks the site from being live, but it should be reviewed/filled in before calling it final.
 
+**Note:** the site went through a full visual redesign (the "Bulletin Board" theme — paper background, ink-black bars, hard offset shadows, tape/pin/stamp details, a single Kelly Green accent). This changed how placeholders are shown but not what's still needed from you — see Photography and Brand below for what moved.
+
 ## Contact & Basics
 - [x] ~~Real contact email~~ — `wamillerlab@gmail.com`, live in the footer
 - [ ] Physical location / room number, if you want a "visit us" section
@@ -28,8 +30,8 @@ rates note) is preserved in git history (see the commit that removed
 - [ ] Confirm the 5 research areas (AI, Molecular Simulation, Computational Biophysics, Drug Discovery, Bioinformatics) are the right framing/order
 
 ## People
-- [ ] Headshot for Dr. Miller (PI) — currently a "WM" initials avatar
-- [ ] Headshots for any grad/undergrad researchers who want one (currently initials avatars for everyone)
+- [ ] Headshot for Dr. Miller (PI) — currently initials in a circle-stamp badge
+- [ ] Headshots for any grad/undergrad researchers who want one (currently initials for everyone)
 - [ ] Longer bios, if wanted — doc only specified name / program / research focus
 - [ ] Any current team members missing from the doc, or alumni who should be removed/added
 - [ ] Current openings/positions, if you want a "we're recruiting" callout
@@ -50,11 +52,11 @@ rates note) is preserved in git history (see the commit that removed
 
 ## Brand
 - [x] ~~Recolored logo file~~ — done, logo now matches the Kelly Green accent (`#00B140`, Pantone 354C)
-- [x] ~~Font~~ — now Fraunces (headlines) + Space Grotesk (body) + IBM Plex Mono (numerals/labels), moved off Space Grotesk's predecessor (IBM Plex Sans) to steer further away from the ubiquitous Inter/Roboto look
+- [x] ~~Font~~ — now Archivo Black (display headlines) + Space Grotesk (body) + IBM Plex Mono (numerals/labels/kickers), as part of the Bulletin Board redesign
 - [ ] Any further font/style preferences
 
 ## Photography
-- [ ] Real photos of the lab, equipment, or team at work. Only one stock photo remains as a placeholder — `public/images/lab-pipette.jpg` (Nathan Rimoux, via Unsplash), used on the Research page. The DNA and server-room stock photos were replaced with bespoke SVG art (a custom molecular helix graphic and a compute-grid visualization) generated for this site specifically, so no further action needed there — but the pipette photo should still be swapped for a real photo of the lab when available.
+- [ ] Real photos of the lab, equipment, or team at work. One real photo is in use — `public/images/lab-pipette.jpg` (Nathan Rimoux, via Unsplash), shown on the Home hero and Research page. Every other photo slot (About page "the lab, most days") is an honest striped placeholder that reads `[ lab photo ]` rather than fake stock art or bespoke illustration — swap in real photos as they come in and the placeholders disappear on their own.
 
 ## Legal/Compliance
 - [ ] Any Loyola disclosure language required on lab-affiliated external sites (check with Vice Provost Singh alongside the platform/rates discussion)

@@ -1,21 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  /* Bulletin Board theme — paper + ink + one green. See
+     .claude/skills/miller-bulletin-theme/SKILL.md for the full spec. */
+  --color-paper: #f2efe6;
+  --color-paper-dim: #e9e5da;
+  --color-card: #ffffff;
+  --color-ink: #161613;
+  --color-ink-soft: #3c3a34;
+  --color-ink-mute: #5c5952;
+  --color-ink-faint: #8a857a;
+  --color-green-ink: #0c1b10;
 
-  /* Brand palette — deep navy + Eagles "Kelly Green" accent, deliberately
-     independent of any host-institution branding so the site can travel
-     with the lab. */
-  --color-navy-950: #04070f;
-  --color-navy-900: #0a1120;
-  --color-navy-800: #101a30;
-  --color-navy-700: #1b2942;
-
-  /* "Kelly Green" accent (Pantone 354C, #00B140 — base/600 below), the
-     brighter sports-branding shade requested in place of the muted Eagles
-     throwback green. Full scale kept on the same hue so every shade
-     (borders, hovers, tints) reads as one consistent, vivid green. */
+  /* Kelly Green (Pantone 354C) — the only accent. Rule: green text on
+     light backgrounds is always 700 (#00963a); #00b140 (600) is a fill
+     color only, and always pairs with --color-green-ink text. */
   --color-green-50: #eafcf1;
   --color-green-100: #cef8dc;
   --color-green-200: #a0f0bb;
@@ -30,16 +29,20 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-grotesk);
   --font-mono: var(--font-plex-mono);
-  --font-display: var(--font-bricolage);
+  --font-display: var(--font-display);
+  --font-hand: var(--font-hand);
 
-  --color-navy-950: var(--color-navy-950);
-  --color-navy-900: var(--color-navy-900);
-  --color-navy-800: var(--color-navy-800);
-  --color-navy-700: var(--color-navy-700);
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-card: var(--color-card);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-mute: var(--color-ink-mute);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-green-ink: var(--color-green-ink);
+
   --color-green-50: var(--color-green-50);
   --color-green-100: var(--color-green-100);
   --color-green-200: var(--color-green-200);
@@ -53,134 +56,48 @@
   --color-green-950: var(--color-green-950);
 }
 
-/* Atmospheric canvas instead of a flat white page — soft, fixed color
-   washes that sit behind every section so light pages never read as an
-   empty white/black block, even where a GradientBlob isn't placed. */
 body {
-  background:
-    radial-gradient(ellipse 900px 560px at 12% 0%, rgba(0, 177, 64, 0.09), transparent 60%),
-    radial-gradient(ellipse 800px 620px at 92% 18%, rgba(10, 17, 32, 0.07), transparent 55%),
-    radial-gradient(ellipse 900px 700px at 15% 95%, rgba(0, 177, 64, 0.06), transparent 55%),
-    var(--background);
-  background-attachment: fixed;
-  color: var(--foreground);
+  background: var(--color-paper);
+  color: var(--color-ink-soft);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
+/* Display headlines — Archivo Black, always uppercase per the theme spec.
+   Apply the `font-display` utility explicitly per-element (see SKILL.md);
+   this just fixes the metrics every display use shares. */
+.font-display {
+  line-height: 0.96;
+  letter-spacing: -0.01em;
 }
 
-/* Editorial section-number label, used throughout SectionHeader. */
+/* Mono kickers / index numerals / captions. */
 .section-index {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
-/* Subtle grain texture for dark sections — breaks up flat color fields
-   without resorting to generic drop-shadow "card" depth cues. */
-.bg-grain {
-  position: relative;
+/* Dashed cut-here rule — replaces gradient section transitions entirely. */
+.dashed-rule {
+  border-top: 2px dashed var(--color-ink);
 }
-.bg-grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.dashed-rule-b {
+  border-bottom: 2px dashed var(--color-ink);
 }
 
-/* Slow drifting motion for GradientBlob — real depth instead of flat
-   color fields, but calm enough not to be distracting. */
-@keyframes blob-drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(4%, -6%) scale(1.08);
-  }
-  66% {
-    transform: translate(-3%, 5%) scale(0.95);
-  }
+/* Hard offset shadow — the one depth cue in this theme. No blur, ever. */
+.hard-shadow {
+  box-shadow: 3px 3px 0 var(--color-ink);
 }
-.blob-drift {
-  animation: blob-drift 22s ease-in-out infinite;
+.hard-shadow-sm {
+  box-shadow: 1px 1px 0 var(--color-ink);
 }
-
-/* Breathing radial glow — used behind the hero logo so it reads as a lit
-   focal point instead of a flat image sitting on a dark background. */
-@keyframes glow-pulse {
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.12);
-  }
-}
-.glow-pulse {
-  animation: glow-pulse 5s ease-in-out infinite;
-}
-
-/* Gentle float, used on hero focal elements to feel alive rather than
-   static without being distracting. */
-@keyframes float-y {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4%);
-  }
-}
-.float-y {
-  animation: float-y 6s ease-in-out infinite;
-}
-
-/* Staggered twinkle for ComputeGrid's active cells, so the infrastructure
-   visualization reads as a live cluster rather than a static pattern. */
-@keyframes cell-twinkle {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.25;
-  }
-}
-.cell-twinkle {
-  animation: cell-twinkle 3s ease-in-out infinite;
+.photo-shadow {
+  box-shadow: 0 10px 24px rgba(22, 22, 19, 0.2);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blob-drift,
-  .glow-pulse,
-  .float-y,
-  .cell-twinkle {
-    animation: none;
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-}
-
-/* Diagonal section edges, used instead of hard flat-color cuts between
-   sections. Pair with a negative top margin on the following element
-   (e.g. -mt-14) so it slides up into the clipped wedge. */
-.slant-b {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
-  padding-bottom: 3.5rem;
-}
-.slant-t {
-  clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0 100%);
-  padding-top: 3.5rem;
-}
-.slant-tb {
-  clip-path: polygon(0 3.5rem, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
 }

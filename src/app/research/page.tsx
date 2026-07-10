@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
+import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import { iconMap } from "@/components/icon-map";
-import SplitImageSection from "@/components/SplitImageSection";
 import DisciplineWeb from "@/components/DisciplineWeb";
-import GradientBlob from "@/components/GradientBlob";
+import PinnedPhoto from "@/components/PinnedPhoto";
 import Reveal from "@/components/Reveal";
 import { researchAreas } from "@/lib/content";
 
@@ -16,29 +16,14 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <>
-      {/* Hero — plain and tight, no floating card */}
-      <section className="bg-grain relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-950 to-black text-white">
-        <GradientBlob tone="mixed" className="-left-20 -top-16 h-80 w-80 opacity-30" />
-        <GradientBlob tone="green" className="-right-16 bottom-0 h-72 w-72 opacity-30" />
-        <Container className="relative py-12 sm:py-16">
-          <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green-400">
-              Research
-            </p>
-            <h1 className="mt-3 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
-              Five disciplines, one computational pipeline
-            </h1>
-            <p className="mt-4 max-w-lg text-lg leading-7 text-slate-300">
-              No discipline works in isolation. Each feeds into the next,
-              from raw biological data to AI-driven predictions to
-              clinically relevant, publication-ready results.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="Research"
+        title="Five disciplines, one pipeline"
+        description="No discipline works in isolation. Each feeds into the next, from raw biological data to AI-driven predictions to clinically relevant, publication-ready results."
+      />
 
       {/* How they connect */}
-      <section className="py-16">
+      <section className="dashed-rule-b py-16">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="How They Connect" title="A web, not a checklist" />
@@ -51,21 +36,35 @@ export default function ResearchPage() {
         </Container>
       </section>
 
-      <SplitImageSection
-        src="/images/lab-pipette.jpg"
-        alt="Researcher working with lab samples and a pipette"
-        eyebrow="Wet Lab to Computation"
-        title="Grounded in real experimental collaboration"
-        description="Every computational model starts with a question from the bench. Our research areas exist to turn that data into actionable, clinically relevant insight."
-        imageSide="left"
-      />
+      {/* Wet lab to computation */}
+      <section className="dashed-rule-b py-16">
+        <Container className="grid items-center gap-12 lg:grid-cols-2">
+          <Reveal className="order-2 lg:order-1">
+            <p className="section-index text-[13px] font-semibold uppercase tracking-[0.15em] text-green-700">
+              Wet Lab to Computation
+            </p>
+            <h2 className="font-display mt-2 text-[28px] uppercase text-ink sm:text-[32px]">
+              Grounded in real collaboration
+            </h2>
+            <p className="mt-4 max-w-md text-base leading-7 text-ink-mute">
+              Every computational model starts with a question from the bench. Our
+              research areas exist to turn that data into actionable, clinically
+              relevant insight.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1} className="order-1 flex justify-center lg:order-2 lg:justify-end">
+            <PinnedPhoto
+              src="/images/lab-pipette.jpg"
+              caption="a question from the bench"
+              rotate={-2}
+            />
+          </Reveal>
+        </Container>
+      </section>
 
-      {/* Five areas — horizontal scroll rail, distinct from the vertical
-          numbered lists used on Home/About. */}
-      <section className="relative overflow-hidden pb-16">
-        <GradientBlob tone="green" className="right-[-10rem] bottom-0 h-[28rem] w-[28rem] opacity-20" />
-        <GradientBlob tone="mixed" className="left-[-8rem] top-0 h-[22rem] w-[22rem] opacity-[0.14]" />
-        <Container className="relative">
+      {/* Five areas, in detail */}
+      <section className="py-16">
+        <Container>
           <Reveal>
             <SectionHeader eyebrow="The Disciplines" title="Five areas, in detail" />
           </Reveal>
@@ -77,21 +76,19 @@ export default function ResearchPage() {
               return (
                 <div
                   key={area.slug}
-                  className="group flex w-[19rem] shrink-0 snap-start flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-7 transition-all hover:-translate-y-1 hover:border-green-300 hover:shadow-xl hover:shadow-slate-200/60"
+                  className="flex w-[19rem] shrink-0 snap-start flex-col gap-4 border-[2.5px] border-ink bg-card p-7"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="section-index text-sm text-slate-400">
+                    <span className="section-index text-sm text-ink-faint">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy-900 text-green-400 transition-colors group-hover:bg-green-500 group-hover:text-navy-950">
-                      {Icon && <Icon size={22} strokeWidth={1.75} />}
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-green-700">
+                      {Icon && <Icon size={20} strokeWidth={1.75} />}
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-slate-900">
-                      {area.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">{area.blurb}</p>
+                    <h3 className="font-sans text-lg font-bold text-ink">{area.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-ink-mute">{area.blurb}</p>
                   </div>
                 </div>
               );

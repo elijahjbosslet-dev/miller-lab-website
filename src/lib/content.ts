@@ -13,6 +13,11 @@ export const lab = {
     "We combine AI, molecular simulation, and bioinformatics with high-performance computing to close the gap between biological data and clinically relevant insight.",
   audienceIntro:
     "The Miller Lab is a collaborative computational research hub, partnering with investigators at Loyola and beyond.",
+  // Approved hero copy — see .claude/skills/miller-bulletin-theme/reference.html
+  heroKicker: "A computational biomedical research lab",
+  heroHeadline: ["We turn ", "data", " into cures."] as const,
+  heroDek:
+    "AI, molecular simulation, and bioinformatics — run on serious computing power — so researchers across medicine, biology, and chemistry get real answers, faster.",
   contactEmail: "wamillerlab@gmail.com",
   affiliation: "Department of Medicine · Department of Molecular Pharmacology and Neuroscience",
   // Placeholder — swap in the real GoFundMe campaign URL once it exists.
@@ -105,9 +110,9 @@ export const researchAreas = [
 // Headline figures for the homepage impact bar.
 // PLACEHOLDER VALUES — replace with real numbers before launch.
 export const impactStats = [
-  { label: "Peer-reviewed publications & presentations", value: "25+" },
-  { label: "Departments & investigators supported", value: "10+" },
-  { label: "Active research collaborations", value: "15+" },
+  { label: "Publications & talks", value: "25+" },
+  { label: "Departments supported", value: "10+" },
+  { label: "Active collaborations", value: "15+" },
 ];
 
 export const consultationSteps = [

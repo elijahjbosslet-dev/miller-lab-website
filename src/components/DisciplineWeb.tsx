@@ -1,4 +1,5 @@
 import { iconMap } from "./icon-map";
+import CircleStamp from "./CircleStamp";
 import type { researchAreas as researchAreasType } from "@/lib/content";
 
 // Places N nodes evenly around a circle in a 0-100 coordinate space,
@@ -22,7 +23,7 @@ export default function DisciplineWeb({
   return (
     <div className="relative mx-auto aspect-square w-full max-w-xl">
       <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full">
-        <g stroke="currentColor" className="text-green-300" strokeWidth="0.4">
+        <g stroke="#161613" strokeWidth="0.5">
           {/* hub spokes */}
           {positions.map((p, i) => (
             <line key={`spoke-${i}`} x1="50" y1="50" x2={p.x} y2={p.y} />
@@ -37,12 +38,10 @@ export default function DisciplineWeb({
 
       {/* Hub */}
       <div
-        className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-navy-900 text-center shadow-lg"
-        style={{ left: "50%", top: "50%", width: "22%", height: "22%" }}
+        className="absolute -translate-x-1/2 -translate-y-1/2"
+        style={{ left: "50%", top: "50%" }}
       >
-        <span className="px-1 text-[0.55rem] font-semibold uppercase leading-tight tracking-wide text-green-400 sm:text-[0.65rem]">
-          Data to Insight
-        </span>
+        <CircleStamp lines={["Data", "to", "Insight"]} rotate={9} className="h-[86px] w-[86px]" />
       </div>
 
       {/* Discipline nodes */}
@@ -55,10 +54,10 @@ export default function DisciplineWeb({
             className="absolute flex w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5 text-center sm:w-28"
             style={{ left: `${p.x}%`, top: `${p.y}%` }}
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-green-600 shadow-md ring-1 ring-slate-200 sm:h-12 sm:w-12">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ink bg-card text-green-700 sm:h-12 sm:w-12">
               {Icon && <Icon size={20} strokeWidth={1.75} />}
             </div>
-            <span className="font-display text-xs font-semibold leading-tight text-slate-900 sm:text-sm">
+            <span className="font-sans text-xs font-bold leading-tight text-ink sm:text-sm">
               {area.title}
             </span>
           </div>
