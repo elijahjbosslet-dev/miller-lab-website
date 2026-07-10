@@ -3,7 +3,6 @@ import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import { iconMap } from "@/components/icon-map";
-import DisciplineWeb from "@/components/DisciplineWeb";
 import PinnedPhoto from "@/components/PinnedPhoto";
 import Reveal from "@/components/Reveal";
 import { researchAreas } from "@/lib/content";
@@ -21,20 +20,6 @@ export default function ResearchPage() {
         title="Five disciplines, one pipeline"
         description="No discipline works in isolation. Each feeds into the next, from raw biological data to AI-driven predictions to clinically relevant, publication-ready results."
       />
-
-      {/* How they connect */}
-      <section className="dashed-rule-b py-16">
-        <Container>
-          <Reveal>
-            <SectionHeader eyebrow="How They Connect" title="A web, not a checklist" />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="mx-auto mt-10 max-w-xl">
-              <DisciplineWeb areas={researchAreas} />
-            </div>
-          </Reveal>
-        </Container>
-      </section>
 
       {/* Wet lab to computation */}
       <section className="dashed-rule-b py-16">
@@ -54,7 +39,7 @@ export default function ResearchPage() {
           </Reveal>
           <Reveal delay={0.1} className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <PinnedPhoto
-              src="/images/lab-pipette.jpg"
+              src="/images/lab-microscope.jpg"
               caption="a question from the bench"
               rotate={-2}
             />

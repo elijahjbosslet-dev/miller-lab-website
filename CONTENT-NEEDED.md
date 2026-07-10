@@ -57,7 +57,12 @@ rates note) is preserved in git history (see the commit that removed
 - [ ] Any further font/style preferences
 
 ## Photography
-- [ ] Real photos of the lab, equipment, or team at work. One real photo is in use — `public/images/lab-pipette.jpg` (Nathan Rimoux, via Unsplash), shown on the Home hero and Research page. Every other photo slot (About page "the lab, most days") is an honest striped placeholder that reads `[ lab photo ]` rather than fake stock art or bespoke illustration — swap in real photos as they come in and the placeholders disappear on their own.
+- [ ] Real photos of the lab, equipment, or team at work. Every photo slot on the site is currently filled with a stock placeholder, all Unsplash-licensed (free to use, no attribution required, credited here anyway):
+  - `public/images/lab-pipette.jpg` (Nathan Rimoux) — Home hero
+  - `public/images/lab-microscope.jpg` (Akram Huseyn) — Research page, "Wet Lab to Computation"
+  - `public/images/lab-data-analysis.jpg` (CDC) — About page, "the lab, most days"
+
+  These read fine but none of them are actually the Miller Lab. Swap in real photos as they come in — the `PinnedPhoto` component falls back to an honest striped `[ lab photo ]` placeholder if you'd rather leave a slot empty than use a stock photo in the meantime.
 
 ## Legal/Compliance
 - [ ] Any Loyola disclosure language required on lab-affiliated external sites (check with Vice Provost Singh alongside the platform/rates discussion)
