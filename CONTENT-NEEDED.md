@@ -37,7 +37,8 @@ rates note) is preserved in git history (see the commit that removed
 - [ ] Current openings/positions, if you want a "we're recruiting" callout
 
 ## Publications & Impact (not yet built — let us know if wanted)
-- [ ] A real publication list (titles, journals, years, links/DOIs) — could become a dedicated Publications page
+- [ ] A real publication list (titles, journals, years, links/DOIs) — the Research page now has a "Coming soon" placeholder reserving room for a Publications page
+- [ ] An "Ongoing Research" page/section (also reserved as a placeholder on the Research page) — what should this actually show? Active grants, in-progress projects, something else?
 - [ ] Software/tools the lab has released publicly (GitHub links, names)
 - [ ] Grant/funding highlights, if you want to showcase specific awards
 - [ ] Notable press or collaborator testimonials

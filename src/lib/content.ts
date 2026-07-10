@@ -108,11 +108,11 @@ export const researchAreas = [
 ] as const;
 
 // Headline figures for the homepage impact bar.
-// PLACEHOLDER VALUES — replace with real numbers before launch.
+// PLACEHOLDER VALUES — swap "X" for real counts before launch.
 export const impactStats = [
-  { label: "Publications & talks", value: "25+" },
-  { label: "Departments supported", value: "10+" },
-  { label: "Active collaborations", value: "15+" },
+  { label: "Publications & talks", value: "X" },
+  { label: "Departments supported", value: "X" },
+  { label: "Active collaborations", value: "X" },
 ];
 
 export const consultationSteps = [

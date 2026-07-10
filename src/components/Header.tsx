@@ -24,12 +24,12 @@ export default function Header() {
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <Image
-            src="/logo.png"
+            src="/logo-dark.png"
             alt=""
-            width={28}
-            height={28}
+            width={32}
+            height={32}
             priority
-            className="h-7 w-7 brightness-0 invert"
+            className="h-8 w-8"
           />
           <span className="font-display text-[17px] tracking-[0.01em] text-white">
             MILLER LAB

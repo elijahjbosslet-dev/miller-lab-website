@@ -3,7 +3,6 @@ import ResearchAreaList from "@/components/ResearchAreaList";
 import SectionHeader from "@/components/SectionHeader";
 import StampButton from "@/components/StampButton";
 import TextCta from "@/components/TextCta";
-import CircleStamp from "@/components/CircleStamp";
 import StatBadge from "@/components/StatBadge";
 import PinnedPhoto from "@/components/PinnedPhoto";
 import LabelStrip from "@/components/LabelStrip";
@@ -46,11 +45,6 @@ export default function Home() {
 
           <div className="relative flex justify-center pb-4 pr-2 pt-2">
             <PinnedPhoto src="/images/lab-pipette.jpg" caption="where the questions come from" />
-            <CircleStamp
-              lines={["Est.", "Loyola", "Chicago"]}
-              rotate={9}
-              className="absolute -bottom-4 right-2"
-            />
           </div>
         </Container>
 
@@ -58,9 +52,6 @@ export default function Home() {
           {impactStats.map((stat, i) => (
             <StatBadge key={stat.label} value={stat.value} label={stat.label} index={i} />
           ))}
-          <p className="section-index max-w-[280px] text-xs leading-[1.5] text-ink-faint">
-            &uarr; the short version of what we&apos;ve been up to
-          </p>
         </Container>
       </section>
 

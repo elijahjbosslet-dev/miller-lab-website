@@ -28,12 +28,12 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo-dark.png"
               alt=""
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               loading="eager"
-              className="h-7 w-7 brightness-0 invert"
+              className="h-8 w-8"
             />
             <span className="font-display text-[15px] text-white">MILLER LAB</span>
           </div>

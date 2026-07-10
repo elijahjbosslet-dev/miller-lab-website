@@ -63,7 +63,7 @@ export default function ResearchPage() {
       </section>
 
       {/* Five areas, in detail */}
-      <section className="py-16">
+      <section className="dashed-rule-b py-16">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="The Disciplines" title="Five areas, in detail" />
@@ -95,6 +95,31 @@ export default function ResearchPage() {
             })}
           </div>
         </Reveal>
+      </section>
+
+      {/* More from the lab — reserved for future content */}
+      <section className="py-16">
+        <Container>
+          <Reveal>
+            <SectionHeader eyebrow="More From The Lab" title="Coming soon" />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-10 grid max-w-2xl gap-5 sm:grid-cols-2">
+              <div className="border-[2.5px] border-dashed border-ink-faint p-6">
+                <p className="font-sans font-bold text-ink">Publications</p>
+                <p className="mt-2 text-sm leading-6 text-ink-mute">
+                  Papers, talks, and preprints from the lab. Under construction.
+                </p>
+              </div>
+              <div className="border-[2.5px] border-dashed border-ink-faint p-6">
+                <p className="font-sans font-bold text-ink">Ongoing Research</p>
+                <p className="mt-2 text-sm leading-6 text-ink-mute">
+                  A running look at what&apos;s currently in the pipeline. Under construction.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
       </section>
     </>
   );
