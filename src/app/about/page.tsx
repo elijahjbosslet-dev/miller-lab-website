@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="Closing the gap between data and clinic"
+        title="Closing the gap between biological data and clinical insight"
         description="We combine artificial intelligence, molecular simulation, and bioinformatics with high-performance computing to make sophisticated computational science accessible to researchers in medicine, biology, and chemistry."
       />
 
