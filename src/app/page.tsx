@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/Container";
 import ResearchAreaList from "@/components/ResearchAreaList";
 import SectionHeader from "@/components/SectionHeader";
@@ -63,52 +64,18 @@ export default function Home() {
             <div className="panel p-4">
               <span className="panel-bracket tl" aria-hidden="true" />
               <span className="panel-bracket br" aria-hidden="true" />
-              <div className="mb-3 flex items-center justify-between text-[9.5px] tracking-[0.16em] text-ink-2">
-                <span className="text-green">SIG // BINDING-ENERGY CONVERGENCE</span>
-                <span>MD &middot; ILLUSTRATIVE</span>
-              </div>
-              <svg viewBox="0 0 380 184" className="block h-auto w-full">
-                <g stroke="var(--hair)" strokeWidth="1">
-                  <line x1="0" y1="34" x2="380" y2="34" />
-                  <line x1="0" y1="72" x2="380" y2="72" />
-                  <line x1="0" y1="110" x2="380" y2="110" />
-                  <line x1="0" y1="148" x2="380" y2="148" />
-                  <line x1="76" y1="0" x2="76" y2="168" />
-                  <line x1="152" y1="0" x2="152" y2="168" />
-                  <line x1="228" y1="0" x2="228" y2="168" />
-                  <line x1="304" y1="0" x2="304" y2="168" />
-                </g>
-                <path
-                  d="M8,30 L28,56 L44,42 L62,88 L80,70 L98,112 L118,98 L138,130 L158,120 L178,142 L198,135 L218,151 L238,147 L258,155 L278,151 L298,157 L318,154 L338,158 L358,156 L372,157 L372,168 L8,168 Z"
-                  fill="rgba(76,187,23,.12)"
-                  stroke="none"
+              <p className="tag mb-3">
+                <span className="dot mr-1.5 inline-block" aria-hidden="true" />
+                FIG // THE MILLER LAB, LOYOLA UNIVERSITY CHICAGO
+              </p>
+              <div className="relative h-[280px] w-full overflow-hidden border-[color:var(--hair)] border sm:h-[320px]">
+                <Image
+                  src="/images/lab-pipette.jpg"
+                  alt="A Miller Lab researcher at the bench"
+                  fill
+                  priority
+                  className="object-cover"
                 />
-                <path
-                  className="trace-draw"
-                  d="M8,30 L28,56 L44,42 L62,88 L80,70 L98,112 L118,98 L138,130 L158,120 L178,142 L198,135 L218,151 L238,147 L258,155 L278,151 L298,157 L318,154 L338,158 L358,156 L372,157"
-                  fill="none"
-                  stroke="var(--color-green)"
-                  strokeWidth="2"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                />
-                <circle cx="372" cy="157" r="4" fill="var(--color-green)" />
-                <circle
-                  cx="372"
-                  cy="157"
-                  r="8"
-                  fill="none"
-                  stroke="var(--color-green)"
-                  strokeWidth="1"
-                  opacity=".5"
-                />
-              </svg>
-              <div className="mt-2 flex items-center justify-between text-[9px] tracking-[0.14em] text-ink-3">
-                <span>&Delta;G</span>
-                <span>
-                  SIMULATION TIME (ns) &rarr;
-                  <span className="cursor-blink" aria-hidden="true" />
-                </span>
               </div>
             </div>
           </Reveal>

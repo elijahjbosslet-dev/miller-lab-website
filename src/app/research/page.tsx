@@ -33,9 +33,6 @@ export default function ResearchPage() {
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal className="order-2 lg:order-1">
             <p className="kicker">{"// Wet Lab to Computation"}</p>
-            <h2 className="font-serif mt-3 text-[28px] text-ink-bright sm:text-[32px]">
-              Grounded in real collaboration
-            </h2>
             <p className="mt-4 max-w-md text-[13px] leading-7 text-ink-2">
               Every computational model starts with a question from the bench. Our
               research areas exist to turn that data into actionable, clinically

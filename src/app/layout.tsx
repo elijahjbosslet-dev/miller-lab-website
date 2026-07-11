@@ -3,7 +3,6 @@ import { DM_Serif_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StatusRibbon from "@/components/StatusRibbon";
 
 const fontSerif = DM_Serif_Display({
   variable: "--font-serif-display",
@@ -44,7 +43,6 @@ export default function RootLayout({
         <span className="corner-mark br" aria-hidden="true" />
 
         <div className="relative z-[1] flex min-h-full flex-1 flex-col">
-          <StatusRibbon />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
