@@ -1,56 +1,38 @@
 import type { Researcher } from "@/lib/content";
 
-const ROTATIONS = [-1.5, 1, -1, 1.5, -0.5];
-
-function initials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
-// Taped index card with the initials as a small circle stamp, per
-// SKILL.md's ResearcherCard mapping.
+// Roster row — name + program/role, with focus areas and a scholar link on
+// a second line when present. See
+// .claude/skills/miller-instrument-theme/SKILL.md "roster-row".
 export default function ResearcherCard({
   researcher,
-  index = 0,
+  role,
 }: {
   researcher: Researcher;
-  index?: number;
+  role: string;
 }) {
-  const rotate = ROTATIONS[index % ROTATIONS.length];
   return (
-    <div
-      className="relative h-full border-[2.5px] border-ink bg-card p-4"
-      style={{ transform: `rotate(${rotate}deg)` }}
-    >
-      <div
-        aria-hidden="true"
-        className="absolute -top-2 left-1/2 h-3 w-9 -translate-x-1/2 bg-green-600/85"
-      />
-      <div className="section-index flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink text-[11px] text-ink">
-        {initials(researcher.name)}
+    <div className="roster-row flex flex-col items-stretch gap-1.5">
+      <div className="flex items-baseline justify-between gap-4">
+        <span className="font-mono text-[13px] text-ink-bright">
+          {researcher.name}
+          {researcher.credentials ? `, ${researcher.credentials}` : ""}
+        </span>
+        <span className="label shrink-0">{role}</span>
       </div>
-      <p className="mt-3 font-sans text-[15px] font-bold text-ink">
-        {researcher.name}
-        {researcher.credentials ? `, ${researcher.credentials}` : ""}
-      </p>
-      <p className="section-index mt-0.5 text-xs text-ink-faint">{researcher.program}</p>
-      {researcher.focus && (
-        <p className="mt-2 text-[12.5px] leading-[1.55] text-ink-mute">{researcher.focus}</p>
-      )}
-      {researcher.scholarUrl && (
-        <a
-          href={researcher.scholarUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="section-index mt-3 inline-block border-b border-green-700/50 text-[11px] uppercase tracking-[0.06em] text-green-700 hover:text-green-600"
-        >
-          Google Scholar
-        </a>
+      {(researcher.focus || researcher.scholarUrl) && (
+        <div className="flex flex-wrap items-baseline gap-3 text-[11.5px] text-ink-2">
+          {researcher.focus && <span>{researcher.focus}</span>}
+          {researcher.scholarUrl && (
+            <a
+              href={researcher.scholarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 border-b border-green pb-px font-mono text-[10.5px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+            >
+              Google Scholar
+            </a>
+          )}
+        </div>
       )}
     </div>
   );

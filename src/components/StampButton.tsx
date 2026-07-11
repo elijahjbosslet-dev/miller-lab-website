@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-// Primary CTA — see SKILL.md "Stamp button" recipe.
+// Primary CTA — green fill, graphite text, green glow. See
+// .claude/skills/miller-instrument-theme/SKILL.md "Primary CTA" recipe.
 export default function StampButton({
   href,
   children,
@@ -12,9 +13,9 @@ export default function StampButton({
   return (
     <Link
       href={href}
-      className="hard-shadow inline-block -rotate-1 rounded-[3px] border-[2.5px] border-ink bg-green-600 px-7 py-4 font-sans text-sm font-bold uppercase tracking-[0.05em] text-green-ink transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-green-400 hover:shadow-[1px_1px_0_var(--color-ink)]"
+      className="inline-block bg-green px-6 py-3.5 font-mono text-[11.5px] font-bold uppercase tracking-[0.14em] text-graphite shadow-[0_0_24px_var(--green-glow)] transition-colors hover:bg-green-bright"
     >
-      {children}
+      <span aria-hidden="true">&#9656;</span> {children}
     </Link>
   );
 }

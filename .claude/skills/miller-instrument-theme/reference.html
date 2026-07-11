@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miller Lab — Instrument theme reference</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     MILLER LAB — "INSTRUMENT" THEME
+     Deep-graphite scientific console. Kelly Green as the only accent.
+     DM Serif Display (display) x JetBrains Mono (everything else).
+     ============================================================ */
+  :root{
+    /* ground */
+    --graphite:      #0c100e;
+    --graphite-2:    #0f1512;
+    --panel:         rgba(255,255,255,.025);
+    /* hairlines */
+    --hair:          rgba(160,180,168,.16);
+    --hair-strong:   rgba(160,180,168,.28);
+    --hair-faint:    rgba(160,180,168,.08);
+    --grid:          rgba(130,160,140,.05);
+    /* ink */
+    --ink-bright:    #f3f7f2;
+    --ink:           #e9efe9;
+    --ink-2:         #8a978f;
+    --ink-3:         #5c675e;
+    --ink-4:         #4a554c;
+    /* accent — sharp Kelly Green */
+    --green:         #4cbb17;
+    --green-bright:  #6fd83f;
+    --green-dim:     rgba(76,187,23,.40);
+    --green-glow:    rgba(76,187,23,.30);
+    /* type */
+    --font-serif:    'DM Serif Display', Georgia, serif;
+    --font-mono:     'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:var(--font-mono);
+    color:var(--ink);
+    background:
+      radial-gradient(120% 80% at 78% -10%, var(--green-glow), transparent 55%),
+      var(--graphite);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* atmospheric overlays -------------------------------------------------- */
+  .fx-grid{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:46px 46px;
+  }
+  .fx-vignette{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background:radial-gradient(130% 90% at 50% 0%, transparent 58%, rgba(0,0,0,.6));
+  }
+  .fx-grain{
+    position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .shell{ position:relative; z-index:1; max-width:1280px; margin:0 auto; }
+
+  /* corner alignment marks ------------------------------------------------ */
+  .corner{ position:fixed; width:15px; height:15px; z-index:2; opacity:.85; }
+  .corner.tl{ top:14px; left:14px; border-left:1.5px solid var(--green); border-top:1.5px solid var(--green); }
+  .corner.tr{ top:14px; right:14px; border-right:1.5px solid var(--green); border-top:1.5px solid var(--green); }
+  .corner.bl{ bottom:14px; left:14px; border-left:1.5px solid var(--green); border-bottom:1.5px solid var(--green); }
+  .corner.br{ bottom:14px; right:14px; border-right:1.5px solid var(--green); border-bottom:1.5px solid var(--green); }
+
+  /* type helpers ---------------------------------------------------------- */
+  .serif{ font-family:var(--font-serif); font-weight:400; }
+  .kicker{ font-size:12px; letter-spacing:.22em; color:var(--green); }
+  .label{ font-size:10px; letter-spacing:.16em; color:var(--ink-3); text-transform:uppercase; }
+  .tag{ font-size:10px; letter-spacing:.14em; color:var(--green); }
+
+  a{ color:inherit; text-decoration:none; }
+
+  /* rules ----------------------------------------------------------------- */
+  .rule{ border-top:1px solid var(--hair); }
+
+  /* buttons --------------------------------------------------------------- */
+  .btn-solid{
+    display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.14em;
+    color:var(--graphite); background:var(--green); padding:14px 24px;
+    box-shadow:0 0 24px var(--green-glow); transition:background .15s ease, box-shadow .15s ease;
+  }
+  .btn-solid:hover{ background:var(--green-bright); box-shadow:0 0 34px var(--green-glow); }
+  .btn-line{
+    font-size:11.5px; font-weight:500; letter-spacing:.14em; color:var(--ink);
+    border-bottom:1px solid var(--green); padding-bottom:4px; transition:color .15s ease;
+  }
+  .btn-line:hover{ color:var(--green-bright); }
+
+  /* nav ------------------------------------------------------------------- */
+  .nav-link{ font-size:11px; font-weight:500; letter-spacing:.14em; color:var(--ink-2); transition:color .15s ease; }
+  .nav-link:hover{ color:var(--green-bright); }
+  .nav-donate{
+    color:var(--graphite); background:var(--green); padding:6px 14px; font-weight:700;
+    letter-spacing:.1em; font-size:11px; box-shadow:0 0 20px var(--green-glow); transition:background .15s ease;
+  }
+  .nav-donate:hover{ background:var(--green-bright); }
+
+  /* field matrix ---------------------------------------------------------- */
+  .field{ padding:20px 18px 24px; border-right:1px solid var(--hair-faint); transition:background .15s ease; }
+  .field:last-child{ border-right:0; }
+  .field:hover{ background:var(--panel); }
+  .field h3{ font-family:var(--font-serif); font-weight:400; font-size:19px; line-height:1.1; margin:12px 0 8px; color:var(--ink); }
+  .field p{ font-size:11.5px; line-height:1.6; color:var(--ink-2); margin:0; }
+  .dot{ display:inline-block; width:6px; height:6px; background:var(--green); }
+
+  /* roster ---------------------------------------------------------------- */
+  .roster-row{ display:flex; justify-content:space-between; align-items:center; padding:11px 0; border-bottom:1px solid var(--hair-faint); font-size:12px; }
+  .roster-row:last-child{ border-bottom:0; }
+  .roster-row .role{ color:var(--ink-3); letter-spacing:.1em; font-size:10px; }
+  .chip{ font-size:10px; letter-spacing:.1em; color:var(--green); border:1px solid var(--green-dim); padding:4px 9px; }
+
+  /* instrument panel ------------------------------------------------------ */
+  .panel{ position:relative; border:1px solid var(--hair-strong); background:var(--panel); padding:16px 16px 14px; }
+  .panel .b{ position:absolute; width:12px; height:12px; }
+  .panel .b.tl{ top:-1px; left:-1px; border-left:1.5px solid var(--green); border-top:1.5px solid var(--green); }
+  .panel .b.br{ bottom:-1px; right:-1px; border-right:1.5px solid var(--green); border-bottom:1.5px solid var(--green); }
+
+  /* motion ---------------------------------------------------------------- */
+  @keyframes rise{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:none; } }
+  @keyframes glow{ 0%,100%{ opacity:.55; transform:scale(1); } 50%{ opacity:1; transform:scale(1.12); } }
+  @keyframes blink{ 0%,48%{ opacity:1; } 49%,100%{ opacity:0; } }
+  @keyframes draw{ from{ stroke-dashoffset:900; } to{ stroke-dashoffset:0; } }
+  .reveal{ opacity:0; animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .live-dot{ width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 9px var(--green); animation:glow 2.6s ease-in-out infinite; }
+  .cursor{ display:inline-block; width:7px; height:11px; background:var(--green); margin-left:6px; vertical-align:-1px; animation:blink 1.1s step-end infinite; }
+  .trace{ stroke-dasharray:900; animation:draw 2.2s ease-out .3s both; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; }
+    .reveal{ opacity:1; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* responsive ------------------------------------------------------------ */
+  @media (max-width:900px){
+    .hero,.mission,.team{ grid-template-columns:1fr !important; }
+    .matrix{ grid-template-columns:1fr 1fr !important; }
+    .field{ border-bottom:1px solid var(--hair-faint); }
+    h1.thesis{ font-size:60px !important; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="fx-grid"></div>
+  <div class="fx-vignette"></div>
+  <div class="fx-grain"></div>
+  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+
+  <div class="shell">
+
+    <!-- STATUS RIBBON -->
+    <div class="reveal rule" style="display:flex;justify-content:space-between;align-items:center;padding:11px 34px;font-size:10px;letter-spacing:.18em;color:var(--ink-3);border-top:0;">
+      <span style="display:flex;align-items:center;gap:8px;"><span class="live-dot"></span>SYSTEM ONLINE</span>
+      <span>41.9948&deg;N &middot; 87.6556&deg;W</span>
+      <span>COMPUTATIONAL&nbsp;BIOMEDICINE</span>
+      <span style="color:var(--ink-2);">LOYOLA UNIVERSITY CHICAGO</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="reveal rule" style="display:flex;justify-content:space-between;align-items:center;padding:18px 34px;animation-delay:.04s;">
+      <a href="#" style="display:flex;align-items:center;gap:12px;">
+        <span class="serif" style="font-size:22px;color:var(--green);">M</span>
+        <span style="font-family:var(--font-mono);font-weight:800;font-size:15px;letter-spacing:.16em;">MILLER&nbsp;LAB</span>
+      </a>
+      <nav style="display:flex;gap:26px;align-items:center;">
+        <a href="#research" class="nav-link">ABOUT</a>
+        <a href="#research" class="nav-link">RESEARCH</a>
+        <a href="#team" class="nav-link">TEAM</a>
+        <a href="#" class="nav-link">FAQ</a>
+        <a href="#" class="nav-donate">DONATE</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" style="display:grid;grid-template-columns:1.12fr .88fr;gap:40px;padding:56px 34px 46px;align-items:center;position:relative;">
+      <div style="position:absolute;left:2px;top:150px;transform:rotate(-90deg);transform-origin:left;font-size:9.5px;letter-spacing:.34em;color:var(--ink-4);">MILLER&nbsp;LAB &mdash; EST. LOYOLA</div>
+
+      <div style="padding-left:18px;">
+        <p class="kicker reveal" style="margin:0 0 22px;animation-delay:.06s;">// DEPT. OF MEDICINE &mdash; MOL. PHARMACOLOGY &amp; NEUROSCIENCE</p>
+        <h1 class="serif thesis reveal" style="font-size:88px;line-height:.9;letter-spacing:-.01em;margin:0;color:var(--ink-bright);animation-delay:.12s;">
+          We turn data<br>into <span style="font-style:italic;color:var(--green);">insight</span>.
+        </h1>
+        <p class="reveal" style="font-weight:300;font-size:18px;line-height:1.55;color:#aab6ac;max-width:33em;margin:26px 0 0;animation-delay:.18s;">
+          A computational biomedical research lab closing the gap between raw biological data and clinically relevant insight.
+        </p>
+        <p class="reveal" style="font-size:12.5px;line-height:1.7;color:var(--ink-2);max-width:34em;margin:16px 0 0;animation-delay:.22s;">
+          We apply artificial intelligence, molecular simulation, and bioinformatics &mdash; run on high-performance computing &mdash; alongside faculty in medicine, pharmacology, neuroscience, and chemistry, plus outside academic and industry partners.
+        </p>
+        <div class="reveal" style="display:flex;gap:20px;margin-top:32px;align-items:center;animation-delay:.28s;">
+          <a href="#research" class="btn-solid">&#9656; EXPLORE THE RESEARCH</a>
+          <a href="#" class="btn-line">WORK WITH US &rarr;</a>
+        </div>
+      </div>
+
+      <!-- instrument readout -->
+      <div class="panel reveal" style="animation-delay:.34s;">
+        <span class="b tl"></span><span class="b br"></span>
+        <div style="display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.16em;color:var(--ink-2);margin-bottom:12px;">
+          <span style="color:var(--green);">SIG // BINDING-ENERGY CONVERGENCE</span><span>MD &middot; ILLUSTRATIVE</span>
+        </div>
+        <svg viewBox="0 0 380 184" style="width:100%;height:auto;display:block;">
+          <g stroke="var(--hair)" stroke-width="1">
+            <line x1="0" y1="34" x2="380" y2="34"/><line x1="0" y1="72" x2="380" y2="72"/><line x1="0" y1="110" x2="380" y2="110"/><line x1="0" y1="148" x2="380" y2="148"/>
+            <line x1="76" y1="0" x2="76" y2="168"/><line x1="152" y1="0" x2="152" y2="168"/><line x1="228" y1="0" x2="228" y2="168"/><line x1="304" y1="0" x2="304" y2="168"/>
+          </g>
+          <path d="M8,30 L28,56 L44,42 L62,88 L80,70 L98,112 L118,98 L138,130 L158,120 L178,142 L198,135 L218,151 L238,147 L258,155 L278,151 L298,157 L318,154 L338,158 L358,156 L372,157 L372,168 L8,168 Z" fill="rgba(76,187,23,.12)" stroke="none"/>
+          <path class="trace" d="M8,30 L28,56 L44,42 L62,88 L80,70 L98,112 L118,98 L138,130 L158,120 L178,142 L198,135 L218,151 L238,147 L258,155 L278,151 L298,157 L318,154 L338,158 L358,156 L372,157" fill="none" stroke="var(--green)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="372" cy="157" r="4" fill="var(--green)"/><circle cx="372" cy="157" r="8" fill="none" stroke="var(--green)" stroke-width="1" opacity=".5"/>
+        </svg>
+        <div style="display:flex;justify-content:space-between;font-size:9px;letter-spacing:.14em;color:var(--ink-3);margin-top:8px;">
+          <span>&Delta;G</span>
+          <span>SIMULATION TIME (ns) &rarr;<span class="cursor"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIELDS OF INQUIRY -->
+    <section id="research" class="rule" style="padding:34px 34px 12px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;">
+        <h2 class="serif" style="font-size:30px;margin:0;color:var(--ink-bright);">Fields of inquiry</h2>
+        <span class="label">[ 05 PARALLEL PROGRAMS &middot; ONE PIPELINE: DATA &rarr; INSIGHT ]</span>
+      </div>
+      <div class="matrix" style="display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--hair-strong);">
+        <div class="field"><div class="tag"><span class="dot"></span> AI</div><h3>Artificial Intelligence</h3><p>Machine learning that predicts disease mechanisms and surfaces therapeutic targets from complex data.</p></div>
+        <div class="field"><div class="tag"><span class="dot"></span> SIM</div><h3>Molecular Simulation</h3><p>Dynamics and docking that model protein behavior and drug&ndash;target interactions atom by atom.</p></div>
+        <div class="field"><div class="tag"><span class="dot"></span> BPX</div><h3>Computational Biophysics</h3><p>Structural modeling connecting molecular-scale mechanism to disease-relevant outcome.</p></div>
+        <div class="field"><div class="tag"><span class="dot"></span> DRG</div><h3>Drug Discovery</h3><p>AI- and simulation-driven pipelines that speed up finding and evaluating candidate therapeutics.</p></div>
+        <div class="field"><div class="tag"><span class="dot"></span> BIO</div><h3>Bioinformatics</h3><p>Reproducible pipelines turning sequencing and structural data into clinically relevant insight.</p></div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission rule" style="margin-top:22px;padding:40px 34px;display:grid;grid-template-columns:.4fr 1fr;gap:36px;align-items:start;">
+      <div class="label" style="padding-top:10px;">// MISSION</div>
+      <div>
+        <p class="serif" style="font-style:italic;font-size:30px;line-height:1.32;margin:0;color:#eef4ed;">
+          &ldquo;Close the gap between biological <span style="color:var(--green);">data</span> and clinically relevant <span style="color:var(--green);">insight</span>.&rdquo;
+        </p>
+        <p style="font-size:12.5px;line-height:1.7;color:var(--ink-2);max-width:46em;margin:18px 0 0;">
+          We translate complex, high-volume biological data into evidence a clinic can act on &mdash; building analysis and simulation pipelines that are reproducible, interpretable, and shared with the collaborators who need them.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="team rule" style="padding:34px 34px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+      <div>
+        <div class="tag" style="letter-spacing:.18em;margin-bottom:14px;">// PRINCIPAL INVESTIGATOR</div>
+        <h3 class="serif" style="font-size:34px;line-height:1;margin:0;color:var(--ink-bright);">Whelton Miller, <span style="font-style:italic;">PhD</span></h3>
+        <p style="font-size:12px;line-height:1.7;color:var(--ink-2);margin:14px 0 0;max-width:38em;">
+          Assistant Professor in the Dept. of Medicine with a joint appointment in Molecular Pharmacology &amp; Neuroscience. Leads the lab's bioinformatics program and its work across RNA editing, cancer biology, and infectious disease.
+        </p>
+        <a href="#team" class="btn-line" style="display:inline-block;margin-top:18px;">MEET THE FULL TEAM &rarr;</a>
+      </div>
+      <div style="border-left:1px solid var(--hair);padding-left:32px;">
+        <div style="display:flex;justify-content:space-between;" class="label rule" ><span style="padding-bottom:10px;">ROSTER</span><span style="padding-bottom:10px;">8 RESEARCHERS</span></div>
+        <div>
+          <div class="roster-row"><span style="color:var(--ink);">Emmanuel Broni</span><span class="role">GRAD</span></div>
+          <div class="roster-row"><span style="color:var(--ink);">ChaNyah Wood</span><span class="role">GRAD</span></div>
+          <div class="roster-row"><span style="color:var(--ink);">Brendon Dal</span><span class="role">GRAD</span></div>
+          <div class="roster-row"><span style="color:var(--ink);">Scarlet Schuth</span><span class="role">GRAD</span></div>
+          <div class="roster-row"><span style="color:var(--ink);">Alberto Moreno</span><span class="role">UGRAD</span></div>
+          <div class="roster-row"><span style="color:var(--ink);">Jennifer Phyu</span><span class="role">UGRAD</span></div>
+          <div class="roster-row"><span style="color:var(--ink);">Khushi Khan</span><span class="role">UGRAD</span></div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+          <span class="chip">RNA EDITING</span><span class="chip">CANCER BIOLOGY</span><span class="chip">INFECTIOUS DISEASE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="border-top:1px solid var(--hair-strong);padding:16px 34px;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.14em;color:var(--ink-3);">
+      <a href="mailto:wamillerlab@gmail.com" style="color:var(--green);">wamillerlab@gmail.com</a>
+      <span>DEPT. OF MEDICINE &middot; MOLECULAR PHARMACOLOGY &amp; NEUROSCIENCE</span>
+      <span>&copy; 2026 MILLER LAB</span>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,31 +1,21 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Space_Grotesk, IBM_Plex_Mono, Caveat } from "next/font/google";
+import { DM_Serif_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StatusRibbon from "@/components/StatusRibbon";
 
-const fontDisplay = Archivo_Black({
-  variable: "--font-display",
+const fontSerif = DM_Serif_Display({
+  variable: "--font-serif-display",
   subsets: ["latin"],
   weight: "400",
+  style: ["normal", "italic"],
 });
 
-const fontSans = Space_Grotesk({
-  variable: "--font-grotesk",
+const fontMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const fontMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const fontHand = Caveat({
-  variable: "--font-hand",
-  subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -42,12 +32,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} ${fontHand.variable} h-full antialiased`}
+      className={`${fontSerif.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink-soft">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="relative min-h-full flex flex-col bg-graphite text-ink">
+        <div className="fx-grid" aria-hidden="true" />
+        <div className="fx-vignette" aria-hidden="true" />
+        <div className="fx-grain" aria-hidden="true" />
+        <span className="corner-mark tl" aria-hidden="true" />
+        <span className="corner-mark tr" aria-hidden="true" />
+        <span className="corner-mark bl" aria-hidden="true" />
+        <span className="corner-mark br" aria-hidden="true" />
+
+        <div className="relative z-[1] flex min-h-full flex-1 flex-col">
+          <StatusRibbon />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

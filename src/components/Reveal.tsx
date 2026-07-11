@@ -3,12 +3,13 @@
 import { motion } from "motion/react";
 import { ReactNode } from "react";
 
-// Subtle scroll-triggered fade-in — opacity only, <=0.3s, per the bulletin
-// theme's "nothing should drift/float" rule. No y-translate.
+// Instrument boot-up reveal — opacity 0->1, translateY(18px)->0, staggered
+// via `delay`. Elements already in view (the hero) animate immediately on
+// load; elements further down the page animate in as they're scrolled to.
 export default function Reveal({
   children,
   delay = 0,
-  duration = 0.3,
+  duration = 0.7,
   className = "",
 }: {
   children: ReactNode;
@@ -19,10 +20,10 @@ export default function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      transition={{ duration, delay, ease: [0.2, 0.7, 0.2, 1] }}
     >
       {children}
     </motion.div>

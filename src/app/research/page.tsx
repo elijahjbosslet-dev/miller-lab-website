@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
-import { iconMap } from "@/components/icon-map";
 import PinnedPhoto from "@/components/PinnedPhoto";
 import Reveal from "@/components/Reveal";
 import { researchAreas } from "@/lib/content";
@@ -10,6 +9,14 @@ import { researchAreas } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Research | Miller Lab",
   description: "The Miller Lab's core research areas.",
+};
+
+const FIELD_CODES: Record<string, string> = {
+  "artificial-intelligence": "AI",
+  "molecular-simulation": "SIM",
+  "computational-biophysics": "BPX",
+  "drug-discovery": "DRG",
+  bioinformatics: "BIO",
 };
 
 export default function ResearchPage() {
@@ -22,79 +29,69 @@ export default function ResearchPage() {
       />
 
       {/* Wet lab to computation */}
-      <section className="dashed-rule-b py-16">
+      <section className="rule-b py-14">
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal className="order-2 lg:order-1">
-            <p className="section-index text-[13px] font-semibold uppercase tracking-[0.15em] text-green-700">
-              Wet Lab to Computation
-            </p>
-            <h2 className="font-display mt-2 text-[28px] uppercase text-ink sm:text-[32px]">
+            <p className="kicker">{"// Wet Lab to Computation"}</p>
+            <h2 className="font-serif mt-3 text-[28px] text-ink-bright sm:text-[32px]">
               Grounded in real collaboration
             </h2>
-            <p className="mt-4 max-w-md text-base leading-7 text-ink-mute">
+            <p className="mt-4 max-w-md text-[13px] leading-7 text-ink-2">
               Every computational model starts with a question from the bench. Our
               research areas exist to turn that data into actionable, clinically
               relevant insight.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <PinnedPhoto src="/images/lab-microscope.jpg" rotate={-2} />
+            <PinnedPhoto src="/images/lab-microscope.jpg" caption="FIG // BENCH TO MODEL" />
           </Reveal>
         </Container>
       </section>
 
       {/* Five areas, in detail */}
-      <section className="dashed-rule-b py-16">
+      <section className="rule-b py-14">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="The Disciplines" title="Five areas, in detail" />
           </Reveal>
-        </Container>
-        <Reveal delay={0.1}>
-          <div className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 lg:px-10 [scrollbar-width:thin]">
-            {researchAreas.map((area, i) => {
-              const Icon = iconMap[area.icon];
-              return (
-                <div
-                  key={area.slug}
-                  className="flex w-[19rem] shrink-0 snap-start flex-col gap-4 border-[2.5px] border-ink bg-card p-7"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="section-index text-sm text-ink-faint">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-green-700">
-                      {Icon && <Icon size={20} strokeWidth={1.75} />}
-                    </div>
-                  </div>
+          <div className="mt-10 border-t-[color:var(--hair-strong)] border-t">
+            {researchAreas.map((area, i) => (
+              <Reveal key={area.slug} delay={i * 0.05}>
+                <div className="rule-b grid gap-2 py-7 sm:grid-cols-[120px_1fr] sm:gap-8">
+                  <p className="tag">
+                    <span className="dot mr-1.5 inline-block" aria-hidden="true" />
+                    {FIELD_CODES[area.slug] ?? "—"}
+                  </p>
                   <div>
-                    <h3 className="font-sans text-lg font-bold text-ink">{area.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-ink-mute">{area.blurb}</p>
+                    <h3 className="font-serif text-[22px] text-ink-bright">{area.title}</h3>
+                    <p className="mt-2 max-w-2xl text-[13px] leading-7 text-ink-2">
+                      {area.blurb}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
+        </Container>
       </section>
 
       {/* More from the lab — reserved for future content */}
-      <section className="py-16">
+      <section className="py-14">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="More From The Lab" title="Coming soon" />
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mt-10 grid max-w-2xl gap-5 sm:grid-cols-2">
-              <div className="border-[2.5px] border-dashed border-ink-faint p-6">
-                <p className="font-sans font-bold text-ink">Publications</p>
-                <p className="mt-2 text-sm leading-6 text-ink-mute">
+            <div className="mt-10 grid max-w-2xl gap-px sm:grid-cols-2" style={{ background: "var(--hair-faint)" }}>
+              <div className="panel p-6">
+                <p className="tag mb-2">{"// Publications"}</p>
+                <p className="text-[12px] leading-6 text-ink-2">
                   Papers, talks, and preprints from the lab. Under construction.
                 </p>
               </div>
-              <div className="border-[2.5px] border-dashed border-ink-faint p-6">
-                <p className="font-sans font-bold text-ink">Ongoing Research</p>
-                <p className="mt-2 text-sm leading-6 text-ink-mute">
+              <div className="panel p-6">
+                <p className="tag mb-2">{"// Ongoing Research"}</p>
+                <p className="text-[12px] leading-6 text-ink-2">
                   A running look at what&apos;s currently in the pipeline. Under construction.
                 </p>
               </div>

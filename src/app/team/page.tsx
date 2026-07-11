@@ -26,16 +26,18 @@ export default function TeamPage() {
         description="A growing team of graduate and undergraduate researchers working across RNA editing, cancer biology, and infectious disease."
       />
 
-      <section className="py-16">
+      <section className="py-14">
         <Container>
           {/* Principal Investigator */}
           <Reveal>
-            <SectionHeader eyebrow="Principal Investigator" title="Dr. Whelton Miller" />
+            <p className="tag">{"// Principal Investigator"}</p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <div className="mt-10 max-w-2xl border-[2.5px] border-ink bg-card p-8 sm:p-10">
-              <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-[2.5px] border-ink">
+          <Reveal delay={0.08}>
+            <div className="mt-6 flex max-w-2xl flex-col gap-6 sm:flex-row sm:items-start">
+              <div className="panel h-24 w-24 shrink-0 p-1.5">
+                <span className="panel-bracket tl" aria-hidden="true" />
+                <span className="panel-bracket br" aria-hidden="true" />
+                <div className="relative h-full w-full overflow-hidden">
                   <Image
                     src="/images/whelton-miller.jpg"
                     alt={principalInvestigator.name}
@@ -43,72 +45,68 @@ export default function TeamPage() {
                     className="object-cover"
                   />
                 </div>
-                <div>
-                  <h3 className="font-display text-2xl uppercase text-ink">
-                    {principalInvestigator.name}, {principalInvestigator.credentials}
-                  </h3>
-                  <ul className="mt-3 space-y-1 text-sm text-ink-mute">
-                    {principalInvestigator.role.map((r) => (
-                      <li key={r}>{r}</li>
-                    ))}
-                  </ul>
-                  {principalInvestigator.scholarUrl && (
-                    <a
-                      href={principalInvestigator.scholarUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="section-index mt-3 inline-block border-b border-green-700/50 text-xs uppercase tracking-[0.06em] text-green-700 hover:text-green-600"
-                    >
-                      Google Scholar
-                    </a>
-                  )}
-                </div>
+              </div>
+              <div>
+                <h3 className="font-serif text-[28px] leading-[1] text-ink-bright">
+                  {principalInvestigator.name}, <span className="italic">{principalInvestigator.credentials}</span>
+                </h3>
+                <ul className="mt-3 space-y-1 text-[12px] leading-6 text-ink-2">
+                  {principalInvestigator.role.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+                {principalInvestigator.scholarUrl && (
+                  <a
+                    href={principalInvestigator.scholarUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-block border-b border-green pb-px font-mono text-[11px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+                  >
+                    Google Scholar
+                  </a>
+                )}
               </div>
             </div>
           </Reveal>
 
           {/* Graduate Researchers */}
-          <div className="dashed-rule mt-16 pt-12">
+          <div className="rule mt-16 pt-12">
             <Reveal>
               <SectionHeader eyebrow="Researchers" title="Graduate Researchers" />
             </Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {graduateResearchers.map((r, i) => (
-                <Reveal key={r.name} delay={i * 0.06}>
-                  <ResearcherCard researcher={r} index={i} />
-                </Reveal>
+            <Reveal delay={0.08} className="mt-8 border-t-[color:var(--hair-strong)] border-t">
+              {graduateResearchers.map((r) => (
+                <ResearcherCard key={r.name} researcher={r} role="GRAD" />
               ))}
-            </div>
+            </Reveal>
           </div>
 
           {/* Undergraduate Researchers */}
-          <div className="dashed-rule mt-16 pt-12">
+          <div className="rule mt-16 pt-12">
             <Reveal>
               <SectionHeader eyebrow="Researchers" title="Undergraduate Researchers" />
             </Reveal>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {undergraduateResearchers.map((r, i) => (
-                <Reveal key={r.name} delay={i * 0.06}>
-                  <ResearcherCard researcher={r} index={i} />
-                </Reveal>
+            <Reveal delay={0.08} className="mt-8 border-t-[color:var(--hair-strong)] border-t">
+              {undergraduateResearchers.map((r) => (
+                <ResearcherCard key={r.name} researcher={r} role="UGRAD" />
               ))}
-            </div>
+            </Reveal>
           </div>
 
           {/* Alumni */}
-          <div className="dashed-rule mt-16 pt-12">
+          <div className="rule mt-16 pt-12">
             <Reveal>
               <SectionHeader eyebrow="Alumni" title="Where they are now" />
             </Reveal>
-            <Reveal delay={0.1} className="dashed-rule mt-10">
+            <Reveal delay={0.1} className="mt-8 border-t-[color:var(--hair-strong)] border-t">
               <ul>
                 {alumni.map((a) => (
                   <li
                     key={a.name}
-                    className="dashed-rule-b flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between"
+                    className="rule-b flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between"
                   >
                     <span className="flex items-baseline gap-3">
-                      <span className="font-sans font-bold text-ink">
+                      <span className="font-mono text-[13px] text-ink-bright">
                         {a.name}
                         {a.credentials ? `, ${a.credentials}` : ""}
                       </span>
@@ -117,13 +115,13 @@ export default function TeamPage() {
                           href={a.scholarUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="section-index border-b border-green-700/50 text-[11px] uppercase tracking-[0.06em] text-green-700 hover:text-green-600"
+                          className="border-b border-green pb-px font-mono text-[10.5px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
                         >
                           Scholar
                         </a>
                       )}
                     </span>
-                    <span className="section-index text-sm text-ink-faint">{a.program}</span>
+                    <span className="label">{a.program}</span>
                   </li>
                 ))}
               </ul>

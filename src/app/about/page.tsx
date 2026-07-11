@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
@@ -23,21 +22,25 @@ export default function AboutPage() {
       />
 
       {/* Mission */}
-      <section className="dashed-rule-b py-16">
+      <section className="rule-b py-14">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="Mission" title="What we do" />
           </Reveal>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <Reveal>
-              <p className="text-base leading-7 text-ink-soft">{lab.missionIntro}</p>
+              <p className="text-[13px] leading-7 text-ink-2">{lab.missionIntro}</p>
               <ul className="mt-6 space-y-4">
                 {missionPillars.map((pillar) => (
                   <li key={pillar.title} className="flex gap-3">
-                    <CheckCircle size={20} weight="bold" className="mt-0.5 shrink-0 text-green-700" />
+                    <span className="dot mt-2 shrink-0" aria-hidden="true" />
                     <div>
-                      <p className="font-sans font-bold text-ink">{pillar.title}</p>
-                      <p className="text-sm leading-6 text-ink-mute">{pillar.description}</p>
+                      <p className="font-mono text-[13px] font-bold text-ink-bright">
+                        {pillar.title}
+                      </p>
+                      <p className="mt-0.5 text-[12px] leading-6 text-ink-2">
+                        {pillar.description}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -45,14 +48,14 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.1} className="flex justify-center lg:justify-end">
-              <PinnedPhoto src="/images/lab-data-analysis.jpg" rotate={2} />
+              <PinnedPhoto src="/images/lab-data-analysis.jpg" caption="FIG // DATA ANALYSIS" />
             </Reveal>
           </div>
         </Container>
       </section>
 
       {/* Who we serve */}
-      <section className="dashed-rule-b py-16">
+      <section className="rule-b py-14">
         <Container>
           <Reveal>
             <SectionHeader
@@ -61,12 +64,14 @@ export default function AboutPage() {
               description={lab.audienceIntro}
             />
           </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-px sm:grid-cols-3" style={{ background: "var(--hair-faint)" }}>
             {audienceSegments.map((segment, i) => (
               <Reveal key={segment.title} delay={i * 0.08}>
-                <div className="h-full border-[2.5px] border-ink bg-card p-6">
-                  <p className="font-sans font-bold text-ink">{segment.title}</p>
-                  <p className="mt-2 text-sm leading-6 text-ink-mute">{segment.description}</p>
+                <div className="h-full bg-graphite p-6">
+                  <p className="font-mono text-[13px] font-bold text-ink-bright">
+                    {segment.title}
+                  </p>
+                  <p className="mt-2 text-[12px] leading-6 text-ink-2">{segment.description}</p>
                 </div>
               </Reveal>
             ))}
@@ -75,12 +80,12 @@ export default function AboutPage() {
       </section>
 
       {/* Research areas */}
-      <section className="py-16">
+      <section className="py-14">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="Research Areas" title="Where computation meets biology" />
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="mt-8">
             <ResearchAreaList areas={researchAreas} />
           </Reveal>
         </Container>

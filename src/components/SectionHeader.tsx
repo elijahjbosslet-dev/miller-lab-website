@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-// Kicker + Archivo Black title + optional text CTA on the right baseline.
-// See SKILL.md "Kicker" and "SectionHeader -> ..." mapping.
+// Kicker + DM Serif Display heading + optional text CTA on the right
+// baseline. See .claude/skills/miller-instrument-theme/SKILL.md "Kicker".
 export default function SectionHeader({
   eyebrow,
   title,
@@ -16,12 +16,10 @@ export default function SectionHeader({
   return (
     <div className="flex flex-wrap items-baseline justify-between gap-6">
       <div className="max-w-2xl">
-        <p className="section-index text-[13px] font-semibold uppercase tracking-[0.15em] text-green-700">
-          {eyebrow}
-        </p>
-        <h2 className="font-display mt-2 text-[34px] uppercase text-ink">{title}</h2>
+        <p className="kicker">{"// "}{eyebrow}</p>
+        <h2 className="font-serif mt-2 text-[30px] text-ink-bright sm:text-[34px]">{title}</h2>
         {description && (
-          <p className="mt-3 max-w-xl text-base leading-7 text-ink-mute">{description}</p>
+          <p className="mt-3 max-w-xl text-[13px] leading-7 text-ink-2">{description}</p>
         )}
       </div>
       {action && <div className="shrink-0">{action}</div>}

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-// Secondary text CTA — see SKILL.md "Text CTA" recipe.
+// Secondary CTA — mono text, 1px green underline, arrow suffix. See
+// .claude/skills/miller-instrument-theme/SKILL.md "Primary / Secondary CTA".
 export default function TextCta({
   href,
   children,
@@ -14,7 +15,7 @@ export default function TextCta({
   return (
     <Link
       href={href}
-      className={`inline-block border-b-[2.5px] border-green-700 font-sans text-sm font-bold uppercase tracking-[0.05em] text-ink ${className}`}
+      className={`inline-block border-b border-green pb-1 font-mono text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:text-green-bright ${className}`}
     >
       {children} <span aria-hidden="true">&rarr;</span>
     </Link>

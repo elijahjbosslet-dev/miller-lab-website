@@ -20,11 +20,15 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-card">
+    <header className="rule sticky top-0 z-50 bg-graphite/90 backdrop-blur-sm">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="" width={32} height={32} priority className="h-8 w-8" />
-          <span className="font-display text-[17px] tracking-[0.01em] text-ink">MILLER LAB</span>
+        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="flex h-8 w-8 items-center justify-center border-[color:var(--hair-strong)] border bg-graphite-2">
+            <Image src="/logo.png" alt="" width={20} height={20} priority className="h-5 w-5" />
+          </span>
+          <span className="font-mono text-[15px] font-extrabold tracking-[0.16em] text-ink-bright">
+            MILLER&nbsp;LAB
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -34,8 +38,8 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-sans text-[13px] font-semibold uppercase tracking-[0.07em] transition-colors ${
-                  active ? "text-green-700" : "text-ink-mute hover:text-green-700"
+                className={`font-mono text-[11px] font-medium uppercase tracking-[0.14em] transition-colors ${
+                  active ? "text-green" : "text-ink-2 hover:text-green-bright"
                 }`}
               >
                 {link.label}
@@ -44,7 +48,7 @@ export default function Header() {
           })}
           <a
             href={lab.donateUrl}
-            className="rounded-[2px] bg-green-600 px-4 py-2 font-sans text-[13px] font-semibold uppercase tracking-[0.07em] text-green-ink transition-colors hover:bg-green-400"
+            className="bg-green px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-graphite shadow-[0_0_20px_var(--green-glow)] transition-colors hover:bg-green-bright"
           >
             Donate
           </a>
@@ -61,15 +65,15 @@ export default function Header() {
       </Container>
 
       {open && (
-        <div className="dashed-rule bg-card lg:hidden">
+        <div className="rule bg-graphite lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`py-2 font-sans text-sm font-semibold uppercase tracking-[0.07em] ${
-                  pathname === link.href ? "text-green-700" : "text-ink-mute"
+                className={`py-2 font-mono text-sm font-medium uppercase tracking-[0.14em] ${
+                  pathname === link.href ? "text-green" : "text-ink-2"
                 }`}
               >
                 {link.label}
@@ -78,7 +82,7 @@ export default function Header() {
             <a
               href={lab.donateUrl}
               onClick={() => setOpen(false)}
-              className="mt-3 inline-block w-fit rounded-[2px] bg-green-600 px-4 py-2 font-sans text-sm font-semibold uppercase tracking-[0.07em] text-green-ink"
+              className="mt-3 inline-block w-fit bg-green px-4 py-2 font-mono text-sm font-bold uppercase tracking-[0.1em] text-graphite"
             >
               Donate
             </a>
