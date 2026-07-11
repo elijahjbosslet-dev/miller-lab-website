@@ -42,7 +42,7 @@ export default function FaqAccordion({ faqs }: { faqs: typeof faqsType }) {
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-2xl pb-5 text-[13px] leading-7 text-ink-2">{faq.answer}</p>
+                  <p className="max-w-2xl pb-5 text-[14px] leading-7 text-ink-2">{faq.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>

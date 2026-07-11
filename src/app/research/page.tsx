@@ -33,7 +33,7 @@ export default function ResearchPage() {
         <Container className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal className="order-2 lg:order-1">
             <p className="kicker">{"// Wet Lab to Computation"}</p>
-            <p className="mt-4 max-w-md text-[13px] leading-7 text-ink-2">
+            <p className="mt-4 max-w-md text-[14px] leading-7 text-ink-2">
               Every computational model starts with a question from the bench. Our
               research areas exist to turn that data into actionable, clinically
               relevant insight.
@@ -61,7 +61,7 @@ export default function ResearchPage() {
                   </p>
                   <div>
                     <h3 className="font-serif text-[22px] text-ink-bright">{area.title}</h3>
-                    <p className="mt-2 max-w-2xl text-[13px] leading-7 text-ink-2">
+                    <p className="mt-2 max-w-2xl text-[14px] leading-7 text-ink-2">
                       {area.blurb}
                     </p>
                   </div>
@@ -82,13 +82,13 @@ export default function ResearchPage() {
             <div className="mt-10 grid max-w-2xl gap-px sm:grid-cols-2" style={{ background: "var(--hair-faint)" }}>
               <div className="panel p-6">
                 <p className="tag mb-2">{"// Publications"}</p>
-                <p className="text-[12px] leading-6 text-ink-2">
+                <p className="text-[13px] leading-6 text-ink-2">
                   Papers, talks, and preprints from the lab. Under construction.
                 </p>
               </div>
               <div className="panel p-6">
                 <p className="tag mb-2">{"// Ongoing Research"}</p>
-                <p className="text-[12px] leading-6 text-ink-2">
+                <p className="text-[13px] leading-6 text-ink-2">
                   A running look at what&apos;s currently in the pipeline. Under construction.
                 </p>
               </div>

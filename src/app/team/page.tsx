@@ -50,7 +50,7 @@ export default function TeamPage() {
                 <h3 className="font-serif text-[28px] leading-[1] text-ink-bright">
                   {principalInvestigator.name}, <span className="italic">{principalInvestigator.credentials}</span>
                 </h3>
-                <ul className="mt-3 space-y-1 text-[12px] leading-6 text-ink-2">
+                <ul className="mt-3 space-y-1 text-[13px] leading-6 text-ink-2">
                   {principalInvestigator.role.map((r) => (
                     <li key={r}>{r}</li>
                   ))}

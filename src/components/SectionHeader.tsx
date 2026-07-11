@@ -19,7 +19,7 @@ export default function SectionHeader({
         <p className="kicker">{"// "}{eyebrow}</p>
         <h2 className="font-serif mt-2 text-[30px] text-ink-bright sm:text-[34px]">{title}</h2>
         {description && (
-          <p className="mt-3 max-w-xl text-[13px] leading-7 text-ink-2">{description}</p>
+          <p className="mt-3 max-w-xl text-[14px] leading-7 text-ink-2">{description}</p>
         )}
       </div>
       {action && <div className="shrink-0">{action}</div>}

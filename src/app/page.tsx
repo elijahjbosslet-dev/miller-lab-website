@@ -48,7 +48,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal delay={0.22}>
-              <p className="mt-4 max-w-lg text-[12.5px] leading-[1.7] text-ink-2">
+              <p className="mt-4 max-w-lg text-[13.5px] leading-[1.7] text-ink-2">
                 {lab.audienceIntro}
               </p>
             </Reveal>
@@ -116,7 +116,7 @@ export default function Home() {
               &ldquo;Close the gap between biological <span className="text-green">data</span> and
               clinically relevant <span className="text-green">insights</span>.&rdquo;
             </p>
-            <p className="mt-5 max-w-2xl text-[12.5px] leading-[1.7] text-ink-2">
+            <p className="mt-5 max-w-2xl text-[13.5px] leading-[1.7] text-ink-2">
               {lab.missionIntro}
             </p>
           </Reveal>
@@ -131,7 +131,7 @@ export default function Home() {
             <h3 className="font-serif mt-3 text-[26px] text-ink-bright">
               {principalInvestigator.name}, <span className="italic">{principalInvestigator.credentials}</span>
             </h3>
-            <p className="mt-3 max-w-lg text-[12.5px] leading-[1.7] text-ink-2">
+            <p className="mt-3 max-w-lg text-[13.5px] leading-[1.7] text-ink-2">
               {principalInvestigator.title}, working alongside {teamCount} grad and
               undergrad researchers on RNA editing, cancer biology, and infectious disease.
             </p>

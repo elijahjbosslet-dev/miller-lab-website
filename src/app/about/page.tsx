@@ -29,7 +29,7 @@ export default function AboutPage() {
           </Reveal>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <Reveal>
-              <p className="text-[13px] leading-7 text-ink-2">{lab.missionIntro}</p>
+              <p className="text-[14px] leading-7 text-ink-2">{lab.missionIntro}</p>
               <ul className="mt-6 space-y-4">
                 {missionPillars.map((pillar) => (
                   <li key={pillar.title} className="flex gap-3">
@@ -38,7 +38,7 @@ export default function AboutPage() {
                       <p className="font-mono text-[13px] font-bold text-ink-bright">
                         {pillar.title}
                       </p>
-                      <p className="mt-0.5 text-[12px] leading-6 text-ink-2">
+                      <p className="mt-0.5 text-[13px] leading-6 text-ink-2">
                         {pillar.description}
                       </p>
                     </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   <p className="font-mono text-[13px] font-bold text-ink-bright">
                     {segment.title}
                   </p>
-                  <p className="mt-2 text-[12px] leading-6 text-ink-2">{segment.description}</p>
+                  <p className="mt-2 text-[13px] leading-6 text-ink-2">{segment.description}</p>
                 </div>
               </Reveal>
             ))}

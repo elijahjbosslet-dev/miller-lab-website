@@ -34,7 +34,7 @@ export default function Footer() {
               MILLER&nbsp;LAB
             </span>
           </div>
-          <p className="mt-4 max-w-sm text-[12.5px] leading-6 text-ink-2">{lab.tagline}.</p>
+          <p className="mt-4 max-w-sm text-[13.5px] leading-6 text-ink-2">{lab.tagline}.</p>
           <a
             href={`mailto:${lab.contactEmail}`}
             className="mt-5 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.06em] text-green transition-colors hover:text-green-bright"

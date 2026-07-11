@@ -31,7 +31,7 @@ export default function ResearchAreaList({
           <h3 className="font-serif mt-3 text-[19px] leading-[1.1] text-ink-bright">
             {area.title}
           </h3>
-          <p className="mt-2 text-[11.5px] leading-[1.6] text-ink-2">{area.blurb}</p>
+          <p className="mt-2 text-[13px] leading-[1.6] text-ink-2">{area.blurb}</p>
         </div>
       ))}
     </div>

@@ -20,7 +20,7 @@ export default function ResearcherCard({
         <span className="label shrink-0">{role}</span>
       </div>
       {(researcher.focus || researcher.scholarUrl) && (
-        <div className="flex flex-wrap items-baseline gap-3 text-[11.5px] text-ink-2">
+        <div className="flex flex-wrap items-baseline gap-3 text-[13px] text-ink-2">
           {researcher.focus && <span>{researcher.focus}</span>}
           {researcher.scholarUrl && (
             <a
