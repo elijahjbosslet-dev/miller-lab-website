@@ -27,49 +27,8 @@ export default function ResearchPage() {
         description="No discipline works in isolation. Each feeds into the next, from raw biological data to AI-driven predictions to clinically relevant, publication-ready results."
       />
 
-      {/* Wet lab to computation */}
-      <section className="rule-b py-14">
-        <Container>
-          <Reveal>
-            <p className="kicker">{"// Data to Discovery"}</p>
-            <p className="mt-4 max-w-2xl text-[14px] leading-7 text-ink-2">
-              Every computational model starts with a question from the bench. Our
-              research areas exist to turn that data into actionable, clinically
-              relevant insight.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* Five areas, in detail */}
-      <section className="rule-b py-14">
-        <Container>
-          <Reveal>
-            <SectionHeader eyebrow="The Disciplines" title="Five areas, in detail" />
-          </Reveal>
-          <div className="mt-10 border-t-[color:var(--hair-strong)] border-t">
-            {researchAreas.map((area, i) => (
-              <Reveal key={area.slug} delay={i * 0.05}>
-                <div className="rule-b grid gap-2 py-7 sm:grid-cols-[120px_1fr] sm:gap-8">
-                  <p className="tag">
-                    <span className="dot mr-1.5 inline-block" aria-hidden="true" />
-                    {FIELD_CODES[area.slug] ?? "—"}
-                  </p>
-                  <div>
-                    <h3 className="font-serif text-[22px] text-ink-bright">{area.title}</h3>
-                    <p className="mt-2 max-w-2xl text-[14px] leading-7 text-ink-2">
-                      {area.blurb}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* More from the lab */}
-      <section className="py-14">
+      <section className="rule-b py-14">
         <Container>
           <Reveal>
             <SectionHeader eyebrow="More From The Lab" title="Publications & pipeline" />
@@ -101,6 +60,33 @@ export default function ResearchPage() {
               </div>
             </div>
           </Reveal>
+        </Container>
+      </section>
+
+      {/* Five areas, in detail */}
+      <section className="py-14">
+        <Container>
+          <Reveal>
+            <SectionHeader eyebrow="The Disciplines" title="Five areas, in detail" />
+          </Reveal>
+          <div className="mt-10 border-t-[color:var(--hair-strong)] border-t">
+            {researchAreas.map((area, i) => (
+              <Reveal key={area.slug} delay={i * 0.05}>
+                <div className="rule-b grid gap-2 py-7 sm:grid-cols-[120px_1fr] sm:gap-8">
+                  <p className="tag">
+                    <span className="dot mr-1.5 inline-block" aria-hidden="true" />
+                    {FIELD_CODES[area.slug] ?? "—"}
+                  </p>
+                  <div>
+                    <h3 className="font-serif text-[22px] text-ink-bright">{area.title}</h3>
+                    <p className="mt-2 max-w-2xl text-[14px] leading-7 text-ink-2">
+                      {area.blurb}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
     </>
