@@ -107,12 +107,17 @@ export const researchAreas = [
   },
 ] as const;
 
-// Headline figures for the homepage impact bar.
-// PLACEHOLDER VALUES — swap "X" for real counts before launch.
+// Headline figures for the homepage impact bar. Counted from Whelton's CV
+// (WMiller-SSOM-CV-Standard_Final.docx, prepared April 2026), scoped to his
+// time as PI at Loyola (2020–present): 31 peer-reviewed publications + 4
+// conference talks delivered at a Loyola venue; 6 disciplines named in the
+// lab's own audience statement (medicine, pharmacology, neuroscience,
+// cancer biology, chemistry, biology); 7 institutions the CV names as
+// active collaborators (Ghana, UASD, Lincoln, Iowa, Kean, Penn, USciences).
 export const impactStats = [
-  { label: "Publications & talks", value: "X" },
-  { label: "Departments supported", value: "X" },
-  { label: "Active collaborations", value: "X" },
+  { label: "Publications & talks", value: "35" },
+  { label: "Departments supported", value: "6" },
+  { label: "Active collaborations", value: "7" },
 ];
 
 export const consultationSteps = [
@@ -194,12 +199,6 @@ export const principalInvestigator = {
 
 export const graduateResearchers: Researcher[] = [
   {
-    name: "Carolyn Ashley",
-    program: "IPBS PhD",
-    focus: "RNA Editing, Cancer Biology, Infectious Disease",
-    scholarUrl: "https://scholar.google.com/citations?user=jYhxyn0AAAAJ&hl=en",
-  },
-  {
     name: "Emmanuel Broni",
     program: "IPBS PhD",
     focus: "Estrogen Receptor, RNA Editing, Cancer Biology, Infectious Disease",
@@ -246,6 +245,13 @@ export const undergraduateResearchers: Researcher[] = [
 ];
 
 export const alumni: Researcher[] = [
+  {
+    name: "Carolyn Ashley",
+    credentials: "PhD",
+    program: "Postdoctoral Fellow, Karolinska Institutet (DDLS Fellowship)",
+    focus: "RNA Editing, Cancer Biology, Infectious Disease",
+    scholarUrl: "https://scholar.google.com/citations?user=jYhxyn0AAAAJ&hl=en",
+  },
   { name: "Maxwell Pierce", program: "M2, STAR Program", focus: "RNA Editing, Infectious Disease" },
   { name: "Miriam Velazquez", credentials: "MS, MBA", program: "MS/MBA Program (Rotation)", focus: "RNA Editing, Cancer Biology, Infectious Disease" },
   { name: "Sufia Khan", program: "BS (Intern), Loyola University Chicago" },

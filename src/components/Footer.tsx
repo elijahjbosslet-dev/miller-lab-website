@@ -27,8 +27,8 @@ export default function Footer() {
       <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center border-[color:var(--hair-strong)] border bg-graphite-2">
-              <Image src="/logo.png" alt="" width={20} height={20} className="h-5 w-5" />
+            <span className="flex h-9 w-9 items-center justify-center border-[color:var(--hair-strong)] border bg-ink-bright">
+              <Image src="/logo.png" alt="" width={26} height={26} className="h-[26px] w-[26px]" />
             </span>
             <span className="font-mono text-[13px] font-extrabold tracking-[0.16em] text-ink-bright">
               MILLER&nbsp;LAB

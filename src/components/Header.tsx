@@ -23,8 +23,8 @@ export default function Header() {
     <header className="rule sticky top-0 z-50 bg-graphite/90 backdrop-blur-sm">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-8 w-8 items-center justify-center border-[color:var(--hair-strong)] border bg-graphite-2">
-            <Image src="/logo.png" alt="" width={20} height={20} priority className="h-5 w-5" />
+          <span className="flex h-9 w-9 items-center justify-center border-[color:var(--hair-strong)] border bg-ink-bright">
+            <Image src="/logo.png" alt="" width={26} height={26} priority className="h-[26px] w-[26px]" />
           </span>
           <span className="font-mono text-[15px] font-extrabold tracking-[0.16em] text-ink-bright">
             MILLER&nbsp;LAB
