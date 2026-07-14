@@ -4,7 +4,6 @@ import ResearchAreaList from "@/components/ResearchAreaList";
 import SectionHeader from "@/components/SectionHeader";
 import StampButton from "@/components/StampButton";
 import TextCta from "@/components/TextCta";
-import FaqAccordion from "@/components/FaqAccordion";
 import Reveal from "@/components/Reveal";
 import {
   lab,
@@ -13,7 +12,6 @@ import {
   principalInvestigator,
   graduateResearchers,
   undergraduateResearchers,
-  faqs,
 } from "@/lib/content";
 
 export default function Home() {
@@ -148,18 +146,6 @@ export default function Home() {
             </p>
             <TextCta href="/team" className="mt-5 inline-block">
               Meet the full team
-            </TextCta>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* One FAQ, teasing the full page */}
-      <section className="py-14">
-        <Container className="max-w-[720px]">
-          <Reveal>
-            <FaqAccordion faqs={faqs.slice(0, 1)} />
-            <TextCta href="/faq" className="mt-6 inline-block">
-              Read the full FAQ
             </TextCta>
           </Reveal>
         </Container>

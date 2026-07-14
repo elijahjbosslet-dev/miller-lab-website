@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal from "@/components/Reveal";
-import { researchAreas } from "@/lib/content";
+import { researchAreas, publicationsSummary, ongoingResearch } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Research | Miller Lab",
@@ -68,25 +68,36 @@ export default function ResearchPage() {
         </Container>
       </section>
 
-      {/* More from the lab — reserved for future content */}
+      {/* More from the lab */}
       <section className="py-14">
         <Container>
           <Reveal>
-            <SectionHeader eyebrow="More From The Lab" title="Coming soon" />
+            <SectionHeader eyebrow="More From The Lab" title="Publications & pipeline" />
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mt-10 grid max-w-2xl gap-px sm:grid-cols-2" style={{ background: "var(--hair-faint)" }}>
+            <div className="mt-10 grid max-w-3xl gap-px sm:grid-cols-2" style={{ background: "var(--hair-faint)" }}>
               <div className="panel p-6">
                 <p className="tag mb-2">{"// Publications"}</p>
-                <p className="text-[13px] leading-6 text-ink-2">
-                  Papers, talks, and preprints from the lab. Under construction.
-                </p>
+                <p className="text-[13px] leading-6 text-ink-2">{publicationsSummary.description}</p>
+                <a
+                  href={publicationsSummary.ncbiUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block border-b border-green pb-px font-mono text-[11px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+                >
+                  Full bibliography
+                </a>
               </div>
               <div className="panel p-6">
                 <p className="tag mb-2">{"// Ongoing Research"}</p>
-                <p className="text-[13px] leading-6 text-ink-2">
-                  A running look at what&apos;s currently in the pipeline. Under construction.
-                </p>
+                <ul className="space-y-1.5 text-[13px] leading-6 text-ink-2">
+                  {ongoingResearch.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="dot mt-2 shrink-0" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </Reveal>

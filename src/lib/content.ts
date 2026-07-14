@@ -10,14 +10,14 @@ export const lab = {
   audienceStatement:
     "The Miller Lab serves as a collaborative computational research hub, building partnerships with investigators worldwide. Our primary audience is faculty and researchers to whom we provide computational expertise that complements their experimental work across disciplines including medicine, pharmacology, neuroscience, cancer biology, chemistry, and biology. By integrating artificial intelligence, molecular simulation, bioinformatics, and high-performance computing into biomedical research, we help investigators generate preliminary data, strengthen grant proposals, and accelerate scientific progress. We also seek collaborations beyond our home institution with external academics, research consortia, and government-funded teams working on interdisciplinary projects in computational biology, drug discovery, precision medicine, and translational science. Additionally, we partner with biotechnology, pharmaceutical, and healthcare organizations interested in advanced computational modeling and AI-driven methods.",
   missionIntro:
-    "We combine AI, molecular simulation, and bioinformatics with high-performance computing to predict disease mechanisms, identify therapeutic targets, and close the gap between biological data and clinically relevant insight.",
+    "We combine AI, molecular simulation, and bioinformatics with high-performance computing. The result: sharper predictions about disease mechanisms and therapeutic targets, built on data other labs can reproduce.",
   audienceIntro:
-    "The Miller Lab is a collaborative computational research hub, partnering with investigators at Loyola and beyond.",
-  // Approved hero copy — see .claude/skills/miller-bulletin-theme/reference.html
+    "We partner with investigators at Loyola and beyond, adding computational firepower to research that would otherwise take years at the bench.",
+  // Approved hero copy — see .claude/skills/miller-instrument-theme/SKILL.md
   heroKicker: "A computational biomedical research lab",
   heroHeadline: ["We turn ", "data", " into insight."] as const,
   heroDek:
-    "AI, molecular simulation, and bioinformatics, run on serious computing power, so researchers across medicine, biology, and chemistry get real answers, faster.",
+    "We run AI, molecular simulation, and bioinformatics on serious computing power — so researchers in medicine, biology, and chemistry get real answers, faster.",
   contactEmail: "wamillerlab@gmail.com",
   affiliation: "Department of Medicine · Department of Molecular Pharmacology and Neuroscience",
   // Placeholder — swap in the real GoFundMe campaign URL once it exists.
@@ -106,6 +106,21 @@ export const researchAreas = [
       "Reproducible computational pipelines that turn sequencing and structural data into clinically relevant insight.",
   },
 ] as const;
+
+// Research page "More From The Lab" panels. Sourced from Whelton's CV
+// (WMiller-SSOM-CV-Standard_Final.docx, April 2026) rather than fabricated —
+// swap for a full publications page once the lab is ready to build one.
+export const publicationsSummary = {
+  description:
+    "Peer-reviewed papers on RNA editing (the ADAR protein family), antimalarial and antileishmanial drug discovery, and viral protein structure — most years since 2020.",
+  ncbiUrl: "https://www.ncbi.nlm.nih.gov/myncbi/whelton.miller.1/bibliography/public/",
+};
+
+export const ongoingResearch = [
+  "RNA-editing mechanisms across the ADAR1, ADAR2, and ADAR3 protein family",
+  "Machine-learning models for infectious-disease sequence prediction",
+  "Next-generation MRI contrast agents (ParaCEST)",
+];
 
 // Headline figures for the homepage impact bar. Counted from Whelton's CV
 // (WMiller-SSOM-CV-Standard_Final.docx, prepared April 2026), scoped to his
