@@ -36,13 +36,13 @@ export default function Home() {
             <Reveal delay={0.12}>
               <h1 className="font-serif mt-5 text-[54px] leading-[0.9] tracking-[-0.01em] text-ink-bright sm:text-[68px] lg:text-[84px]">
                 {lab.heroHeadline[0]}
-                <span className="italic text-green">{lab.heroHeadline[1]}</span>
+                <span className="italic text-green-head">{lab.heroHeadline[1]}</span>
                 <br />
                 {lab.heroHeadline[2]}
               </h1>
             </Reveal>
             <Reveal delay={0.18}>
-              <p className="mt-6 max-w-lg text-lg font-light leading-[1.55] text-[#aab6ac]">
+              <p className="mt-6 max-w-lg text-lg font-light leading-[1.55] text-ink-2">
                 {lab.heroDek}
               </p>
             </Reveal>
@@ -121,9 +121,9 @@ export default function Home() {
             <p className="label">{"// Mission"}</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="font-serif text-[26px] italic leading-[1.32] text-[#eef4ed] sm:text-[30px]">
-              &ldquo;Close the gap between biological <span className="text-green">data</span> and
-              clinically relevant <span className="text-green">insights</span>.&rdquo;
+            <p className="font-serif text-[26px] italic leading-[1.32] text-ink-bright sm:text-[30px]">
+              &ldquo;Close the gap between biological <span className="text-green-head">data</span> and
+              clinically relevant <span className="text-green-head">insights</span>.&rdquo;
             </p>
             <p className="mt-5 max-w-2xl text-[13.5px] leading-[1.7] text-ink-2">
               {lab.missionIntro}

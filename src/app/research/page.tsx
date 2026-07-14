@@ -42,7 +42,7 @@ export default function ResearchPage() {
                   href={publicationsSummary.ncbiUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block border-b border-green pb-px font-mono text-[11px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+                  className="mt-3 inline-block border-b border-green pb-px font-mono text-[11px] uppercase tracking-[0.08em] text-green-text transition-colors hover:text-[color:var(--cta-hover)]"
                 >
                   Full bibliography
                 </a>

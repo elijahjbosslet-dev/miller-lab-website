@@ -27,7 +27,7 @@ export default function FaqAccordion({ faqs }: { faqs: typeof faqsType }) {
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.15, ease: "easeOut" }}
                 className={`flex h-6 w-6 shrink-0 items-center justify-center border ${
-                  isOpen ? "border-green text-green" : "border-[color:var(--hair-strong)] text-ink-3"
+                  isOpen ? "border-green text-green-text" : "border-[color:var(--hair-strong)] text-ink-3"
                 }`}
               >
                 <Plus size={13} weight="bold" />

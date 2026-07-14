@@ -15,7 +15,7 @@ export default function TextCta({
   return (
     <Link
       href={href}
-      className={`inline-block border-b border-green pb-1 font-mono text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:text-green-bright ${className}`}
+      className={`inline-block border-b border-green pb-1 font-mono text-[11.5px] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:text-green-text ${className}`}
     >
       {children} <span aria-hidden="true">&rarr;</span>
     </Link>

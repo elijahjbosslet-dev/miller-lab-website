@@ -60,7 +60,7 @@ export default function TeamPage() {
                     href={principalInvestigator.scholarUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 inline-block border-b border-green pb-px font-mono text-[11px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+                    className="mt-3 inline-block border-b border-green pb-px font-mono text-[11px] uppercase tracking-[0.08em] text-green-text transition-colors hover:text-[color:var(--cta-hover)]"
                   >
                     Google Scholar
                   </a>
@@ -115,7 +115,7 @@ export default function TeamPage() {
                           href={a.scholarUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="border-b border-green pb-px font-mono text-[10.5px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+                          className="border-b border-green pb-px font-mono text-[10.5px] uppercase tracking-[0.08em] text-green-text transition-colors hover:text-[color:var(--cta-hover)]"
                         >
                           Scholar
                         </a>

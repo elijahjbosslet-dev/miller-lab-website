@@ -22,7 +22,7 @@ export default function ResearchAreaList({
       {areas.map((area) => (
         <div
           key={area.slug}
-          className="border-b-[color:var(--hair-faint)] border-b px-1 py-5 transition-colors last:border-b-0 hover:bg-[color:var(--panel)] lg:border-b-0 lg:border-r-[color:var(--hair-faint)] lg:border-r lg:px-[18px] lg:py-6 lg:last:border-r-0"
+          className="border-b-[color:var(--hair-faint)] border-b px-1 py-5 transition-colors last:border-b-0 hover:bg-[color:var(--field-hover)] lg:border-b-0 lg:border-r-[color:var(--hair-faint)] lg:border-r lg:px-[18px] lg:py-6 lg:last:border-r-0"
         >
           <p className="tag">
             <span className="dot mr-1.5 inline-block" aria-hidden="true" />

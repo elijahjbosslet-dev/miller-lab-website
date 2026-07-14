@@ -1,51 +1,100 @@
 @import "tailwindcss";
 
-:root {
-  /* Instrument theme — deep-graphite scientific console, one Kelly Green
-     accent. See .claude/skills/miller-instrument-theme/SKILL.md for the
-     full spec. */
-  --color-graphite: #0c100e;
-  --color-graphite-2: #0f1512;
-  --color-ink-bright: #f3f7f2;
-  --color-ink: #e9efe9;
-  --color-ink-2: #a4b0a9;
-  --color-ink-3: #5c675e;
-  --color-ink-4: #4a554c;
-  --color-green: #4cbb17;
-  --color-green-bright: #6fd83f;
+/* Tailwind's dark: variant is [data-theme=dark]-scoped here (not
+   prefers-color-scheme) so it tracks the persisted toggle, not the OS. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-  /* hairlines & atmosphere — raw vars, not Tailwind color utilities */
+/* Instrument theme — light "Blueprint" (default) + dark "Console". See
+   .claude/skills/miller-instrument-theme/SKILL.md for the full spec.
+   Mode is driven by [data-theme] on <html>; the two palettes below are
+   the ONLY thing that changes between modes. */
+:root {
+  --green: #4cbb17;
+  --green-dim: rgba(76, 187, 23, 0.45);
+  --fill: rgba(76, 187, 23, 0.13);
+}
+
+:root[data-theme="light"] {
+  --page-bg-solid: #f4f4ef;
+  --page-bg: radial-gradient(120% 80% at 80% -12%, rgba(76, 187, 23, 0.1), transparent 52%), var(--page-bg-solid);
+  --vignette: transparent;
+  --grid: rgba(30, 50, 30, 0.05);
+  --grid-fine: rgba(30, 50, 30, 0.028);
+  --grain-op: 0.04;
+  --panel: rgba(255, 255, 255, 0.7);
+  --field-hover: rgba(20, 30, 20, 0.03);
+  --ink-bright: #14170f;
+  --ink: #1f241d;
+  --ink-2: #4a544d;
+  --ink-3: #6a746c;
+  --ink-4: #8a938c;
+  --ink-5: #aab1aa;
+  --hair: rgba(20, 30, 20, 0.14);
+  --hair-strong: rgba(20, 30, 20, 0.2);
+  --hair-faint: rgba(20, 30, 20, 0.07);
+  --green-text: #2c6e10;
+  --green-head: #3a9410;
+  --trace: #3a9410;
+  --cta-bg: #2c6e10;
+  --cta-ink: #f4f4ef;
+  --cta-hover: #38891a;
+  --header-bg: rgba(244, 244, 239, 0.9);
+  --logo-plate: #f4f4ef;
+}
+
+:root[data-theme="dark"] {
+  --page-bg-solid: #0c100e;
+  --page-bg: radial-gradient(120% 80% at 78% -10%, rgba(76, 187, 23, 0.14), transparent 55%), var(--page-bg-solid);
+  --vignette: radial-gradient(130% 90% at 50% 0%, transparent 58%, rgba(0, 0, 0, 0.6));
+  --grid: rgba(130, 160, 140, 0.05);
+  --grid-fine: rgba(130, 160, 140, 0.028);
+  --grain-op: 0.05;
+  --panel: rgba(255, 255, 255, 0.025);
+  --field-hover: rgba(255, 255, 255, 0.025);
+  --ink-bright: #f3f7f2;
+  --ink: #e9efe9;
+  --ink-2: #aab6ac;
+  --ink-3: #8a978f;
+  --ink-4: #5c675e;
+  --ink-5: #4a554c;
   --hair: rgba(160, 180, 168, 0.16);
   --hair-strong: rgba(160, 180, 168, 0.28);
   --hair-faint: rgba(160, 180, 168, 0.08);
-  --grid: rgba(130, 160, 140, 0.05);
-  --green-glow: rgba(76, 187, 23, 0.3);
-  --green-dim: rgba(76, 187, 23, 0.4);
-  --panel: rgba(255, 255, 255, 0.025);
+  --green-text: #4cbb17;
+  --green-head: #4cbb17;
+  --trace: #4cbb17;
+  --cta-bg: #4cbb17;
+  --cta-ink: #0c100e;
+  --cta-hover: #6fd83f;
+  --header-bg: rgba(12, 16, 14, 0.9);
+  --logo-plate: #f4f4ef;
 }
 
 @theme inline {
   --font-serif: var(--font-serif-display);
   --font-mono: var(--font-jetbrains-mono);
 
-  --color-graphite: var(--color-graphite);
-  --color-graphite-2: var(--color-graphite-2);
-  --color-ink-bright: var(--color-ink-bright);
-  --color-ink: var(--color-ink);
-  --color-ink-2: var(--color-ink-2);
-  --color-ink-3: var(--color-ink-3);
-  --color-ink-4: var(--color-ink-4);
-  --color-green: var(--color-green);
-  --color-green-bright: var(--color-green-bright);
+  --color-ink-bright: var(--ink-bright);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
+  --color-ink-5: var(--ink-5);
+  --color-green: var(--green);
+  --color-green-text: var(--green-text);
+  --color-green-head: var(--green-head);
+  --color-cta-bg: var(--cta-bg);
+  --color-cta-ink: var(--cta-ink);
+  --color-cta-hover: var(--cta-hover);
 }
 
 body {
-  background:
-    radial-gradient(120% 80% at 78% -10%, var(--green-glow), transparent 55%),
-    var(--color-graphite);
-  color: var(--color-ink);
+  background: var(--page-bg);
+  background-attachment: fixed;
+  color: var(--ink);
   font-family: var(--font-mono);
   -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Display serif — always weight 400; italicize per-use for the "one word"
@@ -60,7 +109,7 @@ body {
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.22em;
-  color: var(--color-green);
+  color: var(--green-text);
 }
 
 /* Mono micro-label: nav, metadata, roster roles. */
@@ -69,7 +118,7 @@ body {
   font-weight: 600;
   font-size: 10px;
   letter-spacing: 0.16em;
-  color: var(--color-ink-3);
+  color: var(--ink-4);
   text-transform: uppercase;
 }
 
@@ -79,7 +128,7 @@ body {
   font-weight: 600;
   font-size: 10px;
   letter-spacing: 0.14em;
-  color: var(--color-green);
+  color: var(--green-text);
 }
 
 /* 1px hairline rule — the only divider in this theme. Never a slanted
@@ -106,14 +155,14 @@ body {
 .panel-bracket.tl {
   top: -1px;
   left: -1px;
-  border-left: 1.5px solid var(--color-green);
-  border-top: 1.5px solid var(--color-green);
+  border-left: 1.5px solid var(--green);
+  border-top: 1.5px solid var(--green);
 }
 .panel-bracket.br {
   bottom: -1px;
   right: -1px;
-  border-right: 1.5px solid var(--color-green);
-  border-bottom: 1.5px solid var(--color-green);
+  border-right: 1.5px solid var(--green);
+  border-bottom: 1.5px solid var(--green);
 }
 
 /* 6px solid square marker used before field codes and checklist items. */
@@ -121,7 +170,7 @@ body {
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: var(--color-green);
+  background: var(--green);
   flex-shrink: 0;
 }
 
@@ -136,7 +185,7 @@ body {
   border-bottom: 0;
 }
 
-/* Fixed atmosphere overlays — technical grid, vignette, film grain. */
+/* Fixed atmosphere overlays — technical grid, vignette (dark-only), grain. */
 .fx-grid {
   position: fixed;
   inset: 0;
@@ -144,22 +193,24 @@ body {
   z-index: 0;
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 46px 46px;
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(var(--grid-fine) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-fine) 1px, transparent 1px);
+  background-size: 46px 46px, 46px 46px, 9.2px 9.2px, 9.2px 9.2px;
 }
 .fx-vignette {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(130% 90% at 50% 0%, transparent 58%, rgba(0, 0, 0, 0.6));
+  background: var(--vignette);
 }
 .fx-grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.05;
+  opacity: var(--grain-op);
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -171,32 +222,31 @@ body {
   width: 15px;
   height: 15px;
   z-index: 2;
-  opacity: 0.85;
   pointer-events: none;
 }
 .corner-mark.tl {
   top: 14px;
   left: 14px;
-  border-left: 1.5px solid var(--color-green);
-  border-top: 1.5px solid var(--color-green);
+  border-left: 1.5px solid var(--green);
+  border-top: 1.5px solid var(--green);
 }
 .corner-mark.tr {
   top: 14px;
   right: 14px;
-  border-right: 1.5px solid var(--color-green);
-  border-top: 1.5px solid var(--color-green);
+  border-right: 1.5px solid var(--green);
+  border-top: 1.5px solid var(--green);
 }
 .corner-mark.bl {
   bottom: 14px;
   left: 14px;
-  border-left: 1.5px solid var(--color-green);
-  border-bottom: 1.5px solid var(--color-green);
+  border-left: 1.5px solid var(--green);
+  border-bottom: 1.5px solid var(--green);
 }
 .corner-mark.br {
   bottom: 14px;
   right: 14px;
-  border-right: 1.5px solid var(--color-green);
-  border-bottom: 1.5px solid var(--color-green);
+  border-right: 1.5px solid var(--green);
+  border-bottom: 1.5px solid var(--green);
 }
 
 /* Live status LED + blinking cursor + drawn instrument trace. */
@@ -233,15 +283,15 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--color-green);
-  box-shadow: 0 0 9px var(--color-green);
+  background: var(--green);
+  box-shadow: 0 0 9px var(--green);
   animation: glow-pulse 2.6s ease-in-out infinite;
 }
 .cursor-blink {
   display: inline-block;
   width: 7px;
   height: 11px;
-  background: var(--color-green);
+  background: var(--green);
   margin-left: 6px;
   vertical-align: -1px;
   animation: cursor-blink 1.1s step-end infinite;
@@ -256,5 +306,8 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  body {
+    transition: none;
   }
 }

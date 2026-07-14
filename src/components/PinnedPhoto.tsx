@@ -29,7 +29,7 @@ export default function PinnedPhoto({
         {src ? (
           <Image src={src} alt={alt ?? ""} fill className="object-cover" />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-graphite-2 font-mono text-xs text-ink-3">
+          <div className="flex h-full w-full items-center justify-center bg-[color:var(--field-hover)] font-mono text-xs text-ink-3">
             [ lab photo ]
           </div>
         )}

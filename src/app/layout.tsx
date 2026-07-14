@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,6 +24,19 @@ export const metadata: Metadata = {
     "The Miller Lab accelerates biomedical discovery through AI, molecular simulation, computational biophysics, drug discovery, and bioinformatics.",
 };
 
+// Sets [data-theme] before hydration so a saved dark preference doesn't
+// flash light-then-dark on load. Falls back to OS preference, then light.
+const THEME_INIT_SCRIPT = `
+(function () {
+  try {
+    var root = document.documentElement;
+    var saved = localStorage.getItem('miller-theme');
+    var initial = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    root.setAttribute('data-theme', initial);
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,9 +45,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
+      suppressHydrationWarning
       className={`${fontSerif.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body className="relative min-h-full flex flex-col bg-graphite text-ink">
+      <body className="relative min-h-full flex flex-col text-ink">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {THEME_INIT_SCRIPT}
+        </Script>
         <div className="fx-grid" aria-hidden="true" />
         <div className="fx-vignette" aria-hidden="true" />
         <div className="fx-grain" aria-hidden="true" />

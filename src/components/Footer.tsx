@@ -27,7 +27,7 @@ export default function Footer() {
       <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center border-[color:var(--hair-strong)] border bg-ink-bright">
+            <span className="flex h-9 w-9 items-center justify-center border-[color:var(--hair-strong)] border bg-[color:var(--logo-plate)]">
               <Image src="/logo.png" alt="" width={26} height={26} className="h-[26px] w-[26px]" />
             </span>
             <span className="font-mono text-[13px] font-extrabold tracking-[0.16em] text-ink-bright">
@@ -37,7 +37,7 @@ export default function Footer() {
           <p className="mt-4 max-w-sm text-[13.5px] leading-6 text-ink-2">{lab.tagline}.</p>
           <a
             href={`mailto:${lab.contactEmail}`}
-            className="mt-5 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.06em] text-green transition-colors hover:text-green-bright"
+            className="mt-5 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.06em] text-green-text transition-colors hover:text-[color:var(--cta-hover)]"
           >
             <EnvelopeSimple size={14} />
             {lab.contactEmail}
@@ -48,7 +48,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-ink-3 transition-colors hover:text-green-bright"
+              className="text-ink-3 transition-colors hover:text-green-text"
             >
               <LinkedInIcon size={16} />
             </a>
@@ -57,7 +57,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
-              className="text-ink-3 transition-colors hover:text-green-bright"
+              className="text-ink-3 transition-colors hover:text-green-text"
             >
               <XIcon size={16} />
             </a>
@@ -66,7 +66,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="text-ink-3 transition-colors hover:text-green-bright"
+              className="text-ink-3 transition-colors hover:text-green-text"
             >
               <YouTubeIcon size={16} />
             </a>
@@ -81,7 +81,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-mono text-[12.5px] text-ink-2 transition-colors hover:text-green-bright"
+                    className="font-mono text-[12.5px] text-ink-2 transition-colors hover:text-green-text"
                   >
                     {link.label}
                   </Link>

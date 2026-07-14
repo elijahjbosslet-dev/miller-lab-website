@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-px sm:grid-cols-3" style={{ background: "var(--hair-faint)" }}>
             {audienceSegments.map((segment, i) => (
               <Reveal key={segment.title} delay={i * 0.08}>
-                <div className="h-full bg-graphite p-6">
+                <div className="h-full bg-[color:var(--page-bg-solid)] p-6">
                   <p className="font-mono text-[13px] font-bold text-ink-bright">
                     {segment.title}
                   </p>

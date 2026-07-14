@@ -27,7 +27,7 @@ export default function ResearcherCard({
               href={researcher.scholarUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 border-b border-green pb-px font-mono text-[10.5px] uppercase tracking-[0.08em] text-green transition-colors hover:text-green-bright"
+              className="shrink-0 border-b border-green pb-px font-mono text-[10.5px] uppercase tracking-[0.08em] text-green-text transition-colors hover:text-[color:var(--cta-hover)]"
             >
               Google Scholar
             </a>
