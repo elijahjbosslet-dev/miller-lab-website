@@ -47,13 +47,15 @@ export default function Header() {
               </Link>
             );
           })}
-          <ThemeToggle />
           <a
             href={lab.donateUrl}
             className="bg-cta-bg px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-cta-ink transition-colors hover:bg-cta-hover"
           >
             Donate
           </a>
+          <div className="border-l-[color:var(--hair)] border-l pl-6">
+            <ThemeToggle />
+          </div>
         </nav>
 
         <button
@@ -82,7 +84,6 @@ export default function Header() {
               </Link>
             ))}
             <div className="mt-3 flex items-center gap-3">
-              <ThemeToggle />
               <a
                 href={lab.donateUrl}
                 onClick={() => setOpen(false)}
@@ -90,6 +91,7 @@ export default function Header() {
               >
                 Donate
               </a>
+              <ThemeToggle />
             </div>
           </Container>
         </div>

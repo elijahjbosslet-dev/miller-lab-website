@@ -136,17 +136,33 @@ export default function Home() {
       <section className="rule py-14">
         <Container>
           <Reveal>
-            <p className="tag">{"// Principal Investigator"}</p>
-            <h3 className="font-serif mt-3 text-[26px] text-ink-bright">
-              {principalInvestigator.name}, <span className="italic">{principalInvestigator.credentials}</span>
-            </h3>
-            <p className="mt-3 max-w-lg text-[13.5px] leading-[1.7] text-ink-2">
-              {principalInvestigator.title}, working alongside {teamCount} grad and
-              undergrad researchers on RNA editing, cancer biology, and infectious disease.
-            </p>
-            <TextCta href="/team" className="mt-5 inline-block">
-              Meet the full team
-            </TextCta>
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+              <div className="panel h-24 w-24 shrink-0 p-1.5">
+                <span className="panel-bracket tl" aria-hidden="true" />
+                <span className="panel-bracket br" aria-hidden="true" />
+                <div className="relative h-full w-full overflow-hidden">
+                  <Image
+                    src="/images/whelton-miller.jpg"
+                    alt={principalInvestigator.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="tag">{"// Principal Investigator"}</p>
+                <h3 className="font-serif mt-3 text-[26px] text-ink-bright">
+                  {principalInvestigator.name}, <span className="italic">{principalInvestigator.credentials}</span>
+                </h3>
+                <p className="mt-3 max-w-lg text-[13.5px] leading-[1.7] text-ink-2">
+                  {principalInvestigator.title}, working alongside {teamCount} grad and
+                  undergrad researchers on RNA editing, cancer biology, and infectious disease.
+                </p>
+                <TextCta href="/team" className="mt-5 inline-block">
+                  Meet the full team
+                </TextCta>
+              </div>
+            </div>
           </Reveal>
         </Container>
       </section>

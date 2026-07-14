@@ -23,7 +23,10 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="rule text-ink-3">
+    <footer
+      data-theme="dark"
+      className="rule bg-[color:var(--page-bg-solid)] text-ink-3"
+    >
       <Container className="grid gap-10 py-14 lg:grid-cols-[2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">

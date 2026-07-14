@@ -14,7 +14,10 @@
   --fill: rgba(76, 187, 23, 0.13);
 }
 
-:root[data-theme="light"] {
+/* Not scoped to :root — this also lets a subtree (e.g. the footer)
+   force a mode regardless of the page-wide toggle by carrying its own
+   [data-theme] attribute, since custom properties simply cascade. */
+[data-theme="light"] {
   --page-bg-solid: #f4f4ef;
   --page-bg: radial-gradient(120% 80% at 80% -12%, rgba(76, 187, 23, 0.1), transparent 52%), var(--page-bg-solid);
   --vignette: transparent;
@@ -42,7 +45,7 @@
   --logo-plate: #f4f4ef;
 }
 
-:root[data-theme="dark"] {
+[data-theme="dark"] {
   --page-bg-solid: #0c100e;
   --page-bg: radial-gradient(120% 80% at 78% -10%, rgba(76, 187, 23, 0.14), transparent 55%), var(--page-bg-solid);
   --vignette: radial-gradient(130% 90% at 50% 0%, transparent 58%, rgba(0, 0, 0, 0.6));
