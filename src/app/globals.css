@@ -304,6 +304,67 @@ body {
   animation: trace-draw 2.2s ease-out 0.3s both;
 }
 
+/* Theme toggle — a physical dark-plastic rocker switch, not a themed UI
+   chip: the housing/paddle are deliberately always dark regardless of
+   [data-theme], like a real illuminated switch. The active side's icon
+   "lights up" green; the paddle rocks a couple degrees toward it. */
+.rocker {
+  display: inline-flex;
+  align-items: center;
+  width: 56px;
+  height: 30px;
+  padding: 3px;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #4a4944, #1c1b18);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.14),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.55),
+    0 1px 2px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.rocker-paddle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 7px;
+  border-radius: 4px;
+  background: linear-gradient(155deg, #78766d 0%, #38362f 45%, #191815 100%);
+  box-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.22);
+  transform: rotate(2deg);
+  transition: transform 0.18s ease;
+}
+[data-theme="dark"] .rocker-paddle {
+  transform: rotate(-2deg);
+}
+.rocker-paddle svg {
+  position: relative;
+  z-index: 1;
+  color: #8c8a80;
+  opacity: 0.55;
+  transition: color 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
+}
+.rocker-paddle svg.rocker-icon-sun {
+  color: var(--green);
+  opacity: 1;
+  filter: drop-shadow(0 0 3px var(--green));
+}
+[data-theme="dark"] .rocker-paddle svg.rocker-icon-sun {
+  color: #8c8a80;
+  opacity: 0.55;
+  filter: none;
+}
+[data-theme="dark"] .rocker-paddle svg.rocker-icon-moon {
+  color: var(--green);
+  opacity: 1;
+  filter: drop-shadow(0 0 3px var(--green));
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -311,6 +372,9 @@ body {
     transition-duration: 0.01ms !important;
   }
   body {
+    transition: none;
+  }
+  .rocker-paddle {
     transition: none;
   }
 }
