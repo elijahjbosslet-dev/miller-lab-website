@@ -180,18 +180,25 @@ export type Researcher = {
 };
 
 export const principalInvestigator = {
-  name: "Whelton Miller",
+  name: "Whelton A. Miller III",
   credentials: "PhD",
   title: "Principal Investigator",
   role: [
     "Assistant Professor, Department of Medicine (Primary)",
     "Department of Molecular Pharmacology and Neuroscience",
-    "Bioinformatics",
+    "Bioinformatics Program",
+    "Faculty Affiliate, Lab for Applied Artificial Intelligence",
   ],
   scholarUrl: "https://scholar.google.com/citations?user=iUpdueEAAAAJ&hl=en",
 };
 
 export const graduateResearchers: Researcher[] = [
+  {
+    name: "Carolyn Ashley",
+    program: "IPBS PhD",
+    focus: "RNA Editing, Cancer Biology, Infectious Disease",
+    scholarUrl: "https://scholar.google.com/citations?user=jYhxyn0AAAAJ&hl=en",
+  },
   {
     name: "Emmanuel Broni",
     program: "IPBS PhD",
@@ -210,6 +217,11 @@ export const graduateResearchers: Researcher[] = [
   },
   {
     name: "Scarlet Schuth",
+    program: "M2, Medicine - STAR Program",
+    focus: "RNA Editing, Infectious Disease",
+  },
+  {
+    name: "Brandon Lim",
     program: "M2, Medicine - STAR Program",
     focus: "RNA Editing, Infectious Disease",
   },
@@ -234,10 +246,8 @@ export const undergraduateResearchers: Researcher[] = [
 ];
 
 export const alumni: Researcher[] = [
-  { name: "Carolyn Ashley", credentials: "PhD", program: "IPBS PhD", focus: "RNA Editing, Cancer Biology, Infectious Disease", scholarUrl: "https://scholar.google.com/citations?user=jYhxyn0AAAAJ&hl=en" },
-  { name: "Brandon Lim", program: "M2, STAR Program", focus: "RNA Editing, Infectious Disease" },
   { name: "Maxwell Pierce", program: "M2, STAR Program", focus: "RNA Editing, Infectious Disease" },
-  { name: "Miriam Velaquez", credentials: "MS, MBA", program: "MS/MBA Program (Rotation)", focus: "RNA Editing, Cancer Biology, Infectious Disease" },
+  { name: "Miriam Velazquez", credentials: "MS, MBA", program: "MS/MBA Program (Rotation)", focus: "RNA Editing, Cancer Biology, Infectious Disease" },
   { name: "Sufia Khan", program: "BS (Intern), Loyola University Chicago" },
   { name: "Josephine Nimely", program: "BS (Intern), Lincoln University (PA)" },
   { name: "Cedar Davidson", program: "BS (Intern), Lincoln University (PA)" },
@@ -246,7 +256,7 @@ export const alumni: Researcher[] = [
   { name: "Kyndall Wallace", program: "MS/MBA, Loyola University Chicago" },
   { name: "Olivia Seale", program: "MS/MBA (Rotation), Loyola University Chicago" },
   { name: "Emily Krueger", program: "IPBS PhD (Rotation), Loyola University Chicago" },
-  { name: "Sana Iqbala", program: "IPBS PhD (Rotation), Loyola University Chicago" },
+  { name: "Sana Iqbal", program: "IPBS PhD (Rotation), Loyola University Chicago" },
   { name: "Andrew Striegel", program: "BS (Intern), Notre Dame University" },
   { name: "Okuneye Tunmise", program: "BS (Intern), Lincoln University (PA)" },
   { name: "Mary-Pearl T. Ojukwu", program: "BS (Intern), Lincoln University (PA)" },

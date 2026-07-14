@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
-import PinnedPhoto from "@/components/PinnedPhoto";
 import Reveal from "@/components/Reveal";
 import { researchAreas } from "@/lib/content";
 
@@ -30,17 +29,14 @@ export default function ResearchPage() {
 
       {/* Wet lab to computation */}
       <section className="rule-b py-14">
-        <Container className="grid items-center gap-12 lg:grid-cols-2">
-          <Reveal className="order-2 lg:order-1">
-            <p className="kicker">{"// Wet Lab to Computation"}</p>
-            <p className="mt-4 max-w-md text-[14px] leading-7 text-ink-2">
+        <Container>
+          <Reveal>
+            <p className="kicker">{"// Data to Discovery"}</p>
+            <p className="mt-4 max-w-2xl text-[14px] leading-7 text-ink-2">
               Every computational model starts with a question from the bench. Our
               research areas exist to turn that data into actionable, clinically
               relevant insight.
             </p>
-          </Reveal>
-          <Reveal delay={0.1} className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <PinnedPhoto src="/images/lab-microscope.jpg" caption="FIG // BENCH TO MODEL" />
           </Reveal>
         </Container>
       </section>
